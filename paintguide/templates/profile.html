@@ -1,0 +1,156 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="shell">
+  <header class="page-intro">
+    <h1>{{ t('profile.title') }}</h1>
+    <p>{{ t('profile.lede') }}</p>
+  </header>
+
+  <div class="profile-banner">
+    <span class="avatar">{{ current_user.initials }}</span>
+    <div>
+      <h2>{{ current_user.nickname }}</h2>
+      <p>{{ current_user.email }} · {{ t('profile.role') }}: {{ t('profile.role_admin') if current_user.is_admin else t('profile.role_user') }}</p>
+      {% if verification_required %}
+        {% if current_user.is_verified %}
+          <p class="badge" style="margin-top:8px">{{ t('account.profile.verified') }}</p>
+        {% else %}
+          <p class="badge rust" style="margin-top:8px">{{ t('account.profile.unverified') }}</p>
+          <p class="muted" style="font-size:.8rem;margin-top:6px">
+            <a href="{{ url_for('account.resend_verification') }}">{{ t('account.profile.resend') }}</a>
+          </p>
+        {% endif %}
+      {% endif %}
+      {% if current_user.pending_email %}
+        <p class="muted" style="font-size:.8rem;margin-top:6px">
+          {{ t('account.profile.email_hint') }}
+        </p>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="profile-stats">
+    <div class="profile-stat">
+      <strong>{{ stats.guides_saved }}</strong>
+      <span>{{ t('profile.saved_guides') }}</span>
+    </div>
+    <div class="profile-stat">
+      <strong>{{ stats.paints_saved }}</strong>
+      <span>{{ t('profile.saved_paints') }}</span>
+    </div>
+    <div class="profile-stat">
+      <strong>{{ stats.wishlist_count }}</strong>
+      <span>{{ t('nav.wishlist') }}</span>
+    </div>
+  </div>
+
+  <div class="dashboard-grid">
+    <section class="panel">
+      <h2>{{ t('profile.nickname') }}</h2>
+      <form method="post" action="{{ url_for('account.profile') }}" class="wishlist-form">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <input type="hidden" name="action" value="profile">
+        <div class="field">
+          <label for="nickname">{{ t('profile.nickname') }}</label>
+          <input id="nickname" name="nickname" minlength="2" maxlength="40" value="{{ current_user.nickname }}" required>
+        </div>
+        <div class="full">
+          <button class="button block" type="submit">{{ t('profile.save') }}</button>
+        </div>
+      </form>
+
+      <h2 style="margin-top:26px">{{ t('profile.change_password') }}</h2>
+      <form method="post" action="{{ url_for('account.profile') }}" class="wishlist-form">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <input type="hidden" name="action" value="password">
+        <div class="field">
+          <label for="current_password">{{ t('profile.password_current') }}</label>
+          <input id="current_password" name="current_password" type="password" required>
+        </div>
+        <div class="field">
+          <label for="new_password">{{ t('profile.password_new') }}</label>
+          <input id="new_password" name="new_password" type="password" minlength="8" required>
+        </div>
+        <div class="field">
+          <label for="new_password_confirm">{{ t('account.password_confirm') }}</label>
+          <input id="new_password_confirm" name="new_password_confirm" type="password" minlength="8" required>
+        </div>
+        <div class="full">
+          <button class="button secondary block" type="submit">{{ t('profile.change_password') }}</button>
+        </div>
+      </form>
+
+      <h2 style="margin-top:26px">{{ t('account.profile.email_title') }}</h2>
+      <form method="post" action="{{ url_for('account.profile') }}" class="wishlist-form">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <input type="hidden" name="action" value="email">
+        <div class="field">
+          <label for="new_email">{{ t('account.email') }}</label>
+          <input id="new_email" name="email" type="email" value="{{ current_user.pending_email or current_user.email }}" required>
+          <span class="helper">{{ t('account.profile.email_hint') }}</span>
+        </div>
+        <div class="full">
+          <button class="button secondary block" type="submit">{{ t('account.profile.email_submit') }}</button>
+        </div>
+      </form>
+
+      <h2 style="margin-top:26px">{{ t('account.profile.delete_title') }}</h2>
+      <form method="post" action="{{ url_for('account.delete_account') }}" class="wishlist-form">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <p class="muted" style="font-size:.82rem">{{ t('account.profile.delete_hint') }}</p>
+        <div class="field">
+          <label for="delete_password">{{ t('account.profile.delete_confirm') }}</label>
+          <input id="delete_password" name="password" type="password" required>
+        </div>
+        <div class="full">
+          <button class="button secondary block" type="submit">{{ t('account.profile.delete_submit') }}</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>{{ t('profile.saved_guides') }} · {{ favorite_guides|length }}</h2>
+      {% if favorite_guides %}
+        <div class="entry-list">
+          {% for guide in favorite_guides %}
+            <article class="entry">
+              <div>
+                <span class="badge">{{ guide.country.name if guide.country else '' }}</span>
+                <h3><a href="{{ url_for('guide.guide_detail', slug=guide.slug) }}">{{ guide.title }}</a></h3>
+                <p>{{ guide.vehicle_type.name if guide.vehicle_type else '' }} · {{ guide.year_label }}</p>
+              </div>
+              <form class="entry-actions" method="post" action="{{ url_for('guide.toggle_favorite', slug=guide.slug) }}">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                <button class="button small secondary" type="submit">Убрать</button>
+              </form>
+            </article>
+          {% endfor %}
+        </div>
+      {% else %}
+        <p class="muted">{{ t('favorites.empty_hint') }}</p>
+      {% endif %}
+
+      <h2 style="margin-top:26px">{{ t('profile.saved_paints') }} · {{ favorite_paints|length }}</h2>
+      {% if favorite_paints %}
+        <div class="entry-list">
+          {% for paint in favorite_paints %}
+            <article class="entry">
+              <span class="swatch-dot" style="--swatch: {{ paint.color_hex }}"></span>
+              <div>
+                <h3><a href="{{ url_for('paints.paint_detail', paint_id=paint.id) }}">{{ paint.name }}</a></h3>
+                <p>{{ paint.brand.name }} · {{ paint.code }}</p>
+              </div>
+              <form class="entry-actions" method="post" action="{{ url_for('paints.toggle_favorite', paint_id=paint.id) }}">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                <button class="button small secondary" type="submit">Убрать</button>
+              </form>
+            </article>
+          {% endfor %}
+        </div>
+      {% else %}
+        <p class="muted">{{ t('favorites.empty_hint') }}</p>
+      {% endif %}
+    </section>
+  </div>
+</div>
+{% endblock %}

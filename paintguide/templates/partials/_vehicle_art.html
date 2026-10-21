@@ -1,0 +1,103 @@
+{# Силуэт техники — используется как заглушка обложки, когда фотографии нет.
+   Для каждого типа техники свой силуэт: танк, САУ, БТР, бронеавтомобиль,
+   полугусеница, артиллерия, грузовик и авиация. #}
+{% set kind = vehicle_kind or 'tank' %}
+{% set label = vehicle_label or kind %}
+<svg viewBox="0 0 440 200" role="img" aria-label="{{ t('guide.art_label', kind=label) }}">
+  {% if kind == 'aircraft' %}
+    <g fill="rgba(255,255,255,.82)" stroke="rgba(0,0,0,.35)" stroke-width="3" stroke-linejoin="round">
+      <path d="M120 96h120l26 8h84l4 10h-84l-22 10h-128z"/>
+      <path d="M198 106l-14 52 18 4 22-52z"/>
+      <path d="M150 88h58l6 8h-64z"/>
+      <path d="M262 104l72-26 6 8-74 26z"/>
+      <path d="M170 74h20v22h-20z"/>
+    </g>
+    <g fill="rgba(240,220,160,.9)">
+      <ellipse cx="140" cy="110" rx="26" ry="7"/>
+      <ellipse cx="352" cy="110" rx="18" ry="6"/>
+    </g>
+  {% elif kind == 'artillery' %}
+    <g fill="rgba(255,255,255,.82)" stroke="rgba(0,0,0,.35)" stroke-width="3" stroke-linejoin="round">
+      <path d="M96 132h210l24 16H84z"/>
+      <path d="M120 118h160v14H120z"/>
+      <path d="M262 112l96-46 9 12-92 46z"/>
+      <path d="M186 132l16 44h-22l-14-44z"/>
+      <path d="M268 132l14 44h-20l-14-44z"/>
+    </g>
+    <g fill="rgba(240,220,160,.9)">
+      <circle cx="136" cy="166" r="15"/><circle cx="198" cy="166" r="15"/>
+      <circle cx="262" cy="166" r="15"/><circle cx="318" cy="166" r="15"/>
+    </g>
+  {% elif kind == 'truck' %}
+    <g fill="rgba(255,255,255,.82)" stroke="rgba(0,0,0,.35)" stroke-width="3" stroke-linejoin="round">
+      <path d="M52 118h116v42H52z"/>
+      <path d="M168 96h84l38 22v42h-122z"/>
+      <path d="M252 104h44l30 18h-74z"/>
+      <path d="M48 150h296v14H48z"/>
+    </g>
+    <g fill="rgba(240,220,160,.9)">
+      <circle cx="104" cy="166" r="17"/><circle cx="188" cy="166" r="17"/>
+      <circle cx="266" cy="166" r="17"/><circle cx="320" cy="166" r="17"/>
+    </g>
+  {% elif kind == 'halftrack' %}
+    <g fill="rgba(255,255,255,.82)" stroke="rgba(0,0,0,.35)" stroke-width="3" stroke-linejoin="round">
+      <path d="M60 108h230l34 26H56z"/>
+      <path d="M104 74h118l24 34H96z"/>
+      <path d="M212 82l120 4 1 12-122 2z"/>
+      <path d="M56 134h272l-14 22H70z"/>
+    </g>
+    <g fill="rgba(240,220,160,.9)">
+      <circle cx="118" cy="158" r="13"/><circle cx="164" cy="158" r="13"/>
+      <circle cx="210" cy="158" r="13"/><circle cx="256" cy="158" r="13"/>
+    </g>
+  {% elif kind == 'armored_car' %}
+    {# Бронеавтомобиль: низкий корпус, открытая сверху башня, кабина. #}
+    <g fill="rgba(255,255,255,.82)" stroke="rgba(0,0,0,.35)" stroke-width="3" stroke-linejoin="round">
+      <path d="M62 112h250l32 22H58z"/>
+      <path d="M118 82h104l18 30H108z"/>
+      <path d="M300 106h74l14 10-14 8h-74z"/>
+      <path d="M58 136h286l-8 18H66z"/>
+    </g>
+    <g fill="rgba(240,220,160,.9)">
+      <circle cx="110" cy="158" r="15"/><circle cx="168" cy="158" r="15"/>
+      <circle cx="232" cy="158" r="15"/><circle cx="296" cy="158" r="15"/>
+    </g>
+  {% elif kind == 'ifv' %}
+    {# Бронетранспортёр: плоская крыша, наклонный лоб, без башни. #}
+    <g fill="rgba(255,255,255,.82)" stroke="rgba(0,0,0,.35)" stroke-width="3" stroke-linejoin="round">
+      <path d="M62 96h262l44 22v30H52v-40z"/>
+      <path d="M74 92h238v18H74z"/>
+      <path d="M52 148h316l-14 22H66z"/>
+      <path d="M300 118h34v14h-34z"/>
+    </g>
+    <g fill="rgba(240,220,160,.9)">
+      <circle cx="102" cy="158" r="14"/><circle cx="158" cy="158" r="14"/>
+      <circle cx="214" cy="158" r="14"/><circle cx="270" cy="158" r="14"/>
+      <circle cx="320" cy="158" r="14"/>
+    </g>
+  {% elif kind == 'spg' %}
+    <g fill="rgba(255,255,255,.82)" stroke="rgba(0,0,0,.35)" stroke-width="3" stroke-linejoin="round">
+      <path d="M56 118h240l30 22H52z"/>
+      <path d="M124 92h108l20 26H118z"/>
+      <path d="M206 96l148-56 7 13-146 58z"/>
+      <path d="M52 140h296l-12 20H64z"/>
+    </g>
+    <g fill="rgba(240,220,160,.9)">
+      <circle cx="104" cy="160" r="15"/><circle cx="166" cy="160" r="15"/>
+      <circle cx="232" cy="160" r="15"/><circle cx="298" cy="160" r="15"/>
+    </g>
+  {% else %}
+    <g fill="rgba(255,255,255,.82)" stroke="rgba(0,0,0,.35)" stroke-width="3" stroke-linejoin="round">
+      <path d="M48 140h344l-19 40H70z"/>
+      <path d="M84 112h252l42 26H60z"/>
+      <path d="M140 84h136l44 26H108z"/>
+      <path d="M176 52h90l24 30H150z"/>
+      <path d="M232 60l128 6 1 11-134 5z"/>
+    </g>
+    <g fill="rgba(240,220,160,.9)">
+      <circle cx="106" cy="156" r="12"/><circle cx="152" cy="156" r="12"/>
+      <circle cx="198" cy="156" r="12"/><circle cx="244" cy="156" r="12"/>
+      <circle cx="290" cy="156" r="12"/><circle cx="336" cy="156" r="12"/>
+    </g>
+  {% endif %}
+</svg>

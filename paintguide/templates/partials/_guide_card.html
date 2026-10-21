@@ -1,0 +1,55 @@
+{# Карточка руководства в каталоге и на главной.
+
+   Изображение — самостоятельная ссылка на гайд. Раньше картинка была
+   вложена внутрь ссылки, а рядом лежала ещё одна ссылка («Фото» на
+   источник). Вложенные ссылки браузер разрывает: внешняя заканчивалась
+   на «Фото», и картинка переставала открывать гайд. Теперь ссылка на
+   гайд — отдельный слой поверх картинки, а «Фото» лежит выше. #}
+<article class="guide-card">
+  <div class="card-art" style="--card-tone: {{ guide.cover_tone }}">
+    {% if guide.cover_url %}
+      <img src="{{ guide.cover_url }}" alt="{{ guide.title }}" loading="lazy">
+    {% else %}
+      {% with vehicle_kind = guide.vehicle_type.slug if guide.vehicle_type else 'tank',
+              vehicle_label = guide.vehicle_type.name if guide.vehicle_type else 'Танк' %}
+        {% include 'partials/_vehicle_art.html' %}
+      {% endwith %}
+    {% endif %}
+    <a class="card-art-link" href="{{ url_for('guide.guide_detail', slug=guide.slug) }}"
+       aria-label="{{ guide.title }}"></a>
+    <span class="card-index">{{ guide.year_label }}</span>
+    {% if guide.cover_source %}
+      <a class="card-photo-credit"
+         href="{{ guide.cover_source }}" target="_blank" rel="noopener nofollow"
+         title="{{ guide.cover_credit }} · {{ guide.cover_license }}">{{ t('credits.photo') }}</a>
+    {% endif %}
+  </div>
+  <div class="card-body">
+    <div class="card-meta">
+      <span>{{ guide.country.name if guide.country else '' }}</span>
+      <span>·</span>
+      <span>{{ guide.vehicle_type.name if guide.vehicle_type else '' }}</span>
+    </div>
+    <h3><a href="{{ url_for('guide.guide_detail', slug=guide.slug) }}">{{ guide.title }}</a></h3>
+    <p>{{ guide.description|truncate(110) }}</p>
+    <div class="card-bottom">
+      <span class="badge {{ 'gold' if guide.is_hard_guide else '' }}">
+        {{ guide.difficulty_range }}
+      </span>
+      {% if current_user.is_authenticated %}
+        <div class="card-actions">
+          <form method="post" action="{{ url_for('guide.toggle_favorite', slug=guide.slug) }}">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <button class="icon-button" type="submit" aria-label="В избранное">★</button>
+          </form>
+          <form method="post" action="{{ url_for('guide.add_to_wishlist', slug=guide.slug) }}">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <button class="icon-button" type="submit" aria-label="В вишлист">＋</button>
+          </form>
+        </div>
+      {% else %}
+        <a class="mono faint" style="font-size:0.68rem" href="{{ url_for('guide.guide_detail', slug=guide.slug) }}">Читать →</a>
+      {% endif %}
+    </div>
+  </div>
+</article>

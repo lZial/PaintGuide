@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="shell admin-layout">
+  <header class="page-intro" style="padding-bottom:18px">
+    <h1>{{ t('admin.guides') }}</h1>
+  </header>
+
+  {% include 'partials/_admin_nav.html' %}
+
+  <div class="table-search" style="grid-template-columns:repeat(3,minmax(0,1fr)) auto">
+    <div class="field">
+      <label for="published">{{ t('admin.published') }}</label>
+      <select id="published" onchange="window.location.href=this.value">
+        <option value="{{ url_for('admin_guides.index') }}">{{ t('common.all') }}</option>
+        <option value="{{ url_for('admin_guides.index', published='yes') }}" {{ 'selected' if published_filter == 'yes' else '' }}>{{ t('admin.published') }}</option>
+        <option value="{{ url_for('admin_guides.index', published='no') }}" {{ 'selected' if published_filter == 'no' else '' }}>{{ t('admin.draft') }}</option>
+      </select>
+    </div>
+    <div></div>
+    <div></div>
+    <div style="display:flex; align-items:flex-end">
+      <a class="button" href="{{ url_for('admin_guides.create') }}">+ {{ t('admin.new_guide') }}</a>
+    </div>
+  </div>
+
+  {% if guides %}
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>{{ t('paints.col.name') }}</th>
+            <th>{{ t('catalog.filter.country') }}</th>
+            <th>{{ t('catalog.filter.vehicle_type') }}</th>
+            <th>{{ t('catalog.filter.year') }}</th>
+            <th>{{ t('common.actions') }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for guide in guides %}
+            <tr>
+              <td>
+                <a href="{{ url_for('admin_guides.edit', guide_id=guide.id) }}">{{ guide.title }}</a>
+                <div class="faint mono" style="font-size:0.66rem">{{ guide.slug }}</div>
+              </td>
+              <td class="muted">{{ guide.country.name_ru if guide.country else '' }}</td>
+              <td class="muted">{{ guide.vehicle_type.name_ru if guide.vehicle_type else '' }}</td>
+              <td class="muted">{{ guide.year_label }}</td>
+              <td>
+                <div style="display:flex; gap:6px; flex-wrap:wrap">
+                  <span class="badge {{ 'gold' if guide.published else 'plain' }}">
+                    {{ t('admin.published') if guide.published else t('admin.draft') }}
+                  </span>
+                  <a class="button small secondary" href="{{ url_for('admin_guides.edit', guide_id=guide.id) }}">{{ t('common.edit') }}</a>
+                  <form method="post" action="{{ url_for('admin_guides.toggle_publish', guide_id=guide.id) }}">
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                    <button class="button small secondary" type="submit">
+                      {{ t('admin.unpublish') if guide.published else t('admin.publish') }}
+                    </button>
+                  </form>
+                  <form method="post" action="{{ url_for('admin_guides.delete', guide_id=guide.id) }}" data-confirm="{{ t('admin.confirm_delete') }}">
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                    <button class="button small danger" type="submit">{{ t('common.delete') }}</button>
+                  </form>
+                </div>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  {% else %}
+    <div class="empty-state">
+      <div class="empty-mark">○</div>
+      <h3>{{ t('common.empty') }}</h3>
+      <p>Создайте первое руководство, чтобы наполнить каталог.</p>
+      <a class="button" href="{{ url_for('admin_guides.create') }}">+ {{ t('admin.new_guide') }}</a>
+    </div>
+  {% endif %}
+</div>
+{% endblock %}

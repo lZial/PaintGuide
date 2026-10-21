@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="{{ locale }}" data-theme="{{ theme }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#12100f">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='img/mark.svg') }}">
+  <title>{% block title %}{{ title|default('PaintGuide') }}{% endblock %} · PaintGuide</title>
+  {% block meta %}
+    <meta name="description" content="{{ meta_description|default('PaintGuide — база пошаговых руководств по окраске моделей военной техники: акрил, грунт, проливка, камуфляж и weathering.') }}">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="PaintGuide">
+    <meta property="og:title" content="{{ self.title() }}">
+    <meta property="og:description" content="{{ meta_description|default('PaintGuide — база пошаговых руководств по окраске моделей военной техники.') }}">
+    <meta property="og:locale" content="{{ 'ru_RU' if locale == 'ru' else 'en_US' }}">
+    <link rel="canonical" href="{{ request.base_url }}">
+  {% endblock %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/theme.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/site.css') }}">
+  <script>
+    // Тема применяется до отрисовки, чтобы не было вспышки светлого фона.
+    (function () {
+      try {
+        var root = document.documentElement;
+        var saved = root.getAttribute('data-theme');
+        var match = document.cookie.match(/(?:^|;\s*)pg_theme=([^;]+)/);
+        var cookie = match ? decodeURIComponent(match[1]) : null;
+        var prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+        root.setAttribute('data-theme', cookie || saved || (prefersLight ? 'light' : 'dark'));
+      } catch (e) { /* остаёмся на текущей теме */ }
+    })();
+  </script>
+  <script defer src="{{ url_for('static', filename='js/app.js') }}"></script>
+  <script defer src="{{ url_for('static', filename='js/popup.js') }}"></script>
+  {% block head %}{% endblock %}
+</head>
+<body>
+<a class="skip-link" href="#main">К основному содержимому</a>
+
+<header class="topbar">
+  <div class="shell topbar-inner">
+    <a class="brand" href="{{ url_for('main.home') }}" aria-label="PaintGuide — на главную">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40"><use href="{{ url_for('static', filename='img/mark.svg') }}#mark"/></svg>
+      </span>
+      <span class="brand-copy"><strong>PaintGuide</strong><small>база гайдов по окраске</small></span>
+    </a>
+
+    <nav class="nav" id="site-nav" aria-label="Основная навигация">
+      <a href="{{ url_for('catalog.catalog') }}" class="{{ 'active' if nav_active == 'catalog' else '' }}">{{ t('nav.catalog') }}</a>
+      <a href="{{ url_for('paints.paints_index') }}" class="{{ 'active' if nav_active == 'paints' else '' }}">{{ t('nav.paints') }}</a>
+      {% if current_user.is_authenticated %}
+        <a href="{{ url_for('favorites.favorites') }}" class="{{ 'active' if nav_active == 'favorites' else '' }}">{{ t('nav.favorites') }}</a>
+        <a href="{{ url_for('wishlist.wishlist') }}" class="{{ 'active' if nav_active == 'wishlist' else '' }}">{{ t('nav.wishlist') }}</a>
+        <a href="{{ url_for('inventory.inventory') }}" class="{{ 'active' if nav_active == 'inventory' else '' }}">{{ t('nav.inventory') }}</a>
+        <a href="{{ url_for('account.profile') }}" class="{{ 'active' if nav_active == 'profile' else '' }}">{{ t('nav.profile') }}</a>
+        {% if current_user.is_admin %}
+          <a href="{{ url_for('admin.dashboard') }}" class="{{ 'active' if nav_active == 'admin' else '' }}">{{ t('nav.admin') }}</a>
+        {% endif %}
+      {% endif %}
+    </nav>
+
+    <div class="top-actions">
+      <form class="theme-switch" method="post" action="{{ url_for('main.set_theme') }}">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <input type="hidden" name="theme" value="{{ 'light' if theme == 'dark' else 'dark' }}">
+        <button class="icon-button" type="submit" title="{{ t('nav.toggle_theme') }}" aria-label="{{ t('nav.toggle_theme') }}">
+          {% if theme == 'light' %}☾{% else %}☀{% endif %}
+        </button>
+      </form>
+
+      <form class="lang-switch" method="post" action="{{ url_for('main.set_language') }}">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <input type="hidden" name="locale" value="{{ 'en' if locale == 'ru' else 'ru' }}">
+        <button class="icon-button lang" type="submit" title="{{ t('nav.language') }}" aria-label="{{ t('nav.language') }}">{{ 'EN' if locale == 'ru' else 'RU' }}</button>
+      </form>
+
+      {% if current_user.is_authenticated %}
+        <a class="user-chip" href="{{ url_for('account.profile') }}" title="{{ current_user.email }}">
+          <span class="avatar">{{ current_user.initials }}</span>
+          <span class="user-name">{{ current_user.nickname }}</span>
+        </a>
+        <form method="post" action="{{ url_for('account.logout') }}">
+          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+          <button class="button small secondary" type="submit">{{ t('nav.logout') }}</button>
+        </form>
+      {% else %}
+        <a class="button small secondary" href="{{ url_for('account.login') }}">{{ t('nav.login') }}</a>
+        <a class="button small" href="{{ url_for('account.register') }}">{{ t('nav.register') }}</a>
+      {% endif %}
+
+      <button class="menu-toggle" type="button" aria-label="{{ t('nav.menu') }}" aria-expanded="false" aria-controls="site-nav">≡</button>
+    </div>
+  </div>
+</header>
+
+<div class="shell flash-stack" aria-live="polite">
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+        <div class="flash {{ 'error' if category in ['error', 'danger'] else ('info' if category == 'info' else '') }}">{{ message }}</div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+</div>
+
+<main class="main" id="main">{% block content %}{% endblock %}</main>
+
+<footer class="footer">
+  <div class="shell footer-inner">
+    <span>{{ t('footer.tagline') }}</span>
+    <nav class="footer-nav" aria-label="Дополнительная навигация">
+      <a href="{{ url_for('main.terms') }}">{{ t('terms.title') }}</a>
+      <a href="{{ url_for('main.credits') }}">{{ t('credits.title') }}</a>
+      <a href="{{ url_for('catalog.catalog') }}">{{ t('nav.catalog') }}</a>
+      <a href="{{ url_for('paints.paints_index') }}">{{ t('nav.paints') }}</a>
+    </nav>
+    <span class="footer-motto">{{ t('footer.motto') }}</span>
+  </div>
+</footer>
+</body>
+</html>

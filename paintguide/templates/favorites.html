@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="shell">
+  <header class="page-intro">
+    <h1>{{ t('favorites.title') }}</h1>
+    <p>{{ t('favorites.lede') }}</p>
+  </header>
+
+  <div class="dashboard-grid">
+    <section class="panel">
+      <h2>{{ t('favorites.guides') }} · {{ guides|length }}</h2>
+      {% if guides %}
+        <div class="entry-list">
+          {% for guide in guides %}
+            <article class="entry">
+              <div>
+                <span class="badge">{{ guide.country.name if guide.country else '' }}</span>
+                <h3><a href="{{ url_for('guide.guide_detail', slug=guide.slug) }}">{{ guide.title }}</a></h3>
+                <p>{{ guide.vehicle_type.name if guide.vehicle_type else '' }} · {{ guide.year_label }}</p>
+              </div>
+              <form class="entry-actions" method="post" action="{{ url_for('guide.toggle_favorite', slug=guide.slug) }}">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                <button class="button small secondary" type="submit">Убрать</button>
+              </form>
+            </article>
+          {% endfor %}
+        </div>
+      {% else %}
+        <div class="empty-state">
+          <div class="empty-mark">☆</div>
+          <h3>{{ t('favorites.empty') }}</h3>
+          <p>{{ t('favorites.empty_hint') }}</p>
+        </div>
+      {% endif %}
+    </section>
+
+    <section class="panel">
+      <h2>{{ t('favorites.paints') }} · {{ paints|length }}</h2>
+      {% if paints %}
+        <div class="entry-list">
+          {% for paint in paints %}
+            <article class="entry">
+              <span class="swatch-dot" style="--swatch: {{ paint.color_hex }}"></span>
+              <div>
+                <h3><a href="{{ url_for('paints.paint_detail', paint_id=paint.id) }}">{{ paint.name }}</a></h3>
+                <p>{{ paint.brand.name }} · {{ paint.code }} · {{ paint.color_hex }}</p>
+              </div>
+              <form class="entry-actions" method="post" action="{{ url_for('paints.toggle_favorite', paint_id=paint.id) }}">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                <button class="button small secondary" type="submit">Убрать</button>
+              </form>
+            </article>
+          {% endfor %}
+        </div>
+      {% else %}
+        <div class="empty-state">
+          <div class="empty-mark">☆</div>
+          <h3>{{ t('favorites.empty') }}</h3>
+          <p>{{ t('favorites.empty_hint') }}</p>
+        </div>
+      {% endif %}
+    </section>
+  </div>
+</div>
+{% endblock %}

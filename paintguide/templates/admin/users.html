@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="shell admin-layout">
+  <header class="page-intro" style="padding-bottom:18px">
+    <h1>{{ t('admin.users') }}</h1>
+  </header>
+
+  {% include 'partials/_admin_nav.html' %}
+
+  <form class="table-search" style="grid-template-columns:2fr auto" method="get" action="{{ url_for('admin_users.index') }}">
+    <div class="field">
+      <label for="q">{{ t('common.search') }}</label>
+      <input id="q" type="search" name="q" value="{{ search }}" placeholder="Почта или никнейм">
+    </div>
+    <div style="display:flex; align-items:flex-end">
+      <button class="button" type="submit">{{ t('common.search') }}</button>
+    </div>
+  </form>
+
+  {% if users %}
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>{{ t('account.nickname') }}</th>
+            <th>{{ t('account.email') }}</th>
+            <th>{{ t('admin.role') }}</th>
+            <th>{{ t('admin.users') }}</th>
+            <th>{{ t('common.created') }}</th>
+            <th>{{ t('common.actions') }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for user in users %}
+            <tr>
+              <td>
+                {{ user.nickname }}
+                {% if user.is_blocked %}<span class="badge rust">blocked</span>{% endif %}
+              </td>
+              <td class="muted">{{ user.email }}</td>
+              <td>
+                <span class="badge {{ 'gold' if user.is_admin else 'plain' }}">
+                  {{ t('profile.role_admin') if user.is_admin else t('profile.role_user') }}
+                </span>
+              </td>
+              <td>
+                {% if user.is_verified %}
+                  <span class="badge">{{ t('account.profile.verified') }}</span>
+                {% else %}
+                  <span class="badge rust">{{ t('account.profile.unverified') }}</span>
+                {% endif %}
+              </td>
+              <td class="muted mono" style="font-size:0.74rem">
+                {{ user.created_at.strftime('%d.%m.%Y') }}
+              </td>
+              <td>
+                <div style="display:flex; gap:6px; flex-wrap:wrap">
+                  {% if user.id != current_user.id %}
+                    <form method="post" action="{{ url_for('admin_users.toggle_role', user_id=user.id) }}">
+                      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                      <button class="button small secondary" type="submit">
+                        {{ t('admin.make_user') if user.is_admin else t('admin.make_admin') }}
+                      </button>
+                    </form>
+                    {% if not user.is_verified %}
+                      <form method="post" action="{{ url_for('admin_users.verify_user', user_id=user.id) }}">
+                        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                        <button class="button small secondary" type="submit">
+                          {{ t('account.profile.verified') }}
+                        </button>
+                      </form>
+                    {% endif %}
+                    <form method="post" action="{{ url_for('admin_users.toggle_block', user_id=user.id) }}">
+                      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                      <button class="button small {{ 'danger' if not user.is_blocked else 'secondary' }}" type="submit">
+                        {{ t('admin.unblock') if user.is_blocked else t('admin.block') }}
+                      </button>
+                    </form>
+                  {% endif %}
+                </div>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  {% else %}
+    <div class="empty-state">
+      <div class="empty-mark">○</div>
+      <h3>{{ t('common.empty') }}</h3>
+    </div>
+  {% endif %}
+</div>
+{% endblock %}

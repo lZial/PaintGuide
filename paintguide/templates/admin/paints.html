@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="shell admin-layout">
+  <header class="page-intro" style="padding-bottom:18px">
+    <h1>{{ t('admin.paints') }}</h1>
+  </header>
+
+  {% include 'partials/_admin_nav.html' %}
+
+  <div class="table-search" style="grid-template-columns:2fr 1fr auto auto">
+    <div class="field">
+      <label for="q">{{ t('common.search') }}</label>
+      <input id="q" type="search" name="q" value="{{ filters.q }}" placeholder="Название или код">
+    </div>
+    <div class="field">
+      <label for="brand">{{ t('paints.filter.brand') }}</label>
+      <select id="brand" name="brand">
+        <option value="">{{ t('common.all') }}</option>
+        {% for item in brands %}
+          <option value="{{ item.slug }}" {{ 'selected' if filters.brand == item.slug else '' }}>{{ item.name }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div style="display:flex; align-items:flex-end">
+      <button class="button" type="submit">{{ t('common.apply') }}</button>
+    </div>
+    <div style="display:flex; align-items:flex-end">
+      <a class="button secondary" href="{{ url_for('admin_paints.create') }}">+ {{ t('common.create') }}</a>
+    </div>
+  </div>
+
+  <section class="panel">
+    <h2>{{ t('admin.import_paints') }}</h2>
+    <form method="post" action="{{ url_for('admin_paints.import_paints') }}" class="wishlist-form">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      <div class="field">
+        <label for="payload">JSON</label>
+        <textarea id="payload" name="payload" rows="5" placeholder='[{"code":"XF-62","name":"Olive Drab","brand":"tamiya","line":"xf","hex":"#4f513a","type":"acrylic"}]'></textarea>
+        <span class="helper">{{ t('admin.import_hint') }}</span>
+      </div>
+      <div>
+        <button class="button" type="submit">{{ t('common.apply') }}</button>
+      </div>
+    </form>
+  </section>
+
+  {% if paints %}
+    <div class="table-wrap" style="margin-top:22px">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>{{ t('paints.col.brand') }}</th>
+            <th>{{ t('paints.col.line') }}</th>
+            <th>{{ t('paints.col.code') }}</th>
+            <th>{{ t('paints.col.name') }}</th>
+            <th>{{ t('paints.col.color') }}</th>
+            <th>{{ t('common.actions') }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for paint in paints %}
+            <tr>
+              <td>{{ paint.brand.name }}</td>
+              <td class="muted">{{ paint.line.name }}</td>
+              <td class="code">{{ paint.code }}</td>
+              <td>{{ paint.name }}</td>
+              <td>
+                <span class="color-cell">
+                  <span class="color-chip" style="--swatch: {{ paint.color_hex }}"></span>
+                  <span class="color-hex">{{ paint.color_hex }}</span>
+                </span>
+              </td>
+              <td>
+                <div style="display:flex; gap:6px">
+                  <a class="button small secondary" href="{{ url_for('admin_paints.edit', paint_id=paint.id) }}">{{ t('common.edit') }}</a>
+                  <form method="post" action="{{ url_for('admin_paints.delete', paint_id=paint.id) }}" data-confirm="{{ t('admin.confirm_delete') }}">
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                    <button class="button small danger" type="submit">×</button>
+                  </form>
+                </div>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  {% endif %}
+</div>
+{% endblock %}

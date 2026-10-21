@@ -1,0 +1,9 @@
+<nav class="admin-nav">
+  <a href="{{ url_for('admin.dashboard') }}" class="{{ 'active' if nav_active == 'admin_dashboard' else '' }}">{{ t('admin.dashboard') }}</a>
+  <a href="{{ url_for('admin_guides.index') }}" class="{{ 'active' if nav_active == 'admin_guides' else '' }}">{{ t('admin.guides') }}</a>
+  <a href="{{ url_for('admin_paints.index') }}" class="{{ 'active' if nav_active == 'admin_paints' else '' }}">{{ t('admin.paints') }}</a>
+  <a href="{{ url_for('admin_reference.index') }}" class="{{ 'active' if nav_active == 'admin_reference' else '' }}">{{ t('admin.reference') }}</a>
+  <a href="{{ url_for('admin_users.index') }}" class="{{ 'active' if nav_active == 'admin_users' else '' }}">{{ t('admin.users') }}</a>
+  <a href="{{ url_for('admin_users.logs') }}" class="{{ 'active' if nav_active == 'admin_logs' else '' }}">{{ t('admin.logs') }}</a>
+  <a href="{{ url_for('admin_users.stats') }}" class="{{ 'active' if nav_active == 'admin_stats' else '' }}">{{ t('admin.stats') }}</a>
+</nav>

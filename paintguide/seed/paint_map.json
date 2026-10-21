@@ -1,0 +1,1913 @@
+{
+ "paints": {
+  "XF-1|Black": {
+   "code": "XF-1",
+   "name": "Flat black",
+   "score": 1.0
+  },
+  "XF-2|Flat White": {
+   "code": "XF-2",
+   "name": "Flat White",
+   "score": 1.0
+  },
+  "XF-3|Flat Red": {
+   "code": "XF-7",
+   "name": "Flat Red",
+   "score": 1.0
+  },
+  "XF-4|Flat Yellow": {
+   "code": "XF-3",
+   "name": "Flat Yellow",
+   "score": 1.0
+  },
+  "XF-5|Flat Green": {
+   "code": "XF-5",
+   "name": "Flat Green",
+   "score": 1.0
+  },
+  "XF-6|Flat Orange": {
+   "code": "TS-31",
+   "name": "Bright Orange",
+   "score": 1.0
+  },
+  "XF-10|Flat Red": {
+   "code": "XF-7",
+   "name": "Flat Red",
+   "score": 1.0
+  },
+  "XF-15|Flat Green": {
+   "code": "XF-4",
+   "name": "Yellow Green",
+   "score": 1.0
+  },
+  "XF-16|Flat Green": {
+   "code": "XF-4",
+   "name": "Yellow Green",
+   "score": 1.0
+  },
+  "XF-17|Gloss Aluminum": {
+   "code": "TS-17",
+   "name": "Gloss Aluminium",
+   "score": 1.0
+  },
+  "XF-18|Pure Red": {
+   "code": "XF-7",
+   "name": "Flat Red",
+   "score": 1.0
+  },
+  "XF-19|Pure Blue": {
+   "code": "XF-8",
+   "name": "Flat Blue",
+   "score": 1.0
+  },
+  "XF-20|Pure Green": {
+   "code": "XF-5",
+   "name": "Flat Green",
+   "score": 1.0
+  },
+  "XF-22|Pure Yellow": {
+   "code": "XF-3",
+   "name": "Flat Yellow",
+   "score": 1.0
+  },
+  "XF-23|Flat Black": {
+   "code": "XF-1",
+   "name": "Flat black",
+   "score": 1.0
+  },
+  "XF-24|Flat Grey": {
+   "code": "XF-24",
+   "name": "Dark Grey",
+   "score": 1.0
+  },
+  "XF-33|Gun Metal": {
+   "code": "XF-33",
+   "name": "Gun Metal",
+   "score": 1.0
+  },
+  "XF-49|Khaki": {
+   "code": "XF-49",
+   "name": "Khaki",
+   "score": 1.0
+  },
+  "XF-56|Flat NATO Green": {
+   "code": "XF-67",
+   "name": "NATO Green",
+   "score": 1.0
+  },
+  "XF-57|Flat Black Green": {
+   "code": "XF-96",
+   "name": "Flat Black Green",
+   "score": 1.0
+  },
+  "XF-58|Olive Drab": {
+   "code": "XF-62",
+   "name": "Olive Drab",
+   "score": 1.0
+  },
+  "XF-60|Flat Red": {
+   "code": "XF-7",
+   "name": "Flat Red",
+   "score": 1.0
+  },
+  "XF-62|Olive Drab": {
+   "code": "XF-62",
+   "name": "Olive Drab",
+   "score": 1.0
+  },
+  "XF-63|German Grey": {
+   "code": "XF-63",
+   "name": "German Grey",
+   "score": 1.0
+  },
+  "XF-64|Flat Red-Orange": {
+   "code": "XF-28",
+   "name": "Dark Copper",
+   "score": 1.0
+  },
+  "XF-66|Flat Light Grey": {
+   "code": "XF-66",
+   "name": "Light Grey",
+   "score": 1.0
+  },
+  "XF-68|NATO Grey": {
+   "code": "XF-25",
+   "name": "Light Sea Grey",
+   "score": 1.0
+  },
+  "XF-70|Dark Yellow": {
+   "code": "XF-60",
+   "name": "Dark Yellow",
+   "score": 1.0
+  },
+  "XF-72|Dark Green": {
+   "code": "XF-95",
+   "name": "Dark Green",
+   "score": 1.0
+  },
+  "XF-74|Flat Tan": {
+   "code": "XF-57",
+   "name": "Buff",
+   "score": 1.0
+  },
+  "XF-75|NATO Green": {
+   "code": "XF-67",
+   "name": "NATO Green",
+   "score": 1.0
+  },
+  "XF-77|Italian Red": {
+   "code": "TS-8",
+   "name": "Italian Red",
+   "score": 1.0
+  },
+  "XF-78|Flat Sand": {
+   "code": "XF-55",
+   "name": "Deck Tan",
+   "score": 1.0
+  },
+  "XF-79|Flat Khaki": {
+   "code": "XF-49",
+   "name": "Khaki",
+   "score": 1.0
+  },
+  "XF-80|Gloss Black": {
+   "code": "XF-1",
+   "name": "Flat black",
+   "score": 1.0
+  },
+  "XF-81|Gloss Red": {
+   "code": "XF-7",
+   "name": "Flat Red",
+   "score": 1.0
+  },
+  "XF-84|Gloss Yellow": {
+   "code": "XF-3",
+   "name": "Flat Yellow",
+   "score": 1.0
+  },
+  "XF-86|Gloss White": {
+   "code": "XF-2",
+   "name": "Flat White",
+   "score": 1.0
+  },
+  "XF-95|Dark Green": {
+   "code": "XF-95",
+   "name": "Dark Green",
+   "score": 1.0
+  },
+  "XF-96|Flat Black Green": {
+   "code": "XF-96",
+   "name": "Flat Black Green",
+   "score": 1.0
+  },
+  "TS-1|Red Brown": {
+   "code": "TS-1",
+   "name": "Red Brown",
+   "score": 1.0
+  },
+  "TS-2|Dark Green": {
+   "code": "TS-2",
+   "name": "Dark Green",
+   "score": 1.0
+  },
+  "TS-4|German Gray": {
+   "code": "TS-4",
+   "name": "German Grey",
+   "score": 1.0
+  },
+  "TS-5|Olive Drab": {
+   "code": "TS-5",
+   "name": "Olive Drab",
+   "score": 1.0
+  },
+  "TS-8|Italian Red": {
+   "code": "TS-8",
+   "name": "Italian Red",
+   "score": 1.0
+  },
+  "TS-9|British Racing Green": {
+   "code": "XF-27",
+   "name": "Black Green",
+   "score": 1.0
+  },
+  "TS-12|Orange": {
+   "code": "TS-12",
+   "name": "Orange",
+   "score": 1.0
+  },
+  "TS-14|Black": {
+   "code": "TS-14",
+   "name": "Black",
+   "score": 1.0
+  },
+  "TS-16|Yellow": {
+   "code": "TS-16",
+   "name": "Yellow",
+   "score": 1.0
+  },
+  "TS-17|Gloss Aluminum": {
+   "code": "TS-17",
+   "name": "Gloss Aluminium",
+   "score": 1.0
+  },
+  "TS-22|Light Green": {
+   "code": "TS-22",
+   "name": "Light Green",
+   "score": 1.0
+  },
+  "TS-27|Matt Yellow": {
+   "code": "TS-16",
+   "name": "Yellow",
+   "score": 1.0
+  },
+  "TS-28|Olive Drab": {
+   "code": "TS-28",
+   "name": "Olive Drab 2",
+   "score": 1.0
+  },
+  "TS-32|Haze Gray": {
+   "code": "TS-32",
+   "name": "Haze Grey",
+   "score": 1.0
+  },
+  "TS-33|Red": {
+   "code": "TS-33",
+   "name": "Dull Red",
+   "score": 1.0
+  },
+  "TS-35|Insignia White": {
+   "code": "LP-35",
+   "name": "Insignia White",
+   "score": 1.0
+  },
+  "TS-36|Insignia Yellow": {
+   "code": "TS-16",
+   "name": "Yellow",
+   "score": 1.0
+  },
+  "TS-46|Light Gray": {
+   "code": "LP-34",
+   "name": "Light Gray",
+   "score": 1.0
+  },
+  "TS-51|Mock Sand": {
+   "code": "TS-46",
+   "name": "Light Sand",
+   "score": 1.0
+  },
+  "TS-52|Flat Earth": {
+   "code": "XF-52",
+   "name": "Flat Earth",
+   "score": 1.0
+  },
+  "TS-54|Dark Brown": {
+   "code": "TS-62",
+   "name": "NATO Brown",
+   "score": 1.0
+  },
+  "TS-55|Dark Green": {
+   "code": "XF-95",
+   "name": "Dark Green",
+   "score": 1.0
+  },
+  "TS-56|Flat White": {
+   "code": "XF-2",
+   "name": "Flat White",
+   "score": 1.0
+  },
+  "70.601|White": {
+   "code": "70.601",
+   "name": "White",
+   "score": 1.0
+  },
+  "70.602|Black": {
+   "code": "70.602",
+   "name": "Black",
+   "score": 1.0
+  },
+  "70.603|Dark Grey": {
+   "code": "70.603",
+   "name": "Dark Grey",
+   "score": 1.0
+  },
+  "70.604|Light Grey": {
+   "code": "70.604",
+   "name": "Light Grey",
+   "score": 1.0
+  },
+  "70.606|Pure Red": {
+   "code": "70.606",
+   "name": "Pure Red",
+   "score": 1.0
+  },
+  "70.608|Pure Yellow": {
+   "code": "70.608",
+   "name": "Pure Yellow",
+   "score": 1.0
+  },
+  "70.609|Dark Green": {
+   "code": "70.609",
+   "name": "Dark Green",
+   "score": 1.0
+  },
+  "70.628|Matt Green": {
+   "code": "70.628",
+   "name": "Matt Green",
+   "score": 1.0
+  },
+  "70.646|Matt Dark Brown": {
+   "code": "70.646",
+   "name": "Matt Dark Brown",
+   "score": 1.0
+  },
+  "70.647|Matt Brown": {
+   "code": "70.647",
+   "name": "Matt Brown",
+   "score": 1.0
+  },
+  "70.648|Matt Light Brown": {
+   "code": "70.648",
+   "name": "Matt Light Brown",
+   "score": 1.0
+  },
+  "70.663|Matt Olive Green": {
+   "code": "70.663",
+   "name": "Matt Olive Green",
+   "score": 1.0
+  },
+  "70.664|Matt Light Olive": {
+   "code": "70.664",
+   "name": "Matt Light Olive",
+   "score": 1.0
+  },
+  "70.700|British Racing Green": {
+   "code": "70.700",
+   "name": "British Racing Green",
+   "score": 1.0
+  },
+  "70.703|German Green": {
+   "code": "70.703",
+   "name": "German Green",
+   "score": 1.0
+  },
+  "70.705|German Grey": {
+   "code": "70.705",
+   "name": "German Grey",
+   "score": 1.0
+  },
+  "70.706|Russian Green": {
+   "code": "70.706",
+   "name": "Russian Green",
+   "score": 1.0
+  },
+  "70.708|Light Blue Grey": {
+   "code": "70.708",
+   "name": "Light Blue Grey",
+   "score": 1.0
+  },
+  "70.709|English Grey": {
+   "code": "70.709",
+   "name": "English Grey",
+   "score": 1.0
+  },
+  "70.711|Dark Brown": {
+   "code": "70.711",
+   "name": "Dark Brown",
+   "score": 1.0
+  },
+  "70.714|Field Green": {
+   "code": "70.714",
+   "name": "Field Green",
+   "score": 1.0
+  },
+  "70.715|Olive Drab": {
+   "code": "70.715",
+   "name": "Olive Drab",
+   "score": 1.0
+  },
+  "70.716|Sand": {
+   "code": "70.716",
+   "name": "Sand",
+   "score": 1.0
+  },
+  "70.719|Italian Red": {
+   "code": "70.719",
+   "name": "Italian Red",
+   "score": 1.0
+  },
+  "70.722|Flat Tan": {
+   "code": "70.722",
+   "name": "Flat Tan",
+   "score": 1.0
+  },
+  "70.727|NATO Green": {
+   "code": "70.727",
+   "name": "NATO Green",
+   "score": 1.0
+  },
+  "70.801|US Army Olive Drab": {
+   "code": "70.889",
+   "name": "USA Olive Drab  - FS34084",
+   "score": 1.0
+  },
+  "70.803|US Army Field Drab": {
+   "code": "70.873",
+   "name": "US Field Drab - FS30118",
+   "score": 1.0
+  },
+  "70.804|US Army Sand": {
+   "code": "70.716",
+   "name": "Sand",
+   "score": 1.0
+  },
+  "70.808|US Army Blue Grey": {
+   "code": "70.708",
+   "name": "Light Blue Grey",
+   "score": 1.0
+  },
+  "70.809|British RTS Dark Khaki": {
+   "code": "70.889",
+   "name": "USA Olive Drab  - FS34084",
+   "score": 1.0
+  },
+  "70.810|British RTS Field Khaki": {
+   "code": "70.873",
+   "name": "US Field Drab - FS30118",
+   "score": 1.0
+  },
+  "70.814|British RTS Dark Green": {
+   "code": "70.714",
+   "name": "Field Green",
+   "score": 1.0
+  },
+  "70.831|German Panzer Grey": {
+   "code": "70.705",
+   "name": "German Grey",
+   "score": 1.0
+  },
+  "70.833|Soviet Green": {
+   "code": "70.706",
+   "name": "Russian Green",
+   "score": 1.0
+  },
+  "70.867|Japanese Grey": {
+   "code": "70.992",
+   "name": "Neutral Grey - FS36173",
+   "score": 1.0
+  },
+  "70.868|Desert Yellow": {
+   "code": "70.978",
+   "name": "Dark Yellow - FS33440 - RAL 7028",
+   "score": 1.0
+  },
+  "70.878|Dark Yellow": {
+   "code": "70.978",
+   "name": "Dark Yellow - FS33440 - RAL 7028",
+   "score": 1.0
+  },
+  "70.879|Sand": {
+   "code": "70.716",
+   "name": "Sand",
+   "score": 1.0
+  },
+  "70.919|Red Oxide": {
+   "code": "72.163",
+   "name": "Flat Red Oxide",
+   "score": 0.67
+  },
+  "70.924|Ivory": {
+   "code": "70.918",
+   "name": "Ivory - FS37855 - RAL 9001",
+   "score": 1.0
+  },
+  "70.947|Red Brown": {
+   "code": "70.647",
+   "name": "Matt Brown",
+   "score": 1.0
+  },
+  "70.958|Dark Navy Blue": {
+   "code": "72.017",
+   "name": "Dark Blue",
+   "score": 0.92
+  },
+  "70.963|Old Yellow": {
+   "code": "70.944",
+   "name": "Old Rose",
+   "score": 0.42
+  },
+  "72.152|Flat White": {
+   "code": "70.820",
+   "name": "Off-White - FS17925",
+   "score": 1.0
+  },
+  "72.154|Flat Blue": {
+   "code": "70.962",
+   "name": "Flat Blue - FS35180",
+   "score": 0.92
+  },
+  "72.155|Flat Green": {
+   "code": "70.968",
+   "name": "Flat Green - FS34128",
+   "score": 0.92
+  },
+  "72.157|Flat Yellow": {
+   "code": "70.953",
+   "name": "Flat Yellow - RLM4",
+   "score": 0.92
+  },
+  "72.158|Flat Red": {
+   "code": "72.158",
+   "name": "Flat Red",
+   "score": 1.0
+  },
+  "72.159|Flat Black": {
+   "code": "72.051",
+   "name": "Black",
+   "score": 0.5
+  },
+  "72.160|Flat Brown": {
+   "code": "70.984",
+   "name": "Flat Brown - FS30108 - RAL 8011",
+   "score": 0.75
+  },
+  "72.161|Flat Sand": {
+   "code": "70.716",
+   "name": "Sand",
+   "score": 0.5
+  },
+  "72.162|Flat Orange": {
+   "code": "72.162",
+   "name": "Flat Orange",
+   "score": 1.0
+  },
+  "72.163|Flat Red Oxide": {
+   "code": "72.163",
+   "name": "Flat Red Oxide",
+   "score": 1.0
+  },
+  "72.165|Flat Navy Blue": {
+   "code": "72.165",
+   "name": "Flat Navy Blue",
+   "score": 1.0
+  },
+  "72.167|Flat Dark Grey": {
+   "code": "72.167",
+   "name": "Flat Dark Grey",
+   "score": 1.0
+  },
+  "72.169|Flat Light Blue": {
+   "code": "72.169",
+   "name": "Flat Light Blue",
+   "score": 1.0
+  },
+  "72.171|Flat Pale Grey": {
+   "code": "72.171",
+   "name": "Flat Pale Grey",
+   "score": 1.0
+  },
+  "AK11001|White": {
+   "code": "AK738",
+   "name": "White",
+   "score": 1.25
+  },
+  "AK11005|Black": {
+   "code": "AK11029",
+   "name": "Intense black",
+   "score": 1.0
+  },
+  "AK11008|Red Oxide": {
+   "code": "AK180",
+   "name": "Primer Red",
+   "score": 1.0
+  },
+  "AK11009|Yellow Ochre": {
+   "code": "AK11118",
+   "name": "Ochre - Standard",
+   "score": 1.0
+  },
+  "AK11010|Blue": {
+   "code": "AK11179",
+   "name": "Ultramarine - Standard",
+   "score": 1.0
+  },
+  "AK11015|Dark Green": {
+   "code": "AK11146",
+   "name": "Dark Green - Standard",
+   "score": 1.0
+  },
+  "AK11016|Light Green": {
+   "code": "AK11141",
+   "name": "Light Green - Standard",
+   "score": 1.0
+  },
+  "AK11020|Pale Blue": {
+   "code": "AK11161",
+   "name": "Pale Blue - Standard",
+   "score": 1.0
+  },
+  "AK11021|Pale Green": {
+   "code": "AK11013",
+   "name": "Pale Grey - Standard",
+   "score": 0.42
+  },
+  "AK11022|Light Grey": {
+   "code": "AK11013",
+   "name": "Pale Grey - Standard",
+   "score": 1.0
+  },
+  "AK11024|Dark Grey": {
+   "code": "AK11022",
+   "name": "Dark Grey - Standard",
+   "score": 1.25
+  },
+  "AK11025|German Grey": {
+   "code": "AK11025",
+   "name": "German Grey - Standard",
+   "score": 1.25
+  },
+  "AK11026|German Dark Yellow": {
+   "code": "AK11044",
+   "name": "Yellow - Standard",
+   "score": 1.0
+  },
+  "AK11027|Dark Yellow": {
+   "code": "AK300",
+   "name": "Dark Wash for Yellow Vehicles",
+   "score": 0.75
+  },
+  "AK11028|Sand": {
+   "code": "AK11035",
+   "name": "Sand Yellow - Standard",
+   "score": 0.75
+  },
+  "AK11029|Flat Black": {
+   "code": "AK735",
+   "name": "Flat Black",
+   "score": 1.25
+  },
+  "AK11035|Field Green": {
+   "code": "AK11875",
+   "name": "FIELD GREEN FS 34097",
+   "score": 1.0
+  },
+  "AK11036|Olive Green": {
+   "code": "AK11147",
+   "name": "Olive Green - Standard",
+   "score": 1.25
+  },
+  "AK11039|Desert Sand": {
+   "code": "AK11340",
+   "name": "Nº13 Desert Sand (FS30279)",
+   "score": 1.0
+  },
+  "AK11044|Yellow": {
+   "code": "AK11044",
+   "name": "Yellow - Standard",
+   "score": 1.25
+  },
+  "AK11054|Bright Red": {
+   "code": "AK11087",
+   "name": "Scarlet Red - Standard",
+   "score": 1.0
+  },
+  "AK11055|Dark Red": {
+   "code": "AK11092",
+   "name": "Matt Red",
+   "score": 0.5
+  },
+  "AK11059|Brown": {
+   "code": "AK11104",
+   "name": "Saddle Brown - Standard",
+   "score": 1.0
+  },
+  "AK11070|Steel Blue": {
+   "code": "AK3069",
+   "name": "Intense Blue",
+   "score": 0.5
+  },
+  "AK11078|Medium Orange": {
+   "code": "AK11078",
+   "name": "Medium Orange - Standard",
+   "score": 1.25
+  },
+  "AK11080|Dark Brown": {
+   "code": "AK11109",
+   "name": "Dark Brown - Standard",
+   "score": 1.0
+  },
+  "AK11084|Light Brown": {
+   "code": "AK11100",
+   "name": "Light Brown - Standard",
+   "score": 1.25
+  },
+  "AK11107|Rust": {
+   "code": "AK11107",
+   "name": "Dark Rust - Standard",
+   "score": 1.0
+  },
+  "AK11117|Yellow": {
+   "code": "AK11044",
+   "name": "Yellow - Standard",
+   "score": 1.25
+  },
+  "AK11141|Pale Sand": {
+   "code": "AK11032",
+   "name": "Pale Sand - Standard",
+   "score": 1.0
+  },
+  "AK11142|Dark Green": {
+   "code": "AK11146",
+   "name": "Dark Green - Standard",
+   "score": 1.25
+  },
+  "RCM016|RAL 7009 Hellgrau-Light Grey": {
+   "code": "RCM016",
+   "name": "RAL 7009 Hellgrau-Light Grey",
+   "score": 1.0
+  },
+  "RCM001|Rubber Black": {
+   "code": "RCM001",
+   "name": "Rubber Black",
+   "score": 1.0
+  },
+  "RCM002|Off White": {
+   "code": "RCM002",
+   "name": "Off White",
+   "score": 1.0
+  },
+  "RCM019|RAL 8012 Rotbraun-Red Brown": {
+   "code": "RCM019",
+   "name": "RAL 8012 Rotbraun-Red Brown",
+   "score": 1.0
+  },
+  "RCM024|RLM 02 GRAU": {
+   "code": "RCM024",
+   "name": "RLM 02 GRAU",
+   "score": 1.0
+  },
+  "RCM018|RAL 7028 Dunkelgelb": {
+   "code": "RCM018",
+   "name": "RAL 7028 Dunkelgelb",
+   "score": 1.0
+  },
+  "RCM021|Olive Drab": {
+   "code": "RCM021",
+   "name": "Olive Drab",
+   "score": 1.0
+  },
+  "RCM022|Interior Green FS34151": {
+   "code": "RCM022",
+   "name": "Interior Green FS34151",
+   "score": 1.0
+  },
+  "RCM023|US Interior Yellow Green": {
+   "code": "RCM023",
+   "name": "US Interior Yellow Green",
+   "score": 1.0
+  },
+  "RCM028|RAF Cockpit Grey-Green": {
+   "code": "RCM028",
+   "name": "RAF Cockpit Grey-Green",
+   "score": 1.0
+  },
+  "RCM008|Buff": {
+   "code": "RCM008",
+   "name": "Buff",
+   "score": 1.0
+  },
+  "RCM017|RAL 7021 Dunkelgrau": {
+   "code": "RCM017",
+   "name": "RAL 7021 Dunkelgrau",
+   "score": 1.0
+  },
+  "RCM020|RAL 8017 Rotbraun-Red Brown": {
+   "code": "RCM020",
+   "name": "RAL 8017 Rotbraun-Red Brown",
+   "score": 1.0
+  },
+  "H26|Matt Khaki": {
+   "code": "H26",
+   "name": "Matt Khaki",
+   "score": 1.0
+  },
+  "H27|Matt Dark Khaki": {
+   "code": "H27",
+   "name": "Matt Dark Khaki",
+   "score": 1.0
+  },
+  "H30|Matt Black": {
+   "code": "H30",
+   "name": "Matt Black",
+   "score": 1.0
+  },
+  "H31|Matt Dark Green": {
+   "code": "H31",
+   "name": "Matt Dark Green",
+   "score": 1.0
+  },
+  "H34|Matt Medium Blue": {
+   "code": "H34",
+   "name": "Matt Medium Blue",
+   "score": 1.0
+  },
+  "H36|Matt Scarlet": {
+   "code": "H36",
+   "name": "Matt Scarlet",
+   "score": 1.0
+  },
+  "H41|Matt Yellow": {
+   "code": "H41",
+   "name": "Matt Yellow",
+   "score": 1.0
+  },
+  "H44|Matt Hull White": {
+   "code": "H44",
+   "name": "Matt Hull White",
+   "score": 1.0
+  },
+  "H49|Matt Dark Brown": {
+   "code": "H49",
+   "name": "Matt Dark Brown",
+   "score": 1.0
+  },
+  "H62|Matt Dark Green": {
+   "code": "H62",
+   "name": "Matt Dark Green",
+   "score": 1.0
+  },
+  "H63|Matt Medium Grey": {
+   "code": "H63",
+   "name": "Matt Medium Grey",
+   "score": 1.0
+  },
+  "H64|Matt Dark Grey": {
+   "code": "H64",
+   "name": "Matt Dark Grey",
+   "score": 1.0
+  },
+  "H66|Matt Light Grey": {
+   "code": "H66",
+   "name": "Matt Light Grey",
+   "score": 1.0
+  },
+  "H76|Matt Light Sand": {
+   "code": "H76",
+   "name": "Matt Light Sand",
+   "score": 1.0
+  },
+  "H81|Matt Dark Brown": {
+   "code": "H81",
+   "name": "Matt Dark Brown",
+   "score": 1.0
+  },
+  "H91|Matt Dark Yellow": {
+   "code": "H91",
+   "name": "Matt Dark Yellow",
+   "score": 1.0
+  },
+  "H100|Matt Medium Brown": {
+   "code": "H100",
+   "name": "Matt Medium Brown",
+   "score": 1.0
+  },
+  "H115|Matt Desert Sand": {
+   "code": "H115",
+   "name": "Matt Desert Sand",
+   "score": 1.0
+  },
+  "H123|Matt Green": {
+   "code": "H123",
+   "name": "Matt Green",
+   "score": 1.0
+  },
+  "H130|Matt Super Dark Green": {
+   "code": "H130",
+   "name": "Matt Super Dark Green",
+   "score": 1.0
+  },
+  "H303|Matt Olive Green": {
+   "code": "H303",
+   "name": "Matt Olive Green",
+   "score": 1.0
+  },
+  "H328|Matt Field Green": {
+   "code": "H328",
+   "name": "Matt Field Green",
+   "score": 1.0
+  },
+  "CMC-01|White": {
+   "code": "CMC-01",
+   "name": "White",
+   "score": 1.0
+  },
+  "CMC-02|Black": {
+   "code": "CMC-02",
+   "name": "Black",
+   "score": 1.0
+  },
+  "CMC-07|Gray": {
+   "code": "CMC-07",
+   "name": "Gray",
+   "score": 1.0
+  },
+  "CMC-10|Khaki Green": {
+   "code": "CMC-10",
+   "name": "Khaki Green",
+   "score": 1.0
+  },
+  "CMC-11|Dark Green": {
+   "code": "CMC-11",
+   "name": "Dark Green",
+   "score": 1.0
+  },
+  "CMC-17|Light Gray": {
+   "code": "CMC-17",
+   "name": "Light Gray",
+   "score": 1.0
+  },
+  "CMC-18|Medium Gray": {
+   "code": "CMC-18",
+   "name": "Medium Gray",
+   "score": 1.0
+  },
+  "CMC-19|Dark Gray": {
+   "code": "CMC-19",
+   "name": "Dark Gray",
+   "score": 1.0
+  },
+  "CMC-22|Yellow": {
+   "code": "CMC-22",
+   "name": "Yellow",
+   "score": 1.0
+  },
+  "CMC-27|Brown": {
+   "code": "CMC-27",
+   "name": "Brown",
+   "score": 1.0
+  },
+  "CMC-303|Ivory": {
+   "code": "CMC-303",
+   "name": "Ivory",
+   "score": 1.0
+  },
+  "CMC-312|Dark Gray": {
+   "code": "CMC-312",
+   "name": "Dark Gray",
+   "score": 1.0
+  },
+  "CMC-334|Desert Sand": {
+   "code": "CMC-334",
+   "name": "Desert Sand",
+   "score": 1.0
+  },
+  "CMC-350|Olive Green": {
+   "code": "CMC-350",
+   "name": "Olive Green",
+   "score": 1.0
+  },
+  "CMC-365|Medium Green": {
+   "code": "CMC-365",
+   "name": "Medium Green",
+   "score": 1.0
+  },
+  "CMC-410|Desert Sand": {
+   "code": "CMC-410",
+   "name": "Desert Sand",
+   "score": 1.0
+  },
+  "CMC-501|Dark Brown": {
+   "code": "CMC-501",
+   "name": "Dark Brown",
+   "score": 1.0
+  },
+  "SG-001|Russian Green": {
+   "code": "SG-001",
+   "name": "Russian Green",
+   "score": 1.0
+  },
+  "SG-002|Olive Green": {
+   "code": "SG-002",
+   "name": "Olive Green",
+   "score": 1.0
+  },
+  "SG-101|German Dark Yellow": {
+   "code": "SG-101",
+   "name": "German Dark Yellow",
+   "score": 1.0
+  },
+  "SG-103|British Khaki": {
+   "code": "SG-103",
+   "name": "British Khaki",
+   "score": 1.0
+  },
+  "SG-107|Japanese Green": {
+   "code": "SG-107",
+   "name": "Japanese Green",
+   "score": 1.0
+  },
+  "SG-115|White": {
+   "code": "SG-115",
+   "name": "White",
+   "score": 1.0
+  },
+  "SG-116|Black": {
+   "code": "SG-116",
+   "name": "Black",
+   "score": 1.0
+  },
+  "SG-121|US Army Olive Drab": {
+   "code": "SG-121",
+   "name": "US Army Olive Drab",
+   "score": 1.0
+  },
+  "SG-133|Italian Red": {
+   "code": "SG-133",
+   "name": "Italian Red",
+   "score": 1.0
+  },
+  "LC-01|White": {
+   "code": "LC-01",
+   "name": "White",
+   "score": 1.0
+  },
+  "LC-02|Black": {
+   "code": "LC-02",
+   "name": "Black",
+   "score": 1.0
+  },
+  "LC-11|German Grey": {
+   "code": "LC-11",
+   "name": "German Grey",
+   "score": 1.0
+  },
+  "LC-13|Dark Yellow": {
+   "code": "LC-13",
+   "name": "Dark Yellow",
+   "score": 1.0
+  },
+  "LC-14|Russian Green": {
+   "code": "LC-14",
+   "name": "Russian Green",
+   "score": 1.0
+  },
+  "LC-15|US Army Olive Drab": {
+   "code": "LC-15",
+   "name": "US Army Olive Drab",
+   "score": 1.0
+  },
+  "LC-21|Gun Metal": {
+   "code": "LC-21",
+   "name": "Gun Metal",
+   "score": 1.0
+  },
+  "LC-25|Aluminum": {
+   "code": "LC-25",
+   "name": "Aluminum",
+   "score": 1.0
+  },
+  "LC-30|Rubber Black": {
+   "code": "LC-30",
+   "name": "Rubber Black",
+   "score": 1.0
+  },
+  "LC-33|Track Steel": {
+   "code": "LC-33",
+   "name": "Track Steel",
+   "score": 1.0
+  }
+ },
+ "equivalents": [
+  [
+   "XF-1",
+   "Flat black",
+   "70.602",
+   "Black"
+  ],
+  [
+   "XF-1",
+   "Flat black",
+   "AK11029",
+   "Intense black"
+  ],
+  [
+   "XF-1",
+   "Flat black",
+   "H30",
+   "Matt Black"
+  ],
+  [
+   "XF-1",
+   "Flat black",
+   "CMC-02",
+   "Black"
+  ],
+  [
+   "XF-1",
+   "Flat black",
+   "SG-116",
+   "Black"
+  ],
+  [
+   "XF-1",
+   "Flat black",
+   "LC-02",
+   "Black"
+  ],
+  [
+   "XF-2",
+   "Flat White",
+   "70.601",
+   "White"
+  ],
+  [
+   "XF-2",
+   "Flat White",
+   "AK738",
+   "White"
+  ],
+  [
+   "XF-2",
+   "Flat White",
+   "H44",
+   "Matt Hull White"
+  ],
+  [
+   "XF-2",
+   "Flat White",
+   "CMC-01",
+   "White"
+  ],
+  [
+   "XF-2",
+   "Flat White",
+   "SG-115",
+   "White"
+  ],
+  [
+   "XF-2",
+   "Flat White",
+   "LC-01",
+   "White"
+  ],
+  [
+   "XF-7",
+   "Flat Red",
+   "70.606",
+   "Pure Red"
+  ],
+  [
+   "XF-7",
+   "Flat Red",
+   "AK11087",
+   "Scarlet Red - Standard"
+  ],
+  [
+   "XF-8",
+   "Flat Blue",
+   "AK11179",
+   "Ultramarine - Standard"
+  ],
+  [
+   "XF-3",
+   "Flat Yellow",
+   "70.608",
+   "Pure Yellow"
+  ],
+  [
+   "XF-3",
+   "Flat Yellow",
+   "AK11044",
+   "Yellow - Standard"
+  ],
+  [
+   "XF-3",
+   "Flat Yellow",
+   "CMC-22",
+   "Yellow"
+  ],
+  [
+   "XF-24",
+   "Dark Grey",
+   "70.604",
+   "Light Grey"
+  ],
+  [
+   "XF-24",
+   "Dark Grey",
+   "AK11013",
+   "Pale Grey - Standard"
+  ],
+  [
+   "XF-24",
+   "Dark Grey",
+   "CMC-17",
+   "Light Gray"
+  ],
+  [
+   "XF-33",
+   "Gun Metal",
+   "LC-21",
+   "Gun Metal"
+  ],
+  [
+   "XF-49",
+   "Khaki",
+   "H26",
+   "Matt Khaki"
+  ],
+  [
+   "XF-49",
+   "Khaki",
+   "AK11118",
+   "Ochre - Standard"
+  ],
+  [
+   "XF-67",
+   "NATO Green",
+   "AK11875",
+   "FIELD GREEN FS 34097"
+  ],
+  [
+   "XF-67",
+   "NATO Green",
+   "70.727",
+   "NATO Green"
+  ],
+  [
+   "XF-62",
+   "Olive Drab",
+   "70.715",
+   "Olive Drab"
+  ],
+  [
+   "XF-62",
+   "Olive Drab",
+   "LC-15",
+   "US Army Olive Drab"
+  ],
+  [
+   "XF-62",
+   "Olive Drab",
+   "70.889",
+   "USA Olive Drab  - FS34084"
+  ],
+  [
+   "XF-62",
+   "Olive Drab",
+   "SG-121",
+   "US Army Olive Drab"
+  ],
+  [
+   "XF-63",
+   "German Grey",
+   "70.705",
+   "German Grey"
+  ],
+  [
+   "XF-63",
+   "German Grey",
+   "AK11025",
+   "German Grey - Standard"
+  ],
+  [
+   "XF-63",
+   "German Grey",
+   "TS-4",
+   "German Grey"
+  ],
+  [
+   "XF-63",
+   "German Grey",
+   "LC-11",
+   "German Grey"
+  ],
+  [
+   "XF-63",
+   "German Grey",
+   "70.992",
+   "Neutral Grey - FS36173"
+  ],
+  [
+   "XF-66",
+   "Light Grey",
+   "H66",
+   "Matt Light Grey"
+  ],
+  [
+   "XF-66",
+   "Light Grey",
+   "CMC-17",
+   "Light Gray"
+  ],
+  [
+   "XF-60",
+   "Dark Yellow",
+   "70.978",
+   "Dark Yellow - FS33440 - RAL 7028"
+  ],
+  [
+   "XF-60",
+   "Dark Yellow",
+   "AK11044",
+   "Yellow - Standard"
+  ],
+  [
+   "XF-60",
+   "Dark Yellow",
+   "LC-13",
+   "Dark Yellow"
+  ],
+  [
+   "XF-95",
+   "Dark Green",
+   "AK11146",
+   "Dark Green - Standard"
+  ],
+  [
+   "XF-95",
+   "Dark Green",
+   "CMC-11",
+   "Dark Green"
+  ],
+  [
+   "XF-57",
+   "Buff",
+   "70.716",
+   "Sand"
+  ],
+  [
+   "XF-57",
+   "Buff",
+   "AK11035",
+   "Sand Yellow - Standard"
+  ],
+  [
+   "TS-8",
+   "Italian Red",
+   "70.719",
+   "Italian Red"
+  ],
+  [
+   "TS-8",
+   "Italian Red",
+   "TS-8",
+   "Italian Red"
+  ],
+  [
+   "TS-8",
+   "Italian Red",
+   "SG-133",
+   "Italian Red"
+  ],
+  [
+   "XF-55",
+   "Deck Tan",
+   "70.716",
+   "Sand"
+  ],
+  [
+   "XF-55",
+   "Deck Tan",
+   "AK11340",
+   "Nº13 Desert Sand (FS30279)"
+  ],
+  [
+   "XF-55",
+   "Deck Tan",
+   "H115",
+   "Matt Desert Sand"
+  ],
+  [
+   "XF-55",
+   "Deck Tan",
+   "CMC-410",
+   "Desert Sand"
+  ],
+  [
+   "XF-49",
+   "Khaki",
+   "AK11118",
+   "Ochre - Standard"
+  ],
+  [
+   "XF-1",
+   "Flat black",
+   "LC-30",
+   "Rubber Black"
+  ],
+  [
+   "XF-7",
+   "Flat Red",
+   "70.606",
+   "Pure Red"
+  ],
+  [
+   "XF-3",
+   "Flat Yellow",
+   "AK11044",
+   "Yellow - Standard"
+  ],
+  [
+   "XF-2",
+   "Flat White",
+   "70.918",
+   "Ivory - FS37855 - RAL 9001"
+  ],
+  [
+   "TS-1",
+   "Red Brown",
+   "70.647",
+   "Matt Brown"
+  ],
+  [
+   "TS-1",
+   "Red Brown",
+   "AK180",
+   "Primer Red"
+  ],
+  [
+   "TS-2",
+   "Dark Green",
+   "AK11146",
+   "Dark Green - Standard"
+  ],
+  [
+   "TS-2",
+   "Dark Green",
+   "AK11146",
+   "Dark Green - Standard"
+  ],
+  [
+   "TS-5",
+   "Olive Drab",
+   "70.715",
+   "Olive Drab"
+  ],
+  [
+   "TS-8",
+   "Italian Red",
+   "70.719",
+   "Italian Red"
+  ],
+  [
+   "XF-27",
+   "Black Green",
+   "70.700",
+   "British Racing Green"
+  ],
+  [
+   "XF-27",
+   "Black Green",
+   "70.714",
+   "Field Green"
+  ],
+  [
+   "TS-32",
+   "Haze Grey",
+   "70.992",
+   "Neutral Grey - FS36173"
+  ],
+  [
+   "TS-46",
+   "Light Sand",
+   "AK11035",
+   "Sand Yellow - Standard"
+  ],
+  [
+   "XF-52",
+   "Flat Earth",
+   "70.647",
+   "Matt Brown"
+  ],
+  [
+   "TS-62",
+   "NATO Brown",
+   "AK11109",
+   "Dark Brown - Standard"
+  ],
+  [
+   "TS-62",
+   "NATO Brown",
+   "H49",
+   "Matt Dark Brown"
+  ],
+  [
+   "TS-62",
+   "NATO Brown",
+   "CMC-501",
+   "Dark Brown"
+  ],
+  [
+   "XF-95",
+   "Dark Green",
+   "AK11146",
+   "Dark Green - Standard"
+  ],
+  [
+   "XF-2",
+   "Flat White",
+   "70.601",
+   "White"
+  ],
+  [
+   "70.646",
+   "Matt Dark Brown",
+   "AK11109",
+   "Dark Brown - Standard"
+  ],
+  [
+   "70.647",
+   "Matt Brown",
+   "XF-52",
+   "Flat Earth"
+  ],
+  [
+   "70.663",
+   "Matt Olive Green",
+   "AK11147",
+   "Olive Green - Standard"
+  ],
+  [
+   "70.664",
+   "Matt Light Olive",
+   "H303",
+   "Matt Olive Green"
+  ],
+  [
+   "70.706",
+   "Russian Green",
+   "SG-001",
+   "Russian Green"
+  ],
+  [
+   "70.706",
+   "Russian Green",
+   "LC-14",
+   "Russian Green"
+  ],
+  [
+   "70.706",
+   "Russian Green",
+   "70.706",
+   "Russian Green"
+  ],
+  [
+   "70.708",
+   "Light Blue Grey",
+   "AK3069",
+   "Intense Blue"
+  ],
+  [
+   "70.711",
+   "Dark Brown",
+   "AK11109",
+   "Dark Brown - Standard"
+  ],
+  [
+   "70.714",
+   "Field Green",
+   "CMC-365",
+   "Medium Green"
+  ],
+  [
+   "70.716",
+   "Sand",
+   "AK11035",
+   "Sand Yellow - Standard"
+  ],
+  [
+   "70.719",
+   "Italian Red",
+   "AK11087",
+   "Scarlet Red - Standard"
+  ],
+  [
+   "70.722",
+   "Flat Tan",
+   "70.716",
+   "Sand"
+  ],
+  [
+   "70.727",
+   "NATO Green",
+   "AK11875",
+   "FIELD GREEN FS 34097"
+  ],
+  [
+   "70.889",
+   "USA Olive Drab  - FS34084",
+   "H27",
+   "Matt Dark Khaki"
+  ],
+  [
+   "70.873",
+   "US Field Drab - FS30118",
+   "H26",
+   "Matt Khaki"
+  ],
+  [
+   "70.705",
+   "German Grey",
+   "H63",
+   "Matt Medium Grey"
+  ],
+  [
+   "70.978",
+   "Dark Yellow - FS33440 - RAL 7028",
+   "AK300",
+   "Dark Wash for Yellow Vehicles"
+  ],
+  [
+   "72.163",
+   "Flat Red Oxide",
+   "AK180",
+   "Primer Red"
+  ],
+  [
+   "70.918",
+   "Ivory - FS37855 - RAL 9001",
+   "CMC-303",
+   "Ivory"
+  ],
+  [
+   "70.820",
+   "Off-White - FS17925",
+   "70.601",
+   "White"
+  ],
+  [
+   "72.051",
+   "Black",
+   "AK735",
+   "Flat Black"
+  ],
+  [
+   "70.716",
+   "Sand",
+   "70.716",
+   "Sand"
+  ],
+  [
+   "72.163",
+   "Flat Red Oxide",
+   "AK180",
+   "Primer Red"
+  ],
+  [
+   "72.167",
+   "Flat Dark Grey",
+   "70.603",
+   "Dark Grey"
+  ],
+  [
+   "72.169",
+   "Flat Light Blue",
+   "AK11161",
+   "Pale Blue - Standard"
+  ],
+  [
+   "AK11141",
+   "Light Green - Standard",
+   "CMC-10",
+   "Khaki Green"
+  ],
+  [
+   "AK11161",
+   "Pale Blue - Standard",
+   "CMC-410",
+   "Desert Sand"
+  ],
+  [
+   "AK11013",
+   "Pale Grey - Standard",
+   "H66",
+   "Matt Light Grey"
+  ],
+  [
+   "AK11022",
+   "Dark Grey - Standard",
+   "H64",
+   "Matt Dark Grey"
+  ],
+  [
+   "AK11022",
+   "Dark Grey - Standard",
+   "CMC-19",
+   "Dark Gray"
+  ],
+  [
+   "AK735",
+   "Flat Black",
+   "H30",
+   "Matt Black"
+  ],
+  [
+   "AK11147",
+   "Olive Green - Standard",
+   "CMC-350",
+   "Olive Green"
+  ],
+  [
+   "AK11340",
+   "Nº13 Desert Sand (FS30279)",
+   "CMC-410",
+   "Desert Sand"
+  ],
+  [
+   "AK11104",
+   "Saddle Brown - Standard",
+   "CMC-27",
+   "Brown"
+  ],
+  [
+   "AK11100",
+   "Light Brown - Standard",
+   "70.648",
+   "Matt Light Brown"
+  ],
+  [
+   "AK11107",
+   "Dark Rust - Standard",
+   "AK11104",
+   "Saddle Brown - Standard"
+  ],
+  [
+   "RCM024",
+   "RLM 02 GRAU",
+   "AK11025",
+   "German Grey - Standard"
+  ],
+  [
+   "RCM018",
+   "RAL 7028 Dunkelgelb",
+   "AK300",
+   "Dark Wash for Yellow Vehicles"
+  ],
+  [
+   "RCM022",
+   "Interior Green FS34151",
+   "70.706",
+   "Russian Green"
+  ],
+  [
+   "RCM023",
+   "US Interior Yellow Green",
+   "CMC-10",
+   "Khaki Green"
+  ],
+  [
+   "RCM028",
+   "RAF Cockpit Grey-Green",
+   "70.992",
+   "Neutral Grey - FS36173"
+  ],
+  [
+   "RCM020",
+   "RAL 8017 Rotbraun-Red Brown",
+   "AK11109",
+   "Dark Brown - Standard"
+  ],
+  [
+   "H30",
+   "Matt Black",
+   "AK735",
+   "Flat Black"
+  ],
+  [
+   "H44",
+   "Matt Hull White",
+   "AK738",
+   "White"
+  ],
+  [
+   "H63",
+   "Matt Medium Grey",
+   "RCM024",
+   "RLM 02 GRAU"
+  ],
+  [
+   "H100",
+   "Matt Medium Brown",
+   "AK11104",
+   "Saddle Brown - Standard"
+  ],
+  [
+   "H123",
+   "Matt Green",
+   "CMC-365",
+   "Medium Green"
+  ],
+  [
+   "H130",
+   "Matt Super Dark Green",
+   "AK11146",
+   "Dark Green - Standard"
+  ],
+  [
+   "CMC-07",
+   "Gray",
+   "70.603",
+   "Dark Grey"
+  ],
+  [
+   "CMC-11",
+   "Dark Green",
+   "70.709",
+   "English Grey"
+  ],
+  [
+   "CMC-334",
+   "Desert Sand",
+   "AK11340",
+   "Nº13 Desert Sand (FS30279)"
+  ],
+  [
+   "CMC-365",
+   "Medium Green",
+   "H123",
+   "Matt Green"
+  ],
+  [
+   "SG-001",
+   "Russian Green",
+   "70.706",
+   "Russian Green"
+  ],
+  [
+   "SG-101",
+   "German Dark Yellow",
+   "70.978",
+   "Dark Yellow - FS33440 - RAL 7028"
+  ],
+  [
+   "SG-107",
+   "Japanese Green",
+   "70.703",
+   "German Green"
+  ],
+  [
+   "LC-11",
+   "German Grey",
+   "AK11025",
+   "German Grey - Standard"
+  ],
+  [
+   "LC-14",
+   "Russian Green",
+   "70.706",
+   "Russian Green"
+  ],
+  [
+   "LC-15",
+   "US Army Olive Drab",
+   "XF-62",
+   "Olive Drab"
+  ],
+  [
+   "LC-21",
+   "Gun Metal",
+   "XF-33",
+   "Gun Metal"
+  ]
+ ]
+}

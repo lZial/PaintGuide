@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="shell">
+  <section class="hero">
+    <div class="hero-text">
+      <h1>{{ t('home.title') }}</h1>
+      <p class="hero-lede">{{ t('home.lede') }}</p>
+      <div class="hero-actions">
+        <a class="button" href="{{ url_for('catalog.catalog') }}">{{ t('home.open_catalog') }} <span aria-hidden="true">→</span></a>
+        <a class="button secondary" href="{{ url_for('paints.paints_index') }}">{{ t('nav.paints') }}</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="stats-strip">
+    <div class="stat-item"><strong>{{ stats.guides }}</strong>{{ t('home.stats_guides') }}</div>
+    <div class="stat-item"><strong>{{ stats.paints }}</strong>{{ t('home.stats_paints') }}</div>
+    <div class="stat-item"><strong>{{ stats.countries }}</strong>{{ t('home.stats_countries') }}</div>
+    <div class="stat-item"><strong>{{ t('home.step_by_step') }}</strong>&nbsp;</div>
+  </div>
+
+  <section class="section">
+    <div class="section-heading">
+      <div>
+        <div class="eyebrow">Архив мастерской</div>
+        <h2>{{ t('home.popular') }}</h2>
+      </div>
+      <a class="mono faint" style="font-size:0.7rem" href="{{ url_for('catalog.catalog') }}">Весь каталог →</a>
+    </div>
+    {% if popular %}
+      <div class="guide-grid">
+        {% for guide in popular %}
+          {% include 'partials/_guide_card.html' %}
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="empty-state">
+        <div class="empty-mark">○</div>
+        <h3>Каталог пока пуст</h3>
+        <p>Запустите загрузку демонстрационных данных, чтобы каталог наполнился руководствами.</p>
+      </div>
+    {% endif %}
+  </section>
+
+  <section class="section">
+    <div class="section-heading">
+      <div>
+        <div class="eyebrow">Школы окраски</div>
+        <h2>{{ t('home.by_country') }}</h2>
+      </div>
+    </div>
+    <div class="collection-grid">
+      {% for country, count in country_rows %}
+        <a class="collection-chip" href="{{ url_for('catalog.catalog', country=country.slug) }}">
+          <span>
+            <strong>{{ country.flag }} {{ country.name }}</strong>
+            <small>{{ country.region }}</small>
+          </span>
+          <span class="mono muted">{{ count }}</span>
+        </a>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-heading">
+      <div>
+        <div class="eyebrow">По назначению</div>
+        <h2>{{ t('home.by_type') }}</h2>
+      </div>
+    </div>
+    <div class="collection-grid">
+      {% for vehicle_type, count in type_rows %}
+        <a class="collection-chip" href="{{ url_for('catalog.catalog', vehicle_type=vehicle_type.slug) }}">
+          <span>
+            <strong>{{ vehicle_type.name }}</strong>
+            <small>{{ vehicle_type.name_en }}</small>
+          </span>
+          <span class="mono muted">{{ count }}</span>
+        </a>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-heading">
+      <div>
+        <div class="eyebrow">Хронология</div>
+        <h2>Годы выпуска</h2>
+      </div>
+    </div>
+    <div class="collection-grid">
+      {% for year, count in era_rows %}
+        <a class="collection-chip" href="{{ url_for('catalog.catalog', year=year) }}">
+          <span><strong>{{ year }}</strong><small>год выпуска</small></span>
+          <span class="mono muted">{{ count }}</span>
+        </a>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-heading">
+      <div>
+        <div class="eyebrow">Свежие записи</div>
+        <h2>{{ t('home.latest') }}</h2>
+      </div>
+    </div>
+    {% if latest %}
+      <div class="guide-grid">
+        {% for guide in latest %}
+          {% include 'partials/_guide_card.html' %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  </section>
+</div>
+{% endblock %}

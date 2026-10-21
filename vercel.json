@@ -1,0 +1,17 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "flask",
+  "buildCommand": "python build.py",
+  "functions": {
+    "main.py": {
+      "maxDuration": 60
+    }
+  },
+  "installCommand": "pip install -r requirements.txt",
+  "env": {
+    "FLASK_CONFIG": "production",
+    "FLASK_DEBUG": "0",
+    "REQUIRE_DATABASE_URL": "1",
+    "EMAIL_VERIFICATION_REQUIRED": "0"
+  }
+}

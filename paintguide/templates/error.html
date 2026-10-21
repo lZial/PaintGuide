@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="shell auth-wrap">
+  <div class="auth-card" style="text-align:center">
+    <div class="eyebrow no-rule" style="justify-content:center">{{ code }}</div>
+    <h1>{{ title }}</h1>
+    <p>{{ message }}</p>
+    <a class="button" href="{{ url_for('main.home') }}">{{ t('error.home') }}</a>
+  </div>
+</div>
+{% endblock %}

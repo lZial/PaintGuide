@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="shell">
+  <header class="page-intro">
+    <h1>{{ t('paints.title') }}</h1>
+    <p>{{ t('paints.lede') }}</p>
+  </header>
+
+  <form class="table-search" method="get" action="{{ url_for('paints.paints_index') }}">
+    <div class="field">
+      <label for="q">{{ t('common.search') }}</label>
+      <input id="q" type="search" name="q" value="{{ filters.q }}" placeholder="Название или код">
+    </div>
+    <div class="field">
+      <label for="brand">{{ t('paints.filter.brand') }}</label>
+      <select id="brand" name="brand">
+        <option value="">{{ t('common.all') }}</option>
+        {% for item in brands %}
+          <option value="{{ item.slug }}" {{ 'selected' if filters.brand == item.slug else '' }}>{{ item.name }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="field">
+      <label for="line">{{ t('paints.filter.line') }}</label>
+      <select id="line" name="line">
+        <option value="">{{ t('common.all') }}</option>
+        {% for item in lines %}
+          <option value="{{ item.slug }}" {{ 'selected' if filters.line == item.slug else '' }}>{{ item.name }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="field">
+      <label for="type">{{ t('paints.filter.type') }}</label>
+      <select id="type" name="type">
+        <option value="">{{ t('common.all') }}</option>
+        <option value="acrylic" {{ 'selected' if filters.type == 'acrylic' else '' }}>Акрил</option>
+        <option value="enamel" {{ 'selected' if filters.type == 'enamel' else '' }}>Эмаль</option>
+        <option value="pigment" {{ 'selected' if filters.type == 'pigment' else '' }}>Пигмент</option>
+        <option value="metallic" {{ 'selected' if filters.type == 'metallic' else '' }}>Металлик</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="technique">Техника нанесения</label>
+      <select id="technique" name="technique">
+        <option value="">Любая техника</option>
+        {% for item in techniques %}
+          <option value="{{ item }}" {{ 'selected' if filters.technique == item else '' }}>{{ item }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="field">
+      <label for="sort">{{ t('common.sort') }}</label>
+      <select id="sort" name="sort">
+        {% for value, label in sort_labels.items() %}
+          <option value="{{ value }}" {{ 'selected' if filters.sort == value else '' }}>{{ label }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div style="display:flex; gap:8px">
+      <button class="button" type="submit">{{ t('common.apply') }}</button>
+      <a class="button secondary" href="{{ url_for('paints.paints_index') }}">{{ t('common.reset') }}</a>
+    </div>
+  </form>
+
+  <div class="catalog-meta">
+    <span>{{ t('paints.found') }}: {{ pagination.total }}</span>
+    <span>{{ t('paints.col.color') }} · {{ t('paints.col.code') }} · {{ t('paints.col.line') }}</span>
+  </div>
+
+  {% if paints %}
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>{{ t('paints.col.brand') }}</th>
+            <th>{{ t('paints.col.line') }}</th>
+            <th>{{ t('paints.col.code') }}</th>
+            <th>{{ t('paints.col.name') }}</th>
+            <th>{{ t('paints.col.type') }}</th>
+            <th>{{ t('paints.col.color') }}</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for paint in paints %}
+            <tr>
+              <td>{{ paint.brand.name }}</td>
+              <td class="muted">{{ paint.line.name }}</td>
+              <td class="code">{{ paint.code }}</td>
+              <td><a href="{{ url_for('paints.paint_detail', paint_id=paint.id) }}">{{ paint.name }}</a></td>
+              <td class="muted">{{ paint.type_label }}</td>
+              <td>
+                <span class="color-cell">
+                  <span class="color-chip" style="--swatch: {{ paint.color_hex }}"></span>
+                  <span class="color-hex">{{ paint.color_hex }}</span>
+                </span>
+              </td>
+              <td>
+                {% if current_user.is_authenticated %}
+                  <div style="display:flex; gap:6px">
+                    <form method="post" action="{{ url_for('paints.add_to_wishlist', paint_id=paint.id) }}">
+                      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                      <button class="button small secondary" type="submit">+ {{ t('paints.add_wishlist') }}</button>
+                    </form>
+                    <form method="post" action="{{ url_for('paints.add_to_inventory', paint_id=paint.id) }}">
+                      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                      <button class="button small secondary" type="submit">+ {{ t('paints.add_inventory') }}</button>
+                    </form>
+                  </div>
+                {% endif %}
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% include 'partials/_pagination.html' %}
+  {% else %}
+    <div class="empty-state">
+      <div class="empty-mark">○</div>
+      <h3>{{ t('common.empty') }}</h3>
+      <p>Измените фильтры или сбросьте поиск.</p>
+      <a class="button secondary" href="{{ url_for('paints.paints_index') }}">{{ t('common.reset') }}</a>
+    </div>
+  {% endif %}
+</div>
+{% endblock %}

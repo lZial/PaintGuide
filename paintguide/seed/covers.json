@@ -1,0 +1,2282 @@
+{
+  "t-34-85": {
+    "file": "static/img/vehicles/t-34-85.jpg",
+    "title": "File:T-34-85 tank in the Bovington Tank Museum 2.jpg",
+    "author": "Simon from United Kingdom",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:T-34-85_tank_in_the_Bovington_Tank_Museum_2.jpg",
+    "kind": "model",
+    "scale": ""
+  },
+  "t-34-76": {
+    "file": "static/img/vehicles/t-34-76.jpg",
+    "title": "File:T-34-76 model 1943 in Museum of technique 2016-08-16.JPG",
+    "author": "Mike1979 Russia",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:T-34-76_model_1943_in_Museum_of_technique_2016-08-16.JPG",
+    "kind": "model",
+    "scale": ""
+  },
+  "su-100": {
+    "file": "static/img/vehicles/su-100.jpg",
+    "title": "File:SU-100 Model 1969 tank destroyer at the Museum of Revolution, Cuba.jpg",
+    "author": "Brian Snelson from Hockley, Essex, England",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:SU-100_Model_1969_tank_destroyer_at_the_Museum_of_Revolution,_Cuba.jpg",
+    "kind": "model",
+    "scale": ""
+  },
+  "btr-152": {
+    "file": "static/img/vehicles/btr-152.jpg",
+    "title": "File:BTR-152V, Kubinka tank museum.jpg",
+    "author": "Msgevans00",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:BTR-152V,_Kubinka_tank_museum.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "panzer-iv-ausf-g": {
+    "file": "static/img/vehicles/panzer-iv-ausf-g.jpg",
+    "title": "File:Panzer IV Model H, Panzermuseum Munster.JPG",
+    "author": "Wicked-desperado",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Panzer_IV_Model_H,_Panzermuseum_Munster.JPG",
+    "kind": "model",
+    "scale": ""
+  },
+  "panther-ausf-g": {
+    "file": "static/img/vehicles/panther-ausf-g.jpg",
+    "title": "File:Panther tank model (31584690294).jpg",
+    "author": "Thomas Quine",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Panther_tank_model_(31584690294).jpg",
+    "kind": "model",
+    "scale": ""
+  },
+  "tiger-i": {
+    "file": "static/img/vehicles/tiger-i.jpg",
+    "title": "File:Prokhorovka. Museum \"The Third Battlefield of Russia\". Tank \"Tiger I\" (model) P5070073 2200.jpg",
+    "author": "Alexxx1979",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Prokhorovka._Museum_%22The_Third_Battlefield_of_Russia%22._Tank_%22Tiger_I%22_(model)_P5070073_2200.jpg",
+    "kind": "model",
+    "scale": ""
+  },
+  "stug-iii-ausf-g": {
+    "file": "static/img/vehicles/stug-iii-ausf-g.jpg",
+    "title": "File:StuG III Ausf.D – TankFest 2019.jpg",
+    "author": "Alan Wilson",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:StuG_III_Ausf.D_%E2%80%93_TankFest_2019.jpg",
+    "kind": "model",
+    "scale": ""
+  },
+  "wespe": {
+    "file": "static/img/vehicles/wespe.jpg",
+    "title": "File:Wespe in the Kubinka Museum.jpg",
+    "author": "Mike1979 Russia",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Wespe_in_the_Kubinka_Museum.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "m4a3e8-sherman": {
+    "file": "static/img/vehicles/m4a3e8-sherman.jpg",
+    "title": "File:The Sherman Tank (24865956475).jpg",
+    "author": "shankar s. from Dubai, united arab emirates",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:The_Sherman_Tank_(24865956475).jpg",
+    "kind": "model",
+    "scale": ""
+  },
+  "m10-wolverine": {
+    "file": "static/img/vehicles/m10-wolverine.jpg",
+    "title": "File:M10 tank destroyer at the Tank Museum.JPG",
+    "author": "Rodw",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:M10_tank_destroyer_at_the_Tank_Museum.JPG",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "m3a1-stuart": {
+    "file": "static/img/vehicles/m3a1-stuart.jpg",
+    "title": "File:1to35 M3 Stuart Tank - Built in 1985.jpg",
+    "author": "D J Shin",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:1to35_M3_Stuart_Tank_-_Built_in_1985.jpg",
+    "kind": "model",
+    "scale": ""
+  },
+  "m8-grease-truck": {
+    "file": "static/img/vehicles/m8-grease-truck.jpg",
+    "title": "File:Lešany - vojenské muzeum, Tankový den 2024, ukázky, M8 Greyhound, obr01.jpg",
+    "author": "Roman Mifek",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Le%C5%A1any_-_vojensk%C3%A9_muzeum,_Tankov%C3%BD_den_2024,_uk%C3%A1zky,_M8_Greyhound,_obr01.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "churchill-mk-vii": {
+    "file": "static/img/vehicles/churchill-mk-vii.jpg",
+    "title": "File:Model Churchill tank diorama (4536588898).jpg",
+    "author": "Simon Q from United Kingdom",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Model_Churchill_tank_diorama_(4536588898).jpg",
+    "kind": "model",
+    "scale": ""
+  },
+  "comet": {
+    "file": "static/img/vehicles/comet.jpg",
+    "title": "File:Leyland Comet Mk I Model B.jpg",
+    "author": "Northsky71",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Leyland_Comet_Mk_I_Model_B.jpg",
+    "kind": "model",
+    "scale": ""
+  },
+  "spitfire-mk-ix": {
+    "file": "static/img/vehicles/spitfire-mk-ix.jpg",
+    "title": "File:Spitfire, Liverpool Blitz 70 event - DSCF0085.JPG",
+    "author": "Rept0n1x",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Spitfire,_Liverpool_Blitz_70_event_-_DSCF0085.JPG",
+    "kind": "model",
+    "scale": ""
+  },
+  "hurricane-mk-ii": {
+    "file": "static/img/vehicles/hurricane-mk-ii.jpg",
+    "title": "File:Sheet balsa Hawker Hurricane, 1 48-ish scale. (5497605608) (2).jpg",
+    "author": "Bill Abbott",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Sheet_balsa_Hawker_Hurricane,_1_48-ish_scale._(5497605608)_(2).jpg",
+    "kind": "model",
+    "scale": ""
+  },
+  "daimler-dingo": {
+    "file": "static/img/vehicles/daimler-dingo.jpg",
+    "title": "File:Daimler Dingo Mark II front-right 2017 Bovington.jpg",
+    "author": "Morio",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Daimler_Dingo_Mark_II_front-right_2017_Bovington.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "universal-carrier": {
+    "file": "static/img/vehicles/universal-carrier.jpg",
+    "title": "File:Universal Carrier in Verkhnyaya Pyshma Museum.jpg",
+    "author": "Stas Kozlovskiy",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Universal_Carrier_in_Verkhnyaya_Pyshma_Museum.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "type-95-ha-go": {
+    "file": "static/img/vehicles/type-95-ha-go.jpg",
+    "title": "File:Type 95 light tank Ha-Go early model.jpg",
+    "author": "Unknown author Unknown author",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:Type_95_light_tank_Ha-Go_early_model.jpg",
+    "kind": "model",
+    "scale": ""
+  },
+  "a6m2-zero": {
+    "file": "static/img/vehicles/a6m2-zero.jpg",
+    "title": "File:Mitsubishi A6M Zero (23299749660).jpg",
+    "author": "Falcon® Photography from France, France",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Mitsubishi_A6M_Zero_(23299749660).jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "somua-s35": {
+    "file": "static/img/vehicles/somua-s35.jpg",
+    "title": "File:SOMUA S35 in the Bovington Tank Museum (front).jpg",
+    "author": "Jonathan Cardy",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:SOMUA_S35_in_the_Bovington_Tank_Museum_(front).jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "hotchkiss-h39": {
+    "file": "static/img/vehicles/hotchkiss-h39.jpg",
+    "title": "File:Char Hotchkiss H39 (2).jpg",
+    "author": "Gzen92",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Char_Hotchkiss_H39_(2).jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "l3-35": {
+    "file": "static/img/vehicles/l3-35.jpg",
+    "title": "File:47mm M40 L3-35 45mm M1942 kalemegdan.jpg",
+    "author": "Srđan Popović",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:47mm_M40_L3-35_45mm_M1942_kalemegdan.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "m60-magach-6": {
+    "file": "static/img/vehicles/m60-magach-6.jpg",
+    "title": "File:Battle of Suez- Magach tanks.jpg",
+    "author": "צלם במחנה - ארכיון צה\"ל ומערכת הביטחון",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:Battle_of_Suez-_Magach_tanks.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "type-97-shinhoto": {
+    "file": "static/img/vehicles/type-97-shinhoto.jpg",
+    "title": "File:Gongchen tank (captured type 97 Shinhoto Chi-Ha) front-left 2015 Military Museum Beijing.jpg",
+    "author": "Morio",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Gongchen_tank_(captured_type_97_Shinhoto_Chi-Ha)_front-left_2015_Military_Museum_Beijing.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "type-3-chi-nu": {
+    "file": "static/img/vehicles/type-3-chi-nu.jpg",
+    "title": "File:Japanese Type 3 Chi-Nu tank 2.jpg",
+    "author": "Max Smith",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:Japanese_Type_3_Chi-Nu_tank_2.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "is-2": {
+    "file": "static/img/vehicles/is-2.jpg",
+    "title": "File:IS-2 in the CPLA Tank Museum 20131004.JPG",
+    "author": "颐园新居",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:IS-2_in_the_CPLA_Tank_Museum_20131004.JPG",
+    "kind": "model",
+    "scale": ""
+  },
+  "is-3": {
+    "file": "static/img/vehicles/is-3.jpg",
+    "title": "File:T-54M, IS-3 and T-34-85 at a museum in Belarus.jpg",
+    "author": "Guðmundur D. Haraldsson",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:T-54M,_IS-3_and_T-34-85_at_a_museum_in_Belarus.jpg",
+    "kind": "model",
+    "scale": ""
+  },
+  "su-152": {
+    "file": "static/img/vehicles/su-152.jpg",
+    "title": "File:Su-152kub2.jpg",
+    "author": "BVV",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Su-152kub2.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "t-54": {
+    "file": "static/img/vehicles/t-54.jpg",
+    "title": "File:T-54-2 (Model 1949) Medium Tank ‘337’ (37627888806).jpg",
+    "author": "Alan Wilson from Stilton, Peterborough, Cambs, UK",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:T-54-2_(Model_1949)_Medium_Tank_%E2%80%98337%E2%80%99_(37627888806).jpg",
+    "kind": "model",
+    "scale": ""
+  },
+  "t-62": {
+    "file": "static/img/vehicles/t-62.jpg",
+    "title": "File:T-62 Medium Tank ‘166’ (37679271131).jpg",
+    "author": "Alan Wilson from Stilton, Peterborough, Cambs, UK",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:T-62_Medium_Tank_%E2%80%98166%E2%80%99_(37679271131).jpg",
+    "kind": "model",
+    "scale": ""
+  },
+  "stug-iv": {
+    "file": "static/img/vehicles/stug-iv.jpg",
+    "title": "File:Munster StugIV Modell (dark1).jpg",
+    "author": "Darkone",
+    "license": "CC BY-SA 2.5",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.5",
+    "source": "https://commons.wikimedia.org/wiki/File:Munster_StugIV_Modell_(dark1).jpg",
+    "kind": "model",
+    "scale": ""
+  },
+  "jagdpanther": {
+    "file": "static/img/vehicles/jagdpanther.jpg",
+    "title": "File:WTM Jagdpanther 001.jpg",
+    "author": "Brakeet",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:WTM_Jagdpanther_001.jpg",
+    "kind": "model",
+    "scale": "1:144"
+  },
+  "sdkfz-234": {
+    "file": "static/img/vehicles/sdkfz-234.jpg",
+    "title": "File:Munster SdKfz234 2 (dark1).jpg",
+    "author": "Darkone",
+    "license": "CC BY-SA 2.5",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.5",
+    "source": "https://commons.wikimedia.org/wiki/File:Munster_SdKfz234_2_(dark1).jpg",
+    "kind": "model",
+    "scale": ""
+  },
+  "m4a1-sherman": {
+    "file": "static/img/vehicles/m4a1-sherman.jpg",
+    "title": "File:2021 Wings Over Dallas 024 (Super Sherman).jpg",
+    "author": "Michael Barera",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:2021_Wings_Over_Dallas_024_(Super_Sherman).jpg",
+    "kind": "model",
+    "scale": ""
+  },
+  "m18-tank-destroyer": {
+    "file": "static/img/vehicles/m18-tank-destroyer.jpg",
+    "title": "File:M18, Hellcat in the Kubinka Museum.jpg",
+    "author": "Mike1979 Russia",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:M18,_Hellcat_in_the_Kubinka_Museum.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "m36-jackson": {
+    "file": "static/img/vehicles/m36-jackson.jpg",
+    "title": "File:Lešany - vojenské muzeum, Tankový den 2024, ukázky, M36 Jackson, obr02.jpg",
+    "author": "Roman Mifek",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Le%C5%A1any_-_vojensk%C3%A9_muzeum,_Tankov%C3%BD_den_2024,_uk%C3%A1zky,_M36_Jackson,_obr02.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "m24-chaffee": {
+    "file": "static/img/vehicles/m24-chaffee.jpg",
+    "title": "File:M24 Chaffee model.jpg",
+    "author": "Randy Ray",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:M24_Chaffee_model.jpg",
+    "kind": "model",
+    "scale": ""
+  },
+  "centurion": {
+    "file": "static/img/vehicles/centurion.jpg",
+    "title": "File:A41 Centurion Mk3 – Kubinka Tank Museum (37860546446).jpg",
+    "author": "Alan Wilson from Stilton, Peterborough, Cambs, UK",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:A41_Centurion_Mk3_%E2%80%93_Kubinka_Tank_Museum_(37860546446).jpg",
+    "kind": "model",
+    "scale": ""
+  },
+  "valentine": {
+    "file": "static/img/vehicles/valentine.jpg",
+    "title": "File:A Lend-Lease British Valentine tank produced for the Soviet Union.jpg",
+    "author": "Office of War Information",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:A_Lend-Lease_British_Valentine_tank_produced_for_the_Soviet_Union.jpg",
+    "kind": "model",
+    "scale": ""
+  },
+  "renault-r35": {
+    "file": "static/img/vehicles/renault-r35.jpg",
+    "title": "File:Char R35 et U23.jpg",
+    "author": "164RH",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Char_R35_et_U23.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "m13-40": {
+    "file": "static/img/vehicles/m13-40.jpg",
+    "title": "File:Bundesarchiv Bild 101I-783-0104-38, Nordafrika, italienische Panzer M13-40.jpg",
+    "author": "Moosmüller",
+    "license": "CC BY-SA 3.0 de",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-783-0104-38,_Nordafrika,_italienische_Panzer_M13-40.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "t-26": {
+    "file": "static/img/vehicles/t-26.jpg",
+    "title": "File:Ex-Finnish T-26 Model 1933 light tank in the Bovington Tank Museum.jpg",
+    "author": "Kristian Thy from Bonn, Germany",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ex-Finnish_T-26_Model_1933_light_tank_in_the_Bovington_Tank_Museum.jpg",
+    "kind": "model",
+    "scale": ""
+  },
+  "type-97-chi-ha": {
+    "file": "static/img/vehicles/type-97-chi-ha.jpg",
+    "title": "File:Gongchen tank (captured type 97 Shinhoto Chi-Ha) front-left 2015 Military Museum Beijing.jpg",
+    "author": "Morio",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Gongchen_tank_(captured_type_97_Shinhoto_Chi-Ha)_front-left_2015_Military_Museum_Beijing.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "strv-103": {
+    "file": "static/img/vehicles/strv-103.jpg",
+    "title": "File:Strv 103 Björkborn.jpg",
+    "author": "Tomas er",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Strv_103_Bj%C3%B6rkborn.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "type-89-i-go": {
+    "file": "static/img/vehicles/type-89-i-go.jpg",
+    "title": "File:Een buitgemaakte Japanse 89 I-Go middelzware tank in gebruik bij het Nederlandse leger, Bestanddeelnr 58-6-1.jpg",
+    "author": "Fotograaf Onbekend / DLC",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Een_buitgemaakte_Japanse_89_I-Go_middelzware_tank_in_gebruik_bij_het_Nederlandse_leger,_Bestanddeelnr_58-6-1.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "mt-lb": {
+    "file": "static/img/vehicles/mt-lb.jpg",
+    "title": "File:MT-LB, Mitsubishi pickup truck, T-62 tank and a Mercedes-Benz tank truck on the Highway of Death.JPEG",
+    "author": "Unknown, United States Marine Corps",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:MT-LB,_Mitsubishi_pickup_truck,_T-62_tank_and_a_Mercedes-Benz_tank_truck_on_the_Highway_of_Death.JPEG",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "panzer-kampfwagen-iv": {
+    "file": "static/img/vehicles/panzer-kampfwagen-iv.jpg",
+    "title": "File:Panzer IV Model H, Panzermuseum Munster.JPG",
+    "author": "Wicked-desperado",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Panzer_IV_Model_H,_Panzermuseum_Munster.JPG",
+    "kind": "model",
+    "scale": ""
+  },
+  "type-1-ho-ni": {
+    "file": "static/img/vehicles/type-1-ho-ni.jpg",
+    "title": "File:Type 1 10.5cm self-propelled gun Ho-Ni II 02.jpg",
+    "author": "Imperial Japanese Army",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:Type_1_10.5cm_self-propelled_gun_Ho-Ni_II_02.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "crusader": {
+    "file": "static/img/vehicles/crusader.jpg",
+    "title": "File:Crusader III Cruiser tank Mk VI at the Tank Museum.JPG",
+    "author": "Rodw",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Crusader_III_Cruiser_tank_Mk_VI_at_the_Tank_Museum.JPG",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "amx-13": {
+    "file": "static/img/vehicles/amx-13.jpg",
+    "title": "File:Amx-13 tankfest 2023.JPG",
+    "author": "Geni",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Amx-13_tankfest_2023.JPG",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "nakajima-ki-43-ii": {
+    "file": "static/img/vehicles/nakajima-ki-43-ii.jpg",
+    "title": "File:Kato Hayabusa Sento-tai (201602-05 Nakajima Ki-43 Oscar) PDVD 005.JPG",
+    "author": "東宝 (Toho)",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:Kato_Hayabusa_Sento-tai_(201602-05_Nakajima_Ki-43_Oscar)_PDVD_005.JPG",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "nakajima-ki-84-hayate": {
+    "file": "static/img/vehicles/nakajima-ki-84-hayate.jpg",
+    "title": "File:The Nakajima Ki-84 Hayate additional prototype of the Army Air Force.jpg",
+    "author": "Unknown author Unknown author",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:The_Nakajima_Ki-84_Hayate_additional_prototype_of_the_Army_Air_Force.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "kv-1": {
+    "file": "static/img/vehicles/kv-1.jpg",
+    "title": "File:A szovjet hadsereg KV-1 típusú nehéz harckocsija. Fortepan 28293.jpg",
+    "author": "FOTO:Fortepan — ID 28293 : Adományozó/Donor: Konok Tamás id.",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:A_szovjet_hadsereg_KV-1_t%C3%ADpus%C3%BA_neh%C3%A9z_harckocsija._Fortepan_28293.jpg",
+    "kind": "model",
+    "scale": ""
+  },
+  "is-1": {
+    "file": "static/img/vehicles/is-1.jpg",
+    "title": "File:IS 1 prototyp.jpg",
+    "author": "Unknown author Unknown author",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:IS_1_prototyp.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "sdkfz-251": {
+    "file": "static/img/vehicles/sdkfz-251.jpg",
+    "title": "File:Sonderkraftfahrzeug 251 Sd.Kfz.251.jpg",
+    "author": "Arkland",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Sonderkraftfahrzeug_251_Sd.Kfz.251.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "type-92-jyu-sokosha": {
+    "file": "static/img/vehicles/type-92-jyu-sokosha.jpg",
+    "title": "File:Type 92 Iju Sokosha Tankette.jpg",
+    "author": "Imperial Japanese Army",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:Type_92_Iju_Sokosha_Tankette.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "type-59": {
+    "file": "static/img/vehicles/type-59.jpg",
+    "title": "File:Type 59-II Tank (9871578856).jpg",
+    "author": "Gary Todd from Xinzheng, China",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Type_59-II_Tank_(9871578856).jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "ferdinand-elefant": {
+    "file": "static/img/vehicles/ferdinand-elefant.jpg",
+    "title": "File:Elefant ‘501’ - Patriot Museum, Kubinka (26555210489).jpg",
+    "author": "Alan Wilson from Stilton, Peterborough, Cambs, UK",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Elefant_%E2%80%98501%E2%80%99_-_Patriot_Museum,_Kubinka_(26555210489).jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "t-35": {
+    "file": "static/img/vehicles/t-35.jpg",
+    "title": "File:T-35 model 1935.jpg",
+    "author": "Willi Ude, uploaded by Ude",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:T-35_model_1935.jpg",
+    "kind": "model",
+    "scale": ""
+  },
+  "t-55": {
+    "file": "static/img/vehicles/t-55.jpg",
+    "title": "File:T-55 Medium Tank ‘562’ (37678631771).jpg",
+    "author": "Alan Wilson from Stilton, Peterborough, Cambs, UK",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:T-55_Medium_Tank_%E2%80%98562%E2%80%99_(37678631771).jpg",
+    "kind": "model",
+    "scale": ""
+  },
+  "t-70": {
+    "file": "static/img/vehicles/t-70.jpg",
+    "title": "File:Model of the final design MBT-70.JPG",
+    "author": "US Army",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:Model_of_the_final_design_MBT-70.JPG",
+    "kind": "model",
+    "scale": ""
+  },
+  "t-80": {
+    "file": "static/img/vehicles/t-80.jpg",
+    "title": "File:T-80 model with active protection system Drozd at Tula State Museum of Weapons.jpg",
+    "author": "Vitaly V. Kuzmin",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:T-80_model_with_active_protection_system_Drozd_at_Tula_State_Museum_of_Weapons.jpg",
+    "kind": "model",
+    "scale": ""
+  },
+  "t-44": {
+    "file": "static/img/vehicles/t-44.jpg",
+    "title": "File:T-44A Medium Tank ‘136’ (37662332071).jpg",
+    "author": "Alan Wilson from Stilton, Peterborough, Cambs, UK",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:T-44A_Medium_Tank_%E2%80%98136%E2%80%99_(37662332071).jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "is-7": {
+    "file": "static/img/vehicles/is-7.jpg",
+    "title": "File:IS-7 Heavy Tank (23752174238).jpg",
+    "author": "Alan Wilson from Stilton, Peterborough, Cambs, UK",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:IS-7_Heavy_Tank_(23752174238).jpg",
+    "kind": "model",
+    "scale": ""
+  },
+  "kv-2": {
+    "file": "static/img/vehicles/kv-2.jpg",
+    "title": "File:KV-5 KV-2 Comparision.jpg",
+    "author": "Marcos Serra, https://panzerserra.blogspot.de",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:KV-5_KV-2_Comparision.jpg",
+    "kind": "model",
+    "scale": ""
+  },
+  "su-85": {
+    "file": "static/img/vehicles/su-85.jpg",
+    "title": "File:SU-85 tank destroyer (23188281142).jpg",
+    "author": "Thomas Quine",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:SU-85_tank_destroyer_(23188281142).jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "pt-76": {
+    "file": "static/img/vehicles/pt-76.jpg",
+    "title": "File:PT-76 National Museum of the Great Patriotic War 2.jpg",
+    "author": "Andrew Bossi from Laurel, MD, USA",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:PT-76_National_Museum_of_the_Great_Patriotic_War_2.jpg",
+    "kind": "model",
+    "scale": ""
+  },
+  "bmp-1": {
+    "file": "static/img/vehicles/bmp-1.jpg",
+    "title": "File:BMP-1 en la Milita muzeo \"Patrino Armenio\" 01.jpg",
+    "author": "RG72",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:BMP-1_en_la_Milita_muzeo_%22Patrino_Armenio%22_01.jpg",
+    "kind": "model",
+    "scale": ""
+  },
+  "btr-60": {
+    "file": "static/img/vehicles/btr-60.jpg",
+    "title": "File:BTR-60 APC. (31353313135).jpg",
+    "author": "Mohit S from Mumbai, India",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:BTR-60_APC._(31353313135).jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "panzer-kampfwagen-i": {
+    "file": "static/img/vehicles/panzer-kampfwagen-i.jpg",
+    "title": "File:PzKpfW I Zvezda model.jpg",
+    "author": "Участник:LostWikiMan",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:PzKpfW_I_Zvezda_model.jpg",
+    "kind": "model",
+    "scale": ""
+  },
+  "hetzer": {
+    "file": "static/img/vehicles/hetzer.jpg",
+    "title": "File:Jagdpanzer 38(t) Hetzer ‘322973’ (37769385322).jpg",
+    "author": "Alan Wilson from Stilton, Peterborough, Cambs, UK",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Jagdpanzer_38(t)_Hetzer_%E2%80%98322973%E2%80%99_(37769385322).jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "jagdpanzer-iv": {
+    "file": "static/img/vehicles/jagdpanzer-iv.jpg",
+    "title": "File:Knocked-out German Tiger I and Panzerjäger Tiger (P) in Italy, circa in June 1944 (342-FH-3A23117-53482AC).jpg",
+    "author": "U.S. Army Air Forces photo 342-FH-3A23117-53482AC",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:Knocked-out_German_Tiger_I_and_Panzerj%C3%A4ger_Tiger_(P)_in_Italy,_circa_in_June_1944_(342-FH-3A23117-53482AC).jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "sdkfz-222": {
+    "file": "static/img/vehicles/sdkfz-222.jpg",
+    "title": "File:1to35 Sdkfz 222 - When I had hard time in 2002.jpg",
+    "author": "D J Shin",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:1to35_Sdkfz_222_-_When_I_had_hard_time_in_2002.jpg",
+    "kind": "model",
+    "scale": ""
+  },
+  "sdkfz-231": {
+    "file": "static/img/vehicles/sdkfz-231.jpg",
+    "title": "File:Reproduction of a Sd.Kfz. 231 8 rad.JPG",
+    "author": "Bonty",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Reproduction_of_a_Sd.Kfz._231_8_rad.JPG",
+    "kind": "model",
+    "scale": ""
+  },
+  "sdkfz-250": {
+    "file": "static/img/vehicles/sdkfz-250.jpg",
+    "title": "File:Sd.Kfz. 250 5 Greif.JPG",
+    "author": "Bonty",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Sd.Kfz._250_5_Greif.JPG",
+    "kind": "model",
+    "scale": ""
+  },
+  "maus": {
+    "file": "static/img/vehicles/maus.jpg",
+    "title": "File:Munster Maus Modell (dark1) with figure.jpg",
+    "author": "derivative work: Fangz ( talk ) Munster_Maus_Modell_(dark1).jpg : Darkone",
+    "license": "CC BY-SA 2.5",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.5",
+    "source": "https://commons.wikimedia.org/wiki/File:Munster_Maus_Modell_(dark1)_with_figure.jpg",
+    "kind": "model",
+    "scale": ""
+  },
+  "flakpanzer-tiger": {
+    "file": "static/img/vehicles/flakpanzer-tiger.jpg",
+    "title": "File:Geschutzwagen Tiger model 1.JPG",
+    "author": "Alex Alex Lep",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Geschutzwagen_Tiger_model_1.JPG",
+    "kind": "model",
+    "scale": ""
+  },
+  "m7-priest": {
+    "file": "static/img/vehicles/m7-priest.jpg",
+    "title": "File:M7 Priest Gunfire Museum Brasschaat 13-03-2021 11-13-43.jpg",
+    "author": "Paul Hermans",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:M7_Priest_Gunfire_Museum_Brasschaat_13-03-2021_11-13-43.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "m26-pershing": {
+    "file": "static/img/vehicles/m26-pershing.jpg",
+    "title": "File:M26 Pershing Bastogne Barracks.jpg",
+    "author": "Arkland",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:M26_Pershing_Bastogne_Barracks.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "m3-halftrack": {
+    "file": "static/img/vehicles/m3-halftrack.jpg",
+    "title": "File:Lešany - vojenské muzeum, Tankový den 2024, ukázky, M3 Halftrack, obr01.jpg",
+    "author": "Roman Mifek",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Le%C5%A1any_-_vojensk%C3%A9_muzeum,_Tankov%C3%BD_den_2024,_uk%C3%A1zky,_M3_Halftrack,_obr01.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "m22-locust": {
+    "file": "static/img/vehicles/m22-locust.jpg",
+    "title": "File:M22 Locust front-left 2017 Bovington.jpg",
+    "author": "Morio",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:M22_Locust_front-left_2017_Bovington.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "black-prince": {
+    "file": "static/img/vehicles/black-prince.jpg",
+    "title": "File:Churchill Black Prince Prototype Tank.jpg",
+    "author": "Makizox",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Churchill_Black_Prince_Prototype_Tank.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "avro-lancaster": {
+    "file": "static/img/vehicles/avro-lancaster.jpg",
+    "title": "File:XVI Open de Plastimodelismo de Catanduva. Avro Lancaster, foi o melhor e o mais famoso bombardeiro quadrimotor britânico da II Guerra Mundial. - panoramio.jpg",
+    "author": "MARCO AURÉLIO ESPARZ…",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:XVI_Open_de_Plastimodelismo_de_Catanduva._Avro_Lancaster,_foi_o_melhor_e_o_mais_famoso_bombardeiro_quadrimotor_brit%C3%A2nico_da_II_Guerra_Mundial._-_panoramio.jpg",
+    "kind": "model",
+    "scale": ""
+  },
+  "de-havilland-mosquito": {
+    "file": "static/img/vehicles/de-havilland-mosquito.jpg",
+    "title": "File:Monogram 1 48 Mosquito, completed (5200355270) (2).jpg",
+    "author": "Bill Abbott",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Monogram_1_48_Mosquito,_completed_(5200355270)_(2).jpg",
+    "kind": "model",
+    "scale": ""
+  },
+  "messerschmitt-bf-109": {
+    "file": "static/img/vehicles/messerschmitt-bf-109.jpg",
+    "title": "File:Full Scale Model Bf 109G-6 flown by Erich Hartmman February 1945 - San Diego Air & Space Museum (9668450448).jpg",
+    "author": "Tomás Del Coro from Las Vegas, Nevada, USA",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Full_Scale_Model_Bf_109G-6_flown_by_Erich_Hartmman_February_1945_-_San_Diego_Air_%26_Space_Museum_(9668450448).jpg",
+    "kind": "model",
+    "scale": ""
+  },
+  "focke-wulf-fw-190": {
+    "file": "static/img/vehicles/focke-wulf-fw-190.jpg",
+    "title": "File:Focke-Wulf Fw 190A-4 JG 54 Nowotny, modello (Museo del modellismo storico Voghenza).JPG",
+    "author": "Threecharlie",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Focke-Wulf_Fw_190A-4_JG_54_Nowotny,_modello_(Museo_del_modellismo_storico_Voghenza).JPG",
+    "kind": "model",
+    "scale": ""
+  },
+  "messerschmitt-me-262": {
+    "file": "static/img/vehicles/messerschmitt-me-262.jpg",
+    "title": "File:Коробка модели Me-262a компании FROG.jpg",
+    "author": "SergeiZhilinski",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:%D0%9A%D0%BE%D1%80%D0%BE%D0%B1%D0%BA%D0%B0_%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8_Me-262a_%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D0%B8_FROG.jpg",
+    "kind": "model",
+    "scale": "1:72"
+  },
+  "messerschmitt-bf-110": {
+    "file": "static/img/vehicles/messerschmitt-bf-110.jpg",
+    "title": "File:Messerschmitt Bf 110G.jpg",
+    "author": "PA",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Messerschmitt_Bf_110G.jpg",
+    "kind": "model",
+    "scale": ""
+  },
+  "north-american-p-51-mustang": {
+    "file": "static/img/vehicles/north-american-p-51-mustang.jpg",
+    "title": "File:Model of P-51 Mustang by Young C. Park.jpg",
+    "author": "Jim1138",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Model_of_P-51_Mustang_by_Young_C._Park.jpg",
+    "kind": "model",
+    "scale": ""
+  },
+  "republic-p-47-thunderbolt": {
+    "file": "static/img/vehicles/republic-p-47-thunderbolt.jpg",
+    "title": "File:1st Air Commando Group - P-47 Thunderbolts.jpg",
+    "author": "United States Army Air Forces",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:1st_Air_Commando_Group_-_P-47_Thunderbolts.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "douglas-a-26-invader": {
+    "file": "static/img/vehicles/douglas-a-26-invader.jpg",
+    "title": "File:492d Bombardment Group Black Painted A-26 Invader on ramp.jpg",
+    "author": "United States Army Air Forces",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:492d_Bombardment_Group_Black_Painted_A-26_Invader_on_ramp.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "nakajima-ki-61-hiryu": {
+    "file": "static/img/vehicles/nakajima-ki-61-hiryu.jpg",
+    "title": "File:Kawasaki Ki-61 Hien with drop tank.jpeg",
+    "author": "U.S. Navy",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:Kawasaki_Ki-61_Hien_with_drop_tank.jpeg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "nakajima-ki-44-shoki": {
+    "file": "static/img/vehicles/nakajima-ki-44-shoki.jpg",
+    "title": "File:De gecrashte Japanse Nakajima Ki-44 Shoki, NIMH 2157-001-057.jpg",
+    "author": "Onbekend / Unknown",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:De_gecrashte_Japanse_Nakajima_Ki-44_Shoki,_NIMH_2157-001-057.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "dewoitine-d-520": {
+    "file": "static/img/vehicles/dewoitine-d-520.jpg",
+    "title": "File:Dewoitine D.520 (Stammkennz. DR+Vx, SV+xx) weiterproduziert für dt. Luftwaffe u. Verbündete, 1941-43.jpg",
+    "author": "Unknown author Unknown author",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:Dewoitine_D.520_(Stammkennz._DR%2BVx,_SV%2Bxx)_weiterproduziert_f%C3%BCr_dt._Luftwaffe_u._Verb%C3%BCndete,_1941-43.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "ilyushin-il-2": {
+    "file": "static/img/vehicles/ilyushin-il-2.jpg",
+    "title": "File:Borbeni avion IL-2 iz sastava 11. vazduhoplovne divizije JA, za vreme izviđanja neprijateljskih položaja na Sremskom frontu, aprila 1945.jpg",
+    "author": "Unknown author Unknown author",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:Borbeni_avion_IL-2_iz_sastava_11._vazduhoplovne_divizije_JA,_za_vreme_izvi%C4%91anja_neprijateljskih_polo%C5%BEaja_na_Sremskom_frontu,_aprila_1945.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "strv-104": {
+    "file": "static/img/vehicles/strv-104.jpg",
+    "title": "File:Swedish Strv 104 Centurion Tank with Upgrades.jpg",
+    "author": "Unknown author Unknown author",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Swedish_Strv_104_Centurion_Tank_with_Upgrades.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "landsverk-l-60": {
+    "file": "static/img/vehicles/landsverk-l-60.jpg",
+    "title": "File:Landsverk L-60 at Collins Barracks.jpg",
+    "author": "Emperor Gibus the 3rd",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Landsverk_L-60_at_Collins_Barracks.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "centurion-shoot": {
+    "file": "static/img/vehicles/centurion-shoot.jpg",
+    "title": "File:IDF unveils rebuilt Centurion Tank (FL61742840).jpg",
+    "author": "IPPA photographer",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:IDF_unveils_rebuilt_Centurion_Tank_(FL61742840).jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "type-62": {
+    "file": "static/img/vehicles/type-62.jpg",
+    "title": "File:Type 62 light tank front-right 2016 Military Museum Beijing.jpg",
+    "author": "Morio",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Type_62_light_tank_front-right_2016_Military_Museum_Beijing.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "m15-42": {
+    "file": "static/img/vehicles/m15-42.jpg",
+    "title": "File:MDB FIAT M15-42.jpg",
+    "author": "Totorvdr59",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:MDB_FIAT_M15-42.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "panzer-kampfwagen-iii": {
+    "file": "static/img/vehicles/panzer-kampfwagen-iii.png",
+    "title": "File:Pz. Kpfw. I Ausf. A, Fahrschulpanzer mit Pz. Kpfw. III Ausf. C Turm, Kummersdorf 1941 (1).png",
+    "author": "Kanthe",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Pz._Kpfw._I_Ausf._A,_Fahrschulpanzer_mit_Pz._Kpfw._III_Ausf._C_Turm,_Kummersdorf_1941_(1).png",
+    "kind": "model",
+    "scale": "1:35"
+  },
+  "opel-blitz": {
+    "file": "static/img/vehicles/opel-blitz.jpg",
+    "title": "File:Opel Blitz1.JPG",
+    "author": "NoCoMpany741",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Opel_Blitz1.JPG",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "firefly": {
+    "file": "static/img/vehicles/firefly.jpg",
+    "title": "File:M4A2 Sherman Firefly front-right 2017 Bovington.jpg",
+    "author": "Morio",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:M4A2_Sherman_Firefly_front-right_2017_Bovington.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "m3-lee": {
+    "file": "static/img/vehicles/m3-lee.jpg",
+    "title": "File:M3 Lee Medium Tank. (31537103800).jpg",
+    "author": "Mohit S from Mumbai, India",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:M3_Lee_Medium_Tank._(31537103800).jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "m14-41": {
+    "file": "static/img/vehicles/m14-41.jpg",
+    "title": "File:Fiat M14 41 at the Tank Museum.JPG",
+    "author": "Rodw",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Fiat_M14_41_at_the_Tank_Museum.JPG",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "alfa-6c": {
+    "file": "static/img/vehicles/alfa-6c.jpg",
+    "title": "File:1947 Alfa Romeo 6C 2500 Freccia tanks.jpg",
+    "author": "Unknown photographer",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:1947_Alfa_Romeo_6C_2500_Freccia_tanks.jpg",
+    "kind": "model",
+    "scale": ""
+  },
+  "lv-60": {
+    "file": "static/img/vehicles/lv-60.jpg",
+    "title": "File:Landsverk L-60 at Collins Barracks.jpg",
+    "author": "Emperor Gibus the 3rd",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Landsverk_L-60_at_Collins_Barracks.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "lahti-l-39": {
+    "file": "static/img/vehicles/lahti-l-39.jpg",
+    "title": "File:Finnish Lahti L-39 anti-tank gun in firing position, 22 November, 1941.jpg",
+    "author": "Niilo Verronen",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:Finnish_Lahti_L-39_anti-tank_gun_in_firing_position,_22_November,_1941.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "sisu": {
+    "file": "static/img/vehicles/sisu.jpg",
+    "title": "File:Lippujuhlan päivän paraati 2014 064 Karjalan prikaati Sisu E11T.JPG",
+    "author": "MKFI",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:Lippujuhlan_p%C3%A4iv%C3%A4n_paraati_2014_064_Karjalan_prikaati_Sisu_E11T.JPG",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "fokker-dxxi": {
+    "file": "static/img/vehicles/fokker-dxxi.jpg",
+    "title": "File:Finse Fokker D.XXI met skis 2161 026390.jpg",
+    "author": "Collectie Van Beek",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Finse_Fokker_D.XXI_met_skis_2161_026390.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "sm-84": {
+    "file": "static/img/vehicles/sm-84.jpg",
+    "title": "File:Savoia-Marchetti SM.84.jpg",
+    "author": "San Diego Air & Space Museum",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:Savoia-Marchetti_SM.84.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "t-26-camo": {
+    "file": "static/img/vehicles/t-26-camo.jpg",
+    "title": "File:Ex-Finnish T-26 Model 1933 light tank in the Bovington Tank Museum.jpg",
+    "author": "Kristian Thy from Bonn, Germany",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ex-Finnish_T-26_Model_1933_light_tank_in_the_Bovington_Tank_Museum.jpg",
+    "kind": "model",
+    "scale": ""
+  },
+  "btr-60-israel": {
+    "file": "static/img/vehicles/btr-60-israel.jpg",
+    "title": "File:BTR-60 APC. (31353313135).jpg",
+    "author": "Mohit S from Mumbai, India",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:BTR-60_APC._(31353313135).jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "m270-mlrs": {
+    "file": "static/img/vehicles/m270-mlrs.jpg",
+    "title": "File:Micro Armor M270 MLRS 001.jpg",
+    "author": "Brakeet",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Micro_Armor_M270_MLRS_001.jpg",
+    "kind": "model",
+    "scale": "1:144"
+  },
+  "star-266": {
+    "file": "static/img/vehicles/star-266.jpg",
+    "title": "File:Star 266, PIA.jpg",
+    "author": "Raf24~commonswiki",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Star_266,_PIA.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "btr-80": {
+    "file": "static/img/vehicles/btr-80.jpg",
+    "title": "File:AAVs and BTR-80 landing near Vladivostok.JPEG",
+    "author": "PH1 CHARLES W. ALLEY, US Navy",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:AAVs_and_BTR-80_landing_near_Vladivostok.JPEG",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "type-63": {
+    "file": "static/img/vehicles/type-63.jpg",
+    "title": "File:Type 63 amphibious tank front-left1 2015 Military Museum Beijing.jpg",
+    "author": "Morio",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Type_63_amphibious_tank_front-left1_2015_Military_Museum_Beijing.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "type-79": {
+    "file": "static/img/vehicles/type-79.jpg",
+    "title": "File:TYPE79-WUHAN-20250929.jpg",
+    "author": "Dan3031949",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:TYPE79-WUHAN-20250929.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "plz-05": {
+    "file": "static/img/vehicles/plz-05.jpg",
+    "title": "File:PLZ-05 Self-Propelled Artillery 20170902.jpg",
+    "author": "Tyg728",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:PLZ-05_Self-Propelled_Artillery_20170902.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "type-63-apc": {
+    "file": "static/img/vehicles/type-63-apc.jpg",
+    "title": "File:Type 63 Amphibious APC 20131004.JPG",
+    "author": "",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Type_63_Amphibious_APC_20131004.JPG",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "type-15": {
+    "file": "static/img/vehicles/type-15.jpg",
+    "title": "File:Type 15 tank 20221020.jpg",
+    "author": "颐园居",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Type_15_tank_20221020.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "amx-30": {
+    "file": "static/img/vehicles/amx-30.jpg",
+    "title": "File:Prototype AMX-30A at Musée des Blindés, Saumur, France (53360301901).jpg",
+    "author": "Alan Wilson from Peterborough, Cambs, UK",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Prototype_AMX-30A_at_Mus%C3%A9e_des_Blind%C3%A9s,_Saumur,_France_(53360301901).jpg",
+    "kind": "model",
+    "scale": ""
+  },
+  "panhard-ebr": {
+    "file": "static/img/vehicles/panhard-ebr.jpg",
+    "title": "File:Panhard EBR 75 Heavy Armoured Car at the Tank Museum, Bovington 14.jpg",
+    "author": "Mightyhansa",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Panhard_EBR_75_Heavy_Armoured_Car_at_the_Tank_Museum,_Bovington_14.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "hotchkiss-h35": {
+    "file": "static/img/vehicles/hotchkiss-h35.jpg",
+    "title": "File:Hotchkiss H35 Narvik.jpg",
+    "author": "Bene Riobó",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Hotchkiss_H35_Narvik.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "berliet-vudb": {
+    "file": "static/img/vehicles/berliet-vudb.png",
+    "title": "File:Berliet VUDB du 5e escadron du 1er REC, 1935.png",
+    "author": "Le Petit Chat , basis by Mick Bell",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Berliet_VUDB_du_5e_escadron_du_1er_REC,_1935.png",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "arl": {
+    "file": "static/img/vehicles/arl.jpg",
+    "title": "File:ARL-44.jpg",
+    "author": "MWAK",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:ARL-44.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "amx-50": {
+    "file": "static/img/vehicles/amx-50.jpg",
+    "title": "File:AMX-50 at Musée des Blindés, Saumur, France (53334525706).jpg",
+    "author": "Alan Wilson from Peterborough, Cambs, UK",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:AMX-50_at_Mus%C3%A9e_des_Blind%C3%A9s,_Saumur,_France_(53334525706).jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "panhard-aml": {
+    "file": "static/img/vehicles/panhard-aml.jpg",
+    "title": "File:Panhard AML H90 (4536094723).jpg",
+    "author": "Simon Q from United Kingdom",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Panhard_AML_H90_(4536094723).jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "char-d1": {
+    "file": "static/img/vehicles/char-d1.jpg",
+    "title": "File:Char D11936.jpg",
+    "author": "niet toegeschreven, primaire bron fotodienst Franse leger",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:Char_D11936.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "zbd-04": {
+    "file": "static/img/vehicles/zbd-04.jpg",
+    "title": "File:ZBD-04 - front left view.jpg",
+    "author": "Max Smith",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:ZBD-04_-_front_left_view.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "strv-105-artillery": {
+    "file": "static/img/vehicles/strv-105-artillery.jpg",
+    "title": "File:Model of 1936 TK-3 tank (24105363440).jpg",
+    "author": "Thomas Quine",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Model_of_1936_TK-3_tank_(24105363440).jpg",
+    "kind": "model",
+    "scale": ""
+  },
+  "zil-131": {
+    "file": "static/img/vehicles/zil-131.jpg",
+    "title": "File:Abandoned ZiL-157.jpg",
+    "author": "MrPanyGoff",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Abandoned_ZiL-157.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "l6-40": {
+    "file": "static/img/vehicles/l6-40.jpg",
+    "title": "File:Carro Armato L6-40 (23988402388).jpg",
+    "author": "Alan Wilson from Stilton, Peterborough, Cambs, UK",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Carro_Armato_L6-40_(23988402388).jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "fiat-626": {
+    "file": "static/img/vehicles/fiat-626.jpg",
+    "title": "File:Strong Europe Tank Challenge 2016 (26301492974).jpg",
+    "author": "7th Army Training Command from Grafenwoehr, Germany",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Strong_Europe_Tank_Challenge_2016_(26301492974).jpg",
+    "kind": "model",
+    "scale": ""
+  },
+  "strv-105": {
+    "file": "static/img/vehicles/strv-105.jpg",
+    "title": "File:Model of 1936 TK-3 tank (24105363440).jpg",
+    "author": "Thomas Quine",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Model_of_1936_TK-3_tank_(24105363440).jpg",
+    "kind": "model",
+    "scale": ""
+  },
+  "pansarbandvagn": {
+    "file": "static/img/vehicles/pansarbandvagn.jpg",
+    "title": "File:Pansarbandvagn 302 Revinge 2015-1.jpg",
+    "author": "Jorchr",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Pansarbandvagn_302_Revinge_2015-1.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "bandvagn-202": {
+    "file": "static/img/vehicles/bandvagn-202.jpg",
+    "title": "File:Under the Same Sun 20220108.jpg",
+    "author": "Solomon203",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Under_the_Same_Sun_20220108.jpg",
+    "kind": "model",
+    "scale": ""
+  },
+  "scania-vabis": {
+    "file": "static/img/vehicles/scania-vabis.jpg",
+    "title": "File:Skoglund & Olson bus 3.jpg",
+    "author": "Djsgmnd",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Skoglund_%26_Olson_bus_3.jpg",
+    "kind": "model",
+    "scale": "1:30"
+  },
+  "m38-115": {
+    "file": "static/img/vehicles/m38-115.jpg",
+    "title": "File:Landsverk L-60 at Collins Barracks.jpg",
+    "author": "Emperor Gibus the 3rd",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Landsverk_L-60_at_Collins_Barracks.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "t-72": {
+    "file": "static/img/vehicles/t-72.jpg",
+    "title": "File:A right front view of a Soviet T74 main battle tank in a dug-in and camouflaged position. The welded-on armor panels on the turret roof that distinguish the later T-74 models from earlier T-74 and T-72 models can be clearly seen.jpg",
+    "author": "Unknown author Unknown author",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:A_right_front_view_of_a_Soviet_T74_main_battle_tank_in_a_dug-in_and_camouflaged_position._The_welded-on_armor_panels_on_the_turret_roof_that_distinguish_the_later_T-74_models_from_earlier_T-74_and_T-72_models_can_be_clearly_seen.jpg",
+    "kind": "model",
+    "scale": ""
+  },
+  "t-34-model-1940": {
+    "file": "static/img/vehicles/t-34-model-1940.jpg",
+    "title": "File:T-34 Model 1940.jpg",
+    "author": "Soviet state agencies",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:T-34_Model_1940.jpg",
+    "kind": "model",
+    "scale": ""
+  },
+  "m26": {
+    "file": "static/img/vehicles/m26.jpg",
+    "title": "File:Flickr - davehighbury - Bovington Tank Museum 246 M26.jpg",
+    "author": "DAVID HOLT from London, England",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Flickr_-_davehighbury_-_Bovington_Tank_Museum_246_M26.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "m60a1": {
+    "file": "static/img/vehicles/m60a1.jpg",
+    "title": "File:105 mm Gun Full Tracked Combat Tank M60A1-M60A3 Texas Military Forces Museum.jpg",
+    "author": "Pi3.124",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:105_mm_Gun_Full_Tracked_Combat_Tank_M60A1-M60A3_Texas_Military_Forces_Museum.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "m113": {
+    "file": "static/img/vehicles/m113.jpg",
+    "title": "File:M113 AFV scale model Bundeswehr 1964.jpg",
+    "author": "Marseille77",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:M113_AFV_scale_model_Bundeswehr_1964.jpg",
+    "kind": "model",
+    "scale": "1:35"
+  },
+  "m32": {
+    "file": "static/img/vehicles/m32.jpg",
+    "title": "File:M32 ARV.jpg",
+    "author": "Yellowute at English Wikipedia",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:M32_ARV.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "7tp": {
+    "file": "static/img/vehicles/7tp.jpg",
+    "title": "File:1938 Zajecie Zaolzia, Karwina, defilada, czołg lekki 7TP.jpg",
+    "author": "Narodowe Archiwum Cyfrowe",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:1938_Zajecie_Zaolzia,_Karwina,_defilada,_czo%C5%82g_lekki_7TP.jpg",
+    "kind": "model",
+    "scale": ""
+  },
+  "type-69": {
+    "file": "static/img/vehicles/type-69.jpg",
+    "title": "File:Bovington Tank Museum 331 Type 69-II chinese tank.jpg",
+    "author": "DAVID HOLT",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Bovington_Tank_Museum_331_Type_69-II_chinese_tank.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "amx-10": {
+    "file": "static/img/vehicles/amx-10.jpg",
+    "title": "File:French Army AMX-10 RC armored vehicle prepares to fire during exericse.jpg",
+    "author": "Lance Cpl. Damarko Bones",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:French_Army_AMX-10_RC_armored_vehicle_prepares_to_fire_during_exericse.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "type-62-light": {
+    "file": "static/img/vehicles/type-62-light.jpg",
+    "title": "File:Лёгкий танк Т-26 образца 1933 года.JPG",
+    "author": "Walter HJ",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:%D0%9B%D1%91%D0%B3%D0%BA%D0%B8%D0%B9_%D1%82%D0%B0%D0%BD%D0%BA_%D0%A2-26_%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D1%86%D0%B0_1933_%D0%B3%D0%BE%D0%B4%D0%B0.JPG",
+    "kind": "model",
+    "scale": ""
+  },
+  "pbv-302": {
+    "file": "static/img/vehicles/pbv-302.jpg",
+    "title": "File:Hobby Fan Trading Company Booth in Armor School Education Building 20130302a.jpg",
+    "author": "玄史生",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Hobby_Fan_Trading_Company_Booth_in_Armor_School_Education_Building_20130302a.jpg",
+    "kind": "model",
+    "scale": ""
+  },
+  "m38-carl": {
+    "file": "static/img/vehicles/m38-carl.jpg",
+    "title": "File:Model of a Landsverk M38.JPG",
+    "author": "Alf van Beem",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Model_of_a_Landsverk_M38.JPG",
+    "kind": "model",
+    "scale": ""
+  },
+  "star-660": {
+    "file": "static/img/vehicles/star-660.jpg",
+    "title": "File:Dygowo - Star 660 dźwig - 14.06.2024 17-01-20.jpg",
+    "author": "Photographs by Radosław Drożdżewski (User:Zwiadowca21)",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Dygowo_-_Star_660_d%C5%BAwig_-_14.06.2024_17-01-20.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "pzl-p-24": {
+    "file": "static/img/vehicles/pzl-p-24.jpg",
+    "title": "File:Samolot PZL P.24 na lotnisku NAC 1-W-1549a.jpg",
+    "author": "Unknown author Unknown author",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:Samolot_PZL_P.24_na_lotnisku_NAC_1-W-1549a.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "sdkfz-7": {
+    "file": "static/img/vehicles/sdkfz-7.jpg",
+    "title": "File:Немецкий полугусеничный тягач Sd.Kfz. 7.JPG",
+    "author": "User Галин Владимир Петрович (Galin Vladimir Petrovich) at Russian Wikipedia",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:%D0%9D%D0%B5%D0%BC%D0%B5%D1%86%D0%BA%D0%B8%D0%B9_%D0%BF%D0%BE%D0%BB%D1%83%D0%B3%D1%83%D1%81%D0%B5%D0%BD%D0%B8%D1%87%D0%BD%D1%8B%D0%B9_%D1%82%D1%8F%D0%B3%D0%B0%D1%87_Sd.Kfz._7.JPG",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "sdkfz-8": {
+    "file": "static/img/vehicles/sdkfz-8.jpg",
+    "title": "File:Немецкий полугусеничный тягач Sd.kfz. 8.jpg",
+    "author": "User Галин Владимир Петрович (Galin Vladimir Petrovich) at Russian Wikipedia",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:%D0%9D%D0%B5%D0%BC%D0%B5%D1%86%D0%BA%D0%B8%D0%B9_%D0%BF%D0%BE%D0%BB%D1%83%D0%B3%D1%83%D1%81%D0%B5%D0%BD%D0%B8%D1%87%D0%BD%D1%8B%D0%B9_%D1%82%D1%8F%D0%B3%D0%B0%D1%87_Sd.kfz._8.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "sdkfz-9": {
+    "file": "static/img/vehicles/sdkfz-9.jpg",
+    "title": "File:Bundesarchiv Bild 101I-235-0996-02A, Russland, Reparatur Panzer III mit Sd.Kfz. 9-1.jpg",
+    "author": "Falk",
+    "license": "CC BY-SA 3.0 de",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-235-0996-02A,_Russland,_Reparatur_Panzer_III_mit_Sd.Kfz._9-1.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "m2-halftrack": {
+    "file": "static/img/vehicles/m2-halftrack.jpg",
+    "title": "File:M2 truck halftrack.jpg",
+    "author": "U.S. Army",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:M2_truck_halftrack.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "universal-carrier-bren": {
+    "file": "static/img/vehicles/universal-carrier-bren.jpg",
+    "title": "File:Bren Gun Carrier. (30937188693).jpg",
+    "author": "Mohit S from Mumbai, India",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Bren_Gun_Carrier._(30937188693).jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "7-5cm-pak-40": {
+    "file": "static/img/vehicles/7-5cm-pak-40.jpg",
+    "title": "File:7,5-cm-Pak 40 Museum Raverside Belgien.jpg",
+    "author": "Reisender.ab",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:7,5-cm-Pak_40_Museum_Raverside_Belgien.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "25-pounder": {
+    "file": "static/img/vehicles/25-pounder.jpg",
+    "title": "File:Puckapunyal-QF-25-pounder-3.jpg",
+    "author": "User:Bukvoed",
+    "license": "CC BY 2.5",
+    "license_url": "https://creativecommons.org/licenses/by/2.5",
+    "source": "https://commons.wikimedia.org/wiki/File:Puckapunyal-QF-25-pounder-3.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "17-pounder": {
+    "file": "static/img/vehicles/17-pounder.jpg",
+    "title": "File:17 Pounder anti-tank Gun MK1 - Oosterbeek (50928765478).jpg",
+    "author": "FaceMePLS",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:17_Pounder_anti-tank_Gun_MK1_-_Oosterbeek_(50928765478).jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "6-pounder": {
+    "file": "static/img/vehicles/6-pounder.jpg",
+    "title": "File:Ordnance QF 6 pounder Anti-Tank Gun, Marysville, New Brunswick 1.JPG",
+    "author": "Skaarup.HA",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ordnance_QF_6_pounder_Anti-Tank_Gun,_Marysville,_New_Brunswick_1.JPG",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "m38-israel": {
+    "file": "static/img/vehicles/m38-israel.jpg",
+    "title": "File:Model of a Landsverk M38.JPG",
+    "author": "Alf van Beem",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Model_of_a_Landsverk_M38.JPG",
+    "kind": "model",
+    "scale": ""
+  },
+  "m29-weasel": {
+    "file": "static/img/vehicles/m29-weasel.jpg",
+    "title": "File:M29 Weasel at the Tank Museum.JPG",
+    "author": "Rodw",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:M29_Weasel_at_the_Tank_Museum.JPG",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "merkava-mk-2": {
+    "file": "static/img/vehicles/merkava-mk-2.jpg",
+    "title": "File:מודל טנק מרכבה עם \"שערות שולמית\", כדורי ברזל הקשורים בשרשראות ברזל, לחלק האחורי של הצריח.jpg",
+    "author": "Ruthyphone",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:%D7%9E%D7%95%D7%93%D7%9C_%D7%98%D7%A0%D7%A7_%D7%9E%D7%A8%D7%9B%D7%91%D7%94_%D7%A2%D7%9D_%22%D7%A9%D7%A2%D7%A8%D7%95%D7%AA_%D7%A9%D7%95%D7%9C%D7%9E%D7%99%D7%AA%22,_%D7%9B%D7%93%D7%95%D7%A8%D7%99_%D7%91%D7%A8%D7%96%D7%9C_%D7%94%D7%A7%D7%A9%D7%95%D7%A8%D7%99%D7%9D_%D7%91%D7%A9%D7%A8%D7%A9%D7%A8%D7%90%D7%95%D7%AA_%D7%91%D7%A8%D7%96%D7%9C,_%D7%9C%D7%97%D7%9C%D7%A7_%D7%94%D7%90%D7%97%D7%95%D7%A8%D7%99_%D7%A9%D7%9C_%D7%94%D7%A6%D7%A8%D7%99%D7%97.jpg",
+    "kind": "model",
+    "scale": ""
+  },
+  "char-b1": {
+    "file": "static/img/vehicles/char-b1.jpg",
+    "title": "File:Easy Model 172 Char B1.jpg",
+    "author": "Wolcott Hartigan",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Easy_Model_172_Char_B1.jpg",
+    "kind": "model",
+    "scale": ""
+  },
+  "type-96": {
+    "file": "static/img/vehicles/type-96.jpg",
+    "title": "File:A Japan Ground Self-Defense Force Type 96 multi-purpose missile system fires a Tube-launched Optically-tracked Wire-guided missile in a demonstration during Operation Rising Thunder 2014, at Yakima Training 140905-A-BX700-548.jpg",
+    "author": "SGT Cody Quinn",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:A_Japan_Ground_Self-Defense_Force_Type_96_multi-purpose_missile_system_fires_a_Tube-launched_Optically-tracked_Wire-guided_missile_in_a_demonstration_during_Operation_Rising_Thunder_2014,_at_Yakima_Training_140905-A-BX700-548.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "sdkfz-10": {
+    "file": "static/img/vehicles/sdkfz-10.jpg",
+    "title": "File:Sd.Kfz. 10 pulling PaK 40.jpg",
+    "author": "Willi Ude, uploaded by Ude",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Sd.Kfz._10_pulling_PaK_40.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "is-9": {
+    "file": "static/img/vehicles/is-9.jpg",
+    "title": "File:IS-9 Neptis sp (5241625584).jpg",
+    "author": "NSG group from Lund, Sweden",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:IS-9_Neptis_sp_(5241625584).jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "kv-202": {
+    "file": "static/img/vehicles/kv-202.jpg",
+    "title": "File:T-10 tank.jpg",
+    "author": "ChrisO",
+    "license": "CC BY-SA 3.0",
+    "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:T-10_tank.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "brm-2": {
+    "file": "static/img/vehicles/brm-2.jpg",
+    "title": "File:BRDM-2RKh markers left side BSCF 2025.JPG",
+    "author": "Geni",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:BRDM-2RKh_markers_left_side_BSCF_2025.JPG",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "zil-135": {
+    "file": "static/img/vehicles/zil-135.jpg",
+    "title": "File:ZIL135 LM vorn.JPG",
+    "author": "LutzBruno",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:ZIL135_LM_vorn.JPG",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "m12-gmc": {
+    "file": "static/img/vehicles/m12-gmc.jpg",
+    "title": "File:155mm-GMC-M12-France-1944.jpg",
+    "author": "Unknown author Unknown author",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:155mm-GMC-M12-France-1944.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "l6": {
+    "file": "static/img/vehicles/l6.jpg",
+    "title": "File:Fiat L6 40 05.jpg",
+    "author": "Ministry of Defence of the Russian Federation",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Fiat_L6_40_05.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "type-95-hyoshou": {
+    "file": "static/img/vehicles/type-95-hyoshou.jpg",
+    "title": "File:US Army Museum of Hawaii - IMG 2408.JPG",
+    "author": "Daderot",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:US_Army_Museum_of_Hawaii_-_IMG_2408.JPG",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "type-4-ke-ni": {
+    "file": "static/img/vehicles/type-4-ke-ni.jpg",
+    "title": "File:Type 4 Ke-Nu - Victory Park, Moscow (38817720251).jpg",
+    "author": "Alan Wilson from Stilton, Peterborough, Cambs, UK",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Type_4_Ke-Nu_-_Victory_Park,_Moscow_(38817720251).jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "macchi-c-202": {
+    "file": "static/img/vehicles/macchi-c-202.jpg",
+    "title": "File:Macchi C.202 (A19600332000).jpg",
+    "author": "Smithsonian Institution",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Macchi_C.202_(A19600332000).jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "lagg-3": {
+    "file": "static/img/vehicles/lagg-3.jpg",
+    "title": "File:Lavochkin LaGG-3 in the Great Patriotic War Museum 5-jun-2014.jpg",
+    "author": "Mike1979 Russia",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Lavochkin_LaGG-3_in_the_Great_Patriotic_War_Museum_5-jun-2014.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "magach-6m": {
+    "file": "static/img/vehicles/magach-6m.jpg",
+    "title": "File:M60A1-Patton-Blazer-latrun-2.jpg",
+    "author": "No machine-readable author provided. Bukvoed assumed (based on copyright claims).",
+    "license": "CC BY 2.5",
+    "license_url": "https://creativecommons.org/licenses/by/2.5",
+    "source": "https://commons.wikimedia.org/wiki/File:M60A1-Patton-Blazer-latrun-2.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "t-72-smoothbore": {
+    "file": "static/img/vehicles/t-72-smoothbore.jpg",
+    "title": "File:Alabino05042017-40.jpg",
+    "author": "Vitaly V. Kuzmin",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Alabino05042017-40.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "m2-105mm-howitzer": {
+    "file": "static/img/vehicles/m2-105mm-howitzer.jpg",
+    "title": "File:M101-105mm-howitzer-camp-pendleton-20050326.jpg",
+    "author": "PD-USGov-Military-Marines",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:M101-105mm-howitzer-camp-pendleton-20050326.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "88mm-flak-36": {
+    "file": "static/img/vehicles/88mm-flak-36.png",
+    "title": "File:Flak18-36(cropped).png",
+    "author": "Rickard Ångman",
+    "license": "CC BY-SA 3.0",
+    "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Flak18-36(cropped).png",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "m2-medium-tank": {
+    "file": "static/img/vehicles/m2-medium-tank.jpg",
+    "title": "File:Aberdean proving grounds 014.JPG",
+    "author": "original uploader: BonesBrigade , also made the picture",
+    "license": "Attribution",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:Aberdean_proving_grounds_014.JPG",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "boeing-b-17-flying-fortress": {
+    "file": "static/img/vehicles/boeing-b-17-flying-fortress.jpg",
+    "title": "File:B17 - Chino Airshow 2014 (framed).jpg",
+    "author": "Airwolfhound",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:B17_-_Chino_Airshow_2014_(framed).jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "yakovlev-yak-3": {
+    "file": "static/img/vehicles/yakovlev-yak-3.jpg",
+    "title": "File:Yakolev Yak-3 (115450123) (25073819848).jpg",
+    "author": "Alan Wilson from Stilton, Peterborough, Cambs, UK",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Yakolev_Yak-3_(115450123)_(25073819848).jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "su-35": {
+    "file": "static/img/vehicles/su-35.jpg",
+    "title": "File:Russian Air Force, RF-81719, Sukhoi Su-35S (49581740157).jpg",
+    "author": "Anna Zvereva from Tallinn, Estonia",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Russian_Air_Force,_RF-81719,_Sukhoi_Su-35S_(49581740157).jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "p26-40": {
+    "file": "static/img/vehicles/p26-40.png",
+    "title": "File:PzKpfw VII (schwere) Löwe.png",
+    "author": "Przemysław Łagosz",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:PzKpfw_VII_(schwere)_L%C3%B6we.png",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "pansar-i": {
+    "file": "static/img/vehicles/pansar-i.jpg",
+    "title": "File:Stridsvagn m40K Hässleholm 31.07.09.JPG",
+    "author": "Wassen",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Stridsvagn_m40K_H%C3%A4ssleholm_31.07.09.JPG",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "p40": {
+    "file": "static/img/vehicles/p40.jpg",
+    "title": "File:P26-40 tank.jpg",
+    "author": "Unknown author Unknown author",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:P26-40_tank.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "fiat-cr-42": {
+    "file": "static/img/vehicles/fiat-cr-42.jpg",
+    "title": "File:Fiat CR.42 - Aegean Islands.jpg",
+    "author": "Unknown author Unknown author",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:Fiat_CR.42_-_Aegean_Islands.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "strv-103-c": {
+    "file": "static/img/vehicles/strv-103-c.jpg",
+    "title": "File:STRV-103 demonstrating at P7 Revingehed, 24th April 2022.jpg",
+    "author": "VHMQ Photography",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:STRV-103_demonstrating_at_P7_Revingehed,_24th_April_2022.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "152-k-40": {
+    "file": "static/img/vehicles/152-k-40.jpg",
+    "title": "File:150mm sFH18 howitzer base borden 1.jpg",
+    "author": "Balcer~commonswiki",
+    "license": "CC BY 2.5",
+    "license_url": "https://creativecommons.org/licenses/by/2.5",
+    "source": "https://commons.wikimedia.org/wiki/File:150mm_sFH18_howitzer_base_borden_1.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "blenheim-mk-v": {
+    "file": "static/img/vehicles/blenheim-mk-v.jpg",
+    "title": "File:Blenheim - RIAT 2015 (19998104414).jpg",
+    "author": "Airwolfhound from Hertfordshire, UK",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Blenheim_-_RIAT_2015_(19998104414).jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "su-26": {
+    "file": "static/img/vehicles/su-26.jpg",
+    "title": "File:VII Małopolski Piknik Lotniczy – Su-26, LY-AKG (cropped).jpg",
+    "author": "Wojciech Migda ( Wmigda )",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:VII_Ma%C5%82opolski_Piknik_Lotniczy_%E2%80%93_Su-26,_LY-AKG_(cropped).jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "su-26m": {
+    "file": "static/img/vehicles/su-26m.jpg",
+    "title": "File:VII Małopolski Piknik Lotniczy – Su-26, LY-AKG (cropped).jpg",
+    "author": "Wojciech Migda ( Wmigda )",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:VII_Ma%C5%82opolski_Piknik_Lotniczy_%E2%80%93_Su-26,_LY-AKG_(cropped).jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "105-k-13": {
+    "file": "static/img/vehicles/105-k-13.jpg",
+    "title": "File:Schneider-Ansaldo 105mm M1913 side.jpg",
+    "author": "Nikola Smolenski",
+    "license": "CC BY-SA 3.0",
+    "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Schneider-Ansaldo_105mm_M1913_side.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "spg-l-60": {
+    "file": "static/img/vehicles/spg-l-60.jpg",
+    "title": "File:Stridsvagn m40K Hässleholm 31.07.09.JPG",
+    "author": "Wassen",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Stridsvagn_m40K_H%C3%A4ssleholm_31.07.09.JPG",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "m48a3c": {
+    "file": "static/img/vehicles/m48a3c.jpg",
+    "title": "File:Kampfpanzer M 48 A2 C.JPG",
+    "author": "Huhu",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:Kampfpanzer_M_48_A2_C.JPG",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "m60-blazer": {
+    "file": "static/img/vehicles/m60-blazer.jpg",
+    "title": "File:M60 Patton Tank Fort Lewis Military Museum.jpg",
+    "author": "Articseahorse",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:M60_Patton_Tank_Fort_Lewis_Military_Museum.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "m151-mutt": {
+    "file": "static/img/vehicles/m151-mutt.jpg",
+    "title": "File:AMG M151 A2 (1978) GB (owner Gavin Broad).JPG",
+    "author": "AlfvanBeem",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:AMG_M151_A2_(1978)_GB_(owner_Gavin_Broad).JPG",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "namer": {
+    "file": "static/img/vehicles/namer.jpg",
+    "title": "File:Flickr - Israel Defense Forces - 13th Battalion of the Golani Brigade Holds Drill at Golan Heights (8).jpg",
+    "author": "https://www.flickr.com/people/45644610@N03",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Flickr_-_Israel_Defense_Forces_-_13th_Battalion_of_the_Golani_Brigade_Holds_Drill_at_Golan_Heights_(8).jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "bj212": {
+    "file": "static/img/vehicles/bj212.jpg",
+    "title": "File:Beijing BJ212 BJ2023CHB2 Longyan 01 2022-08-06.jpg",
+    "author": "JamesYoung8167",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Beijing_BJ212_BJ2023CHB2_Longyan_01_2022-08-06.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "renault-d1": {
+    "file": "static/img/vehicles/renault-d1.jpg",
+    "title": "File:Char D11936.jpg",
+    "author": "niet toegeschreven, primaire bron fotodienst Franse leger",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:Char_D11936.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "type-80": {
+    "file": "static/img/vehicles/type-80.jpg",
+    "title": "File:Damascus Checkpoint.jpeg",
+    "author": "Elizabeth Arrott",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:Damascus_Checkpoint.jpeg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "sh-5": {
+    "file": "static/img/vehicles/sh-5.jpg",
+    "title": "File:Chinese Shuihong 5 amphibious aircraft.jpg",
+    "author": "tienvijftien",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Chinese_Shuihong_5_amphibious_aircraft.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "zsl-92": {
+    "file": "static/img/vehicles/zsl-92.jpg",
+    "title": "File:PLA Hong Kong Garrison ZSL92B.JPG",
+    "author": "Negi",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:PLA_Hong_Kong_Garrison_ZSL92B.JPG",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "type-59-1": {
+    "file": "static/img/vehicles/type-59-1.jpg",
+    "title": "File:Type 59 tank - front right.jpg",
+    "author": "Max Smith",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:Type_59_tank_-_front_right.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "t-34-85-finland": {
+    "file": "static/img/vehicles/t-34-85-finland.jpg",
+    "title": "File:Tank T-34.JPG",
+    "author": "Cezary Piwowarski",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Tank_T-34.JPG",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "t-26-model-1940": {
+    "file": "static/img/vehicles/t-26-model-1940.jpg",
+    "title": "File:T-26 in Kirovsk.JPG",
+    "author": "WolfDW",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:T-26_in_Kirovsk.JPG",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "152-k-40-winter": {
+    "file": "static/img/vehicles/152-k-40-winter.jpg",
+    "title": "File:150mm sFH18 howitzer base borden 1.jpg",
+    "author": "Balcer~commonswiki",
+    "license": "CC BY 2.5",
+    "license_url": "https://creativecommons.org/licenses/by/2.5",
+    "source": "https://commons.wikimedia.org/wiki/File:150mm_sFH18_howitzer_base_borden_1.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "76-k-36": {
+    "file": "static/img/vehicles/76-k-36.jpg",
+    "title": "File:F22 helsinki military museum 1.jpg",
+    "author": "Balcer~commonswiki",
+    "license": "CC BY 2.5",
+    "license_url": "https://creativecommons.org/licenses/by/2.5",
+    "source": "https://commons.wikimedia.org/wiki/File:F22_helsinki_military_museum_1.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "kv-202-engineering": {
+    "file": "static/img/vehicles/kv-202-engineering.jpg",
+    "title": "File:T-10 tank.jpg",
+    "author": "ChrisO",
+    "license": "CC BY-SA 3.0",
+    "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:T-10_tank.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "strv-109": {
+    "file": "static/img/vehicles/strv-109.jpg",
+    "title": "File:Stridsvagn m40K Hässleholm 31.07.09.JPG",
+    "author": "Wassen",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Stridsvagn_m40K_H%C3%A4ssleholm_31.07.09.JPG",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "10-5-cm-m-39": {
+    "file": "static/img/vehicles/10-5-cm-m-39.jpg",
+    "title": "File:German First World War 10.5 cm leichte Feldhaubitze 16 (10.5 cm leFH 16), (Serial No. 12826), Quebec City (3).JPG",
+    "author": "Skaarup.HA",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:German_First_World_War_10.5_cm_leichte_Feldhaubitze_16_(10.5_cm_leFH_16),_(Serial_No._12826),_Quebec_City_(3).JPG",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "jelcz-315": {
+    "file": "static/img/vehicles/jelcz-315.jpg",
+    "title": "File:Jelcz truck towing a trailer.jpg",
+    "author": "artisan2007",
+    "license": "CC BY 3.0",
+    "license_url": "https://creativecommons.org/licenses/by/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Jelcz_truck_towing_a_trailer.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "sdkfz-4": {
+    "file": "static/img/vehicles/sdkfz-4.jpg",
+    "title": "File:Panzerwerfer alias Maultier.jpg",
+    "author": "w:en:user:Poldiri",
+    "license": "CC BY-SA 3.0",
+    "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Panzerwerfer_alias_Maultier.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "sdkfz-6": {
+    "file": "static/img/vehicles/sdkfz-6.jpg",
+    "title": "File:Bundesarchiv Bild 101I-012-0012-05, Polen, Motorisierte deutsche Truppen.jpg",
+    "author": "Falk",
+    "license": "CC BY-SA 3.0 de",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-012-0012-05,_Polen,_Motorisierte_deutsche_Truppen.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "m3-76mm": {
+    "file": "static/img/vehicles/m3-76mm.jpg",
+    "title": "File:AlfredPalmerM3tank1942b crop2.jpg",
+    "author": "Alfred T. Palmer",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:AlfredPalmerM3tank1942b_crop2.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "m3-ussr": {
+    "file": "static/img/vehicles/m3-ussr.jpg",
+    "title": "File:AlfredPalmerM3tank1942b crop2.jpg",
+    "author": "Alfred T. Palmer",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:AlfredPalmerM3tank1942b_crop2.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "m3-15mc": {
+    "file": "static/img/vehicles/m3-15mc.jpg",
+    "title": "File:AlfredPalmerM3tank1942b crop2.jpg",
+    "author": "Alfred T. Palmer",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:AlfredPalmerM3tank1942b_crop2.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "10-5cm-lefh-16": {
+    "file": "static/img/vehicles/10-5cm-lefh-16.jpg",
+    "title": "File:German First World War 10.5 cm leichte Feldhaubitze 16 (10.5 cm leFH 16), (Serial No. 12826), Quebec City (3).JPG",
+    "author": "Skaarup.HA",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:German_First_World_War_10.5_cm_leichte_Feldhaubitze_16_(10.5_cm_leFH_16),_(Serial_No._12826),_Quebec_City_(3).JPG",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "15cm-sfh-18": {
+    "file": "static/img/vehicles/15cm-sfh-18.jpg",
+    "title": "File:150mm sFH18 howitzer base borden 1.jpg",
+    "author": "Balcer~commonswiki",
+    "license": "CC BY 2.5",
+    "license_url": "https://creativecommons.org/licenses/by/2.5",
+    "source": "https://commons.wikimedia.org/wiki/File:150mm_sFH18_howitzer_base_borden_1.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "122mm-m-30": {
+    "file": "static/img/vehicles/122mm-m-30.jpg",
+    "title": "File:M30 howitzer nn 1.jpg",
+    "author": "LostArtilleryman",
+    "license": "CC BY-SA 2.5",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.5",
+    "source": "https://commons.wikimedia.org/wiki/File:M30_howitzer_nn_1.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "vab": {
+    "file": "static/img/vehicles/vab.jpg",
+    "title": "File:54th Signal Regiment Bastille Day 2013 Paris t114322.jpg",
+    "author": "Marie-Lan Nguyen",
+    "license": "CC BY 2.5",
+    "license_url": "https://creativecommons.org/licenses/by/2.5",
+    "source": "https://commons.wikimedia.org/wiki/File:54th_Signal_Regiment_Bastille_Day_2013_Paris_t114322.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "m590": {
+    "file": "static/img/vehicles/m590.jpg",
+    "title": "File:PEO Mossberg 590A1.jpg",
+    "author": "Photo Courtesy of PEO Soldier",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:PEO_Mossberg_590A1.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "sexton": {
+    "file": "static/img/vehicles/sexton.jpg",
+    "title": "File:Sexton, Overlord Museum.jpg",
+    "author": "Supercarwaar",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Sexton,_Overlord_Museum.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  }
+}

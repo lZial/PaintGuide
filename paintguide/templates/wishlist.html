@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="shell">
+  <header class="page-intro">
+    <h1>{{ t('wishlist.title') }}</h1>
+    <p>{{ t('wishlist.lede') }}</p>
+  </header>
+
+  <div class="dashboard-grid">
+    <section class="panel">
+      <h2>{{ t('wishlist.add_title') }}</h2>
+      <form method="post" action="{{ url_for('wishlist.wishlist') }}" class="wishlist-form">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <div class="field">
+          <label for="item-name">{{ t('wishlist.name') }}</label>
+          <input id="item-name" name="name" required maxlength="180" placeholder="Panther Ausf. G">
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="item-type">{{ t('wishlist.type') }}</label>
+            <select id="item-type" name="item_type" required>
+              <option value="model">{{ t('wishlist.type.model') }}</option>
+              <option value="guide">{{ t('wishlist.type.guide') }}</option>
+              <option value="paint">{{ t('wishlist.type.paint') }}</option>
+              <option value="idea">{{ t('wishlist.type.idea') }}</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="item-qty">{{ t('wishlist.quantity') }}</label>
+            <input id="item-qty" name="quantity" type="number" min="1" max="99" value="1">
+          </div>
+        </div>
+        <div class="field full">
+          <label for="item-notes">{{ t('wishlist.notes') }}</label>
+          <textarea id="item-notes" name="notes" rows="3" maxlength="500" placeholder="Набор, масштаб, задумка по окраске…"></textarea>
+        </div>
+        <div class="full">
+          <button class="button block" type="submit">{{ t('wishlist.add') }} <span aria-hidden="true">+</span></button>
+        </div>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>{{ t('wishlist.queue_title') }} · {{ entries|length }}</h2>
+      {% if entries %}
+        <div class="entry-list">
+          {% for entry in entries %}
+            <article class="entry">
+              {% if entry.item_type == 'paint' and entry.detail %}
+                <span class="swatch-dot" style="--swatch: {{ entry.detail.color_hex }}"></span>
+              {% endif %}
+              <div>
+                <span class="badge plain">{{ entry.item_type }}</span>
+                <h3>{{ entry.name }}</h3>
+                <p>
+                  {{ entry.notes or '—' }}
+                  {% if entry.quantity > 1 %} · ×{{ entry.quantity }}{% endif %}
+                </p>
+              </div>
+              <form class="entry-actions" method="post" action="{{ url_for('wishlist.delete_entry', entry_id=entry.id) }}" data-confirm="Удалить запись из вишлиста?">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                <button class="button small danger" type="submit">{{ t('wishlist.remove') }}</button>
+              </form>
+            </article>
+          {% endfor %}
+        </div>
+      {% else %}
+        <div class="empty-state">
+          <div class="empty-mark">＋</div>
+          <h3>{{ t('wishlist.empty') }}</h3>
+          <p>{{ t('wishlist.empty_hint') }}</p>
+        </div>
+      {% endif %}
+    </section>
+  </div>
+</div>
+{% endblock %}

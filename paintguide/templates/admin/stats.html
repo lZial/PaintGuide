@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="shell admin-layout">
+  <header class="page-intro" style="padding-bottom:18px">
+    <h1>{{ t('admin.stats') }}</h1>
+  </header>
+
+  {% include 'partials/_admin_nav.html' %}
+
+  <div class="stat-cards">
+    <div class="stat-card"><strong>{{ total }}</strong><span>{{ t('admin.card.views') }} (30 дней)</span></div>
+    <div class="stat-card"><strong>{{ visits|length }}</strong><span>дней с наблюдениями</span></div>
+  </div>
+
+  <section class="panel">
+    <h2>{{ t('admin.visits') }}</h2>
+    {% set max_views = visits | map(attribute=1) | max if visits else 1 %}
+    <div class="chart">
+      {% for day, count in visits %}
+        <span class="bar" style="height: {{ (count / max_views * 100) if max_views else 4 }}%" title="{{ day }}: {{ count }}"></span>
+      {% endfor %}
+    </div>
+    <div class="chart-labels">
+      <span>{{ visits[0][0] if visits else '' }}</span>
+      <span>{{ visits[-1][0] if visits else '' }}</span>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>Популярные разделы</h2>
+    {% if top %}
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr><th>Путь</th><th>Просмотры</th></tr>
+          </thead>
+          <tbody>
+            {% for path, count in top %}
+              <tr>
+                <td class="mono">{{ path }}</td>
+                <td class="mono muted">{{ count }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    {% else %}
+      <p class="muted">Пока нет накопленных данных.</p>
+    {% endif %}
+  </section>
+</div>
+{% endblock %}

@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="shell">
+  <header class="page-intro">
+    <h1>{{ t('catalog.title') }}</h1>
+    <p>{{ t('catalog.lede') }}</p>
+  </header>
+
+  <form class="filter-panel" method="get" action="{{ url_for('catalog.catalog') }}" data-auto-submit>
+    <div class="field">
+      <label for="q">{{ t('common.search') }}</label>
+      <input id="q" type="search" name="q" value="{{ catalog.search }}" placeholder="{{ t('catalog.search_placeholder') }}">
+    </div>
+    <div class="field">
+      <label for="country">{{ t('catalog.filter.country') }}</label>
+      <select id="country" name="country">
+        <option value="">{{ t('catalog.filter.all_countries') }}</option>
+        {% for item in catalog.countries %}
+          <option value="{{ item.slug }}" {{ 'selected' if catalog.country == item.slug else '' }}>{{ item.flag }} {{ item.name }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="field">
+      <label for="vehicle_type">{{ t('catalog.filter.vehicle_type') }}</label>
+      <select id="vehicle_type" name="vehicle_type">
+        <option value="">{{ t('catalog.filter.all_types') }}</option>
+        {% for item in catalog.vehicle_types %}
+          <option value="{{ item.slug }}" {{ 'selected' if catalog.vehicle_type == item.slug else '' }}>{{ item.name }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="field">
+      <label for="difficulty">{{ t('catalog.filter.difficulty') }}</label>
+      <select id="difficulty" name="difficulty">
+        <option value="">{{ t('catalog.filter.all_difficulties') }}</option>
+        {% for item in catalog.difficulties %}
+          <option value="{{ item.slug }}" {{ 'selected' if catalog.difficulty == item.slug else '' }}>{{ item.name }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="field">
+      <label for="year">{{ t('catalog.filter.year') }}</label>
+      <select id="year" name="year">
+        <option value="">{{ t('catalog.filter.all_years') }}</option>
+        {% for year in catalog.years %}
+          <option value="{{ year }}" {{ 'selected' if catalog.year == year|string else '' }}>{{ year }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="field">
+      <label for="sort">{{ t('common.sort') }}</label>
+      <select id="sort" name="sort">
+        {% for value, label in sort_options.items() %}
+          <option value="{{ value }}" {{ 'selected' if catalog.sort == value else '' }}>{{ label }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div style="display:flex; gap:8px">
+      <button class="button" type="submit">{{ t('common.apply') }}</button>
+      <a class="button secondary" href="{{ url_for('catalog.catalog') }}">{{ t('common.reset') }}</a>
+    </div>
+  </form>
+
+  <div class="catalog-meta">
+    <span>{{ t('catalog.found') }}: {{ pagination.total }}</span>
+    {% if catalog.has_filters %}<span>{{ t('common.reset') }}: <a href="{{ url_for('catalog.catalog') }}">×</a></span>{% endif %}
+  </div>
+
+  {% if guides %}
+    <div class="guide-grid">
+      {% for guide in guides %}
+        {% include 'partials/_guide_card.html' %}
+      {% endfor %}
+    </div>
+    {% include 'partials/_pagination.html' %}
+  {% else %}
+    <div class="empty-state">
+      <div class="empty-mark">—</div>
+      <h3>{{ t('catalog.empty') }}</h3>
+      <p>{{ t('catalog.empty_hint') }}</p>
+      <a class="button secondary" href="{{ url_for('catalog.catalog') }}">{{ t('catalog.reset') }}</a>
+    </div>
+  {% endif %}
+</div>
+{% endblock %}

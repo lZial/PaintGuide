@@ -1,0 +1,178 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="shell admin-layout">
+  <header class="page-intro" style="padding-bottom:18px">
+    <h1>{{ t('admin.edit_guide') if guide else t('admin.new_guide') }}</h1>
+  </header>
+
+  {% include 'partials/_admin_nav.html' %}
+
+  {% if error %}<div class="error-box" role="alert">{{ error }}</div>{% endif %}
+
+  <form method="post" action="{{ url_for('admin_guides.edit', guide_id=guide.id) if guide else url_for('admin_guides.create') }}">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+    <section class="panel">
+      <div class="eyebrow">Основное</div>
+      <h2>Карточка руководства</h2>
+      <div class="form-grid">
+        <div class="field span-2">
+          <label for="title">Название единицы техники *</label>
+          <input id="title" name="title" required maxlength="200" value="{{ guide.title if guide else '' }}" placeholder="Т-34-85, выпуск 1943–1958">
+        </div>
+        <div class="field span-2">
+          <label for="subtitle">Подзаголовок</label>
+          <input id="subtitle" name="subtitle" maxlength="240" value="{{ guide.subtitle if guide else '' }}" placeholder="Зимний лесной камуфляж, вариант 1944 года">
+        </div>
+        <div class="field">
+          <label for="slug">Адрес (slug) *</label>
+          <input id="slug" name="slug" maxlength="140" value="{{ guide.slug if guide else '' }}" placeholder="t-34-85">
+        </div>
+        <div class="field">
+          <label for="country">Страна *</label>
+          <select id="country" name="country" required>
+            <option value="">— выберите —</option>
+            {% for item in countries %}
+              <option value="{{ item.slug }}" {{ 'selected' if guide and guide.country and guide.country.slug == item.slug else '' }}>{{ item.flag }} {{ item.name_ru }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="field">
+          <label for="vehicle_type">Тип техники *</label>
+          <select id="vehicle_type" name="vehicle_type" required>
+            <option value="">— выберите —</option>
+            {% for item in vehicle_types %}
+              <option value="{{ item.slug }}" {{ 'selected' if guide and guide.vehicle_type and guide.vehicle_type.slug == item.slug else '' }}>{{ item.name_ru }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="field">
+          <label for="year_from">Год выпуска (с)</label>
+          <input id="year_from" name="year_from" type="number" min="1850" max="2100" value="{{ guide.year_from if guide and guide.year_from else '' }}">
+        </div>
+        <div class="field">
+          <label for="year_to">Год выпуска (по)</label>
+          <input id="year_to" name="year_to" type="number" min="1850" max="2100" value="{{ guide.year_to if guide and guide.year_to else '' }}">
+        </div>
+        <div class="field">
+          <label for="production">Производство</label>
+          <input id="production" name="production" maxlength="200" value="{{ guide.production if guide else '' }}" placeholder="Завод № 92, Нижний Тагил">
+        </div>
+        <div class="field">
+          <label for="crew">Экипаж</label>
+          <input id="crew" name="crew" maxlength="120" value="{{ guide.crew if guide else '' }}" placeholder="4 человека">
+        </div>
+        <div class="field span-2">
+          <label for="description">Описание</label>
+          <textarea id="description" name="description" rows="3">{{ guide.description if guide else '' }}</textarea>
+        </div>
+        <div class="field span-2">
+          <label for="cover_url">Ссылка на обложку</label>
+          <input id="cover_url" name="cover_url" type="url" value="{{ guide.cover_url if guide else '' }}" placeholder="https://…">
+        </div>
+        <div class="field span-2">
+          <label class="switch-row">
+            <input type="checkbox" name="published" {{ 'checked' if not guide or guide.published else '' }}>
+            <span>Опубликовано в каталоге</span>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    {% for difficulty in difficulties %}
+      {% set variant = guide.variants|selectattr('difficulty_id', 'equalto', difficulty.id)|first if guide else None %}
+      <section class="variant-block">
+        <header class="variant-head">
+          <label class="switch-row">
+            <input type="checkbox" name="variant_difficulty" value="{{ difficulty.slug }}"
+                   {{ 'checked' if variant else 'checked' }}>
+            <strong>{{ difficulty.name_ru }}</strong>
+          </label>
+          <span class="spacer"></span>
+          <label class="switch-row">
+            <input type="checkbox" name="variant_default_{{ difficulty.slug }}" {{ 'checked' if variant and variant.is_default else '' }}>
+            <span>По умолчанию</span>
+          </label>
+        </header>
+        <div class="variant-body">
+          <div class="form-grid">
+            <div class="field">
+              <label for="variant_title_{{ difficulty.slug }}">Заголовок варианта</label>
+              <input id="variant_title_{{ difficulty.slug }}" name="variant_title_{{ difficulty.slug }}" maxlength="200"
+                     value="{{ variant.title if variant else '' }}" placeholder="Быстрый результат без погодных эффектов">
+            </div>
+            <div class="field">
+              <label for="variant_hours_{{ difficulty.slug }}">Примерное время, ч</label>
+              <input id="variant_hours_{{ difficulty.slug }}" name="variant_hours_{{ difficulty.slug }}" type="number" min="0" max="200"
+                     value="{{ variant.time_hours if variant else 0 }}">
+            </div>
+            <div class="field span-2">
+              <label for="variant_summary_{{ difficulty.slug }}">Краткое описание</label>
+              <textarea id="variant_summary_{{ difficulty.slug }}" name="variant_summary_{{ difficulty.slug }}" rows="2">{{ variant.summary if variant else '' }}</textarea>
+            </div>
+          </div>
+
+          <div class="eyebrow" style="margin-top:8px">{{ t('admin.steps_builder') }}</div>
+          {% for index in range(12) %}
+            {% set step = variant.steps[index] if variant and variant.steps|length > index else None %}
+            <div class="step-editor">
+              <div class="head"><span>Шаг {{ index + 1 }}</span></div>
+              <div class="form-grid">
+                <div class="field span-2">
+                  <label for="step_title_{{ difficulty.slug }}_{{ index }}">Название этапа</label>
+                  <input id="step_title_{{ difficulty.slug }}_{{ index }}" name="step_title_{{ difficulty.slug }}_{{ index }}"
+                         maxlength="160" value="{{ step.title if step else '' }}" placeholder="Грунтовка">
+                </div>
+                <div class="field span-2">
+                  <label for="step_instruction_{{ difficulty.slug }}_{{ index }}">Инструкция</label>
+                  <textarea id="step_instruction_{{ difficulty.slug }}_{{ index }}" name="step_instruction_{{ difficulty.slug }}_{{ index }}" rows="2">{{ step.instruction if step else '' }}</textarea>
+                </div>
+                <div class="field span-2">
+                  <label for="step_tip_{{ difficulty.slug }}_{{ index }}">{{ t('guide.tip') }}</label>
+                  <input id="step_tip_{{ difficulty.slug }}_{{ index }}" name="step_tip_{{ difficulty.slug }}_{{ index }}"
+                         maxlength="400" value="{{ step.tip if step else '' }}" placeholder="{{ t('admin.tip_placeholder') }}">
+                </div>
+              </div>
+              <div class="paint-slots">
+                {% for slot in range(1, 4) %}
+                  {% set link = step.paints[slot - 1] if step and step.paints|length >= slot else None %}
+                  <div class="paint-slot">
+                    <div class="field">
+                      <label for="step_paint{{ slot }}_{{ difficulty.slug }}_{{ index }}">Краска {{ slot }}</label>
+                      <input type="text"
+                             id="step_paint{{ slot }}_{{ difficulty.slug }}_{{ index }}"
+                             class="paint-input"
+                             list="pg-paint-list"
+                             autocomplete="off"
+                             data-paint-input
+                             data-paint-hidden="step_paint{{ slot }}_{{ difficulty.slug }}_{{ index }}"
+                             value="{{ link.paint.display_name if link else '' }}"
+                             placeholder="Tamiya XF-62 Olive Drab">
+                      <input type="hidden"
+                             name="step_paint{{ slot }}_{{ difficulty.slug }}_{{ index }}"
+                             data-paint-value
+                             value="{{ link.paint_id if link else '' }}">
+                    </div>
+                    <div class="field">
+                      <label for="step_area{{ slot }}_{{ difficulty.slug }}_{{ index }}">{{ t('guide.area') }}</label>
+                      <input id="step_area{{ slot }}_{{ difficulty.slug }}_{{ index }}" name="step_area{{ slot }}_{{ difficulty.slug }}_{{ index }}"
+                             maxlength="160" value="{{ link.area if link else '' }}" placeholder="Корпус и башня">
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </section>
+    {% endfor %}
+
+    <div class="form-actions">
+      <a class="muted" style="font-size:0.82rem" href="{{ url_for('admin_guides.index') }}">{{ t('common.back') }}</a>
+      <button class="button" type="submit">{{ t('common.save') }}</button>
+    </div>
+  </form>
+</div>
+<script type="application/json" id="paint-index">{{ paint_index|tojson }}</script>
+<script defer src="{{ url_for('static', filename='js/admin.js') }}"></script>
+{% endblock %}

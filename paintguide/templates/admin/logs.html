@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="shell admin-layout">
+  <header class="page-intro" style="padding-bottom:18px">
+    <h1>{{ t('admin.logs') }}</h1>
+  </header>
+
+  {% include 'partials/_admin_nav.html' %}
+
+  <form class="table-search" style="grid-template-columns:1fr auto" method="get" action="{{ url_for('admin_users.logs') }}">
+    <div class="field">
+      <label for="action">{{ t('common.actions') }}</label>
+      <select id="action" name="action">
+        <option value="">{{ t('common.all') }}</option>
+        {% for item in actions %}
+          <option value="{{ item }}" {{ 'selected' if action_filter == item else '' }}>{{ item }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div style="display:flex; align-items:flex-end">
+      <button class="button" type="submit">{{ t('common.apply') }}</button>
+    </div>
+  </form>
+
+  {% if logs %}
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Время</th>
+            <th>Действие</th>
+            <th>Объект</th>
+            <th>Пользователь</th>
+            <th>Детали</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for entry in logs %}
+            <tr>
+              <td class="mono muted" style="font-size:0.72rem">{{ entry.created_at.strftime('%d.%m.%Y %H:%M') }}</td>
+              <td><span class="log-action">{{ entry.action }}</span></td>
+              <td>{{ entry.entity_label or '—' }}</td>
+              <td class="muted">{{ entry.user_label }}</td>
+              <td class="muted">{{ entry.detail or '—' }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  {% else %}
+    <div class="empty-state">
+      <div class="empty-mark">○</div>
+      <h3>{{ t('admin.no_logs') }}</h3>
+    </div>
+  {% endif %}
+</div>
+{% endblock %}

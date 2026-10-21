@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="shell">
+  <header class="page-intro">
+    <h1>{{ t('inventory.title') }}</h1>
+    <p>{{ t('inventory.lede') }}</p>
+  </header>
+
+  <div class="profile-stats">
+    <div class="profile-stat">
+      <strong>{{ counts.owned }}</strong>
+      <span>{{ t('inventory.count_owned') }}</span>
+    </div>
+    <div class="profile-stat">
+      <strong>{{ counts.wanted }}</strong>
+      <span>{{ t('inventory.count_wanted') }}</span>
+    </div>
+  </div>
+
+  <div class="dashboard-grid">
+    <section class="panel">
+      <h2>{{ t('inventory.add_title') }}</h2>
+      <form method="post" action="{{ url_for('inventory.inventory') }}" class="wishlist-form">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <div class="field">
+          <label for="paint_id">{{ t('paints.col.name') }}</label>
+          <select id="paint_id" name="paint_id" required>
+            <option value="">— выберите краску —</option>
+            {% for paint in all_paints %}
+              <option value="{{ paint.id }}">{{ paint.brand.name }} · {{ paint.name }} ({{ paint.code }})</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="status">Статус</label>
+            <select id="status" name="status">
+              <option value="owned">{{ t('inventory.owned') }}</option>
+              <option value="wanted">{{ t('inventory.wanted') }}</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="quantity">{{ t('inventory.quantity') }}</label>
+            <input id="quantity" name="quantity" type="number" min="1" max="99" value="1">
+          </div>
+        </div>
+        <div class="field full">
+          <label for="notes">{{ t('inventory.notes') }}</label>
+          <textarea id="notes" name="notes" rows="2" maxlength="300"></textarea>
+        </div>
+        <div class="full">
+          <button class="button block" type="submit">Добавить краску</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>{{ t('inventory.owned') }} · {{ owned|length }}</h2>
+      {% if owned %}
+        <div class="entry-list">
+          {% for stock in owned %}
+            <article class="entry">
+              <span class="swatch-dot" style="--swatch: {{ stock.paint.color_hex }}"></span>
+              <div>
+                <h3>{{ stock.paint.name }}</h3>
+                <p>{{ stock.paint.brand.name }} · {{ stock.paint.code }} · ×{{ stock.quantity }}</p>
+              </div>
+              <div class="entry-actions">
+                <form method="post" action="{{ url_for('inventory.toggle_status', stock_id=stock.id) }}">
+                  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                  <button class="button small secondary" type="submit">{{ t('inventory.mark_wanted') }}</button>
+                </form>
+                <form method="post" action="{{ url_for('inventory.delete_stock', stock_id=stock.id) }}" data-confirm="Убрать краску из инвентаря?">
+                  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                  <button class="button small danger" type="submit">×</button>
+                </form>
+              </div>
+            </article>
+          {% endfor %}
+        </div>
+      {% else %}
+        <div class="empty-state">
+          <div class="empty-mark">○</div>
+          <h3>{{ t('inventory.empty') }}</h3>
+          <p>{{ t('inventory.empty_hint') }}</p>
+        </div>
+      {% endif %}
+
+      {% if wanted %}
+        <h2 style="margin-top:26px">{{ t('inventory.wanted') }} · {{ wanted|length }}</h2>
+        <div class="entry-list">
+          {% for stock in wanted %}
+            <article class="entry">
+              <span class="swatch-dot" style="--swatch: {{ stock.paint.color_hex }}"></span>
+              <div>
+                <h3>{{ stock.paint.name }}</h3>
+                <p>{{ stock.paint.brand.name }} · {{ stock.paint.code }}</p>
+              </div>
+              <div class="entry-actions">
+                <form method="post" action="{{ url_for('inventory.toggle_status', stock_id=stock.id) }}">
+                  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                  <button class="button small secondary" type="submit">{{ t('inventory.mark_owned') }}</button>
+                </form>
+                <form method="post" action="{{ url_for('inventory.delete_stock', stock_id=stock.id) }}" data-confirm="Убрать краску из инвентаря?">
+                  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                  <button class="button small danger" type="submit">×</button>
+                </form>
+              </div>
+            </article>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </section>
+  </div>
+</div>
+{% endblock %}

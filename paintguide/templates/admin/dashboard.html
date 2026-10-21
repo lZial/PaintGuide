@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="shell admin-layout">
+  <header class="page-intro" style="padding-bottom:18px">
+    <h1>{{ t('admin.title') }}</h1>
+    <p>{{ t('admin.lede') }}</p>
+  </header>
+
+  {% include 'partials/_admin_nav.html' %}
+
+  <div class="stat-cards">
+    <div class="stat-card"><strong>{{ counts.published }}</strong><span>{{ t('admin.card.guides') }}</span></div>
+    <div class="stat-card"><strong>{{ counts.paints }}</strong><span>{{ t('admin.card.paints') }}</span></div>
+    <div class="stat-card"><strong>{{ counts.users }}</strong><span>{{ t('admin.card.users') }}</span></div>
+    <div class="stat-card"><strong>{{ total_views }}</strong><span>{{ t('admin.card.views') }}</span></div>
+  </div>
+
+  <div class="dashboard-grid">
+    <section class="panel">
+      <div class="eyebrow">{{ t('admin.visits') }}</div>
+      <h2>{{ total_views }} {{ t('guide.views') }}</h2>
+      {% set max_views = visits | map(attribute=1) | max if visits else 1 %}
+      <div class="chart">
+        {% for day, count in visits %}
+          <span class="bar" style="height: {{ (count / max_views * 100) if max_views else 4 }}%" title="{{ day }}: {{ count }}"></span>
+        {% endfor %}
+      </div>
+      <div class="chart-labels">
+        <span>{{ visits[0][0] if visits else '' }}</span>
+        <span>{{ visits[-1][0] if visits else '' }}</span>
+      </div>
+
+      {% if top_paths %}
+        <div class="eyebrow" style="margin-top:26px">Разделы</div>
+        <div class="entry-list" style="margin-top:12px">
+          {% for path, count in top_paths %}
+            <div class="entry">
+              <div><h3 class="mono" style="margin:0;font-size:0.84rem">{{ path }}</h3></div>
+              <span class="mono muted">{{ count }}</span>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </section>
+
+    <section class="panel">
+      <h2>{{ t('admin.recent_logs') }}</h2>
+      {% if recent %}
+        <div class="entry-list">
+          {% for entry in recent %}
+            <div class="entry">
+              <div>
+                <h3 style="margin:0 0 5px">{{ entry.entity_label or entry.action }}</h3>
+                <p>
+                  <span class="log-action">{{ entry.action }}</span>
+                  · {{ entry.user_label }}
+                  {% if entry.detail %} · {{ entry.detail }}{% endif %}
+                </p>
+              </div>
+              <span class="mono faint" style="font-size:0.66rem">{{ entry.created_at.strftime('%d.%m %H:%M') }}</span>
+            </div>
+          {% endfor %}
+        </div>
+      {% else %}
+        <p class="muted">{{ t('admin.no_logs') }}</p>
+      {% endif %}
+    </section>
+  </div>
+
+  <section class="panel">
+    <div class="eyebrow">{{ t('admin.guides') }}</div>
+    <h2>{{ t('admin.new_guide') }}</h2>
+    <a class="button" href="{{ url_for('admin_guides.create') }}">+ {{ t('admin.new_guide') }}</a>
+    <div class="entry-list" style="margin-top:18px">
+      {% for guide in latest_guides %}
+        <div class="entry">
+          <div>
+            <h3 style="margin:0 0 5px">
+              <a href="{{ url_for('admin_guides.edit', guide_id=guide.id) }}">{{ guide.title }}</a>
+            </h3>
+            <p>
+              <span class="badge {{ 'gold' if guide.published else 'plain' }}">
+                {{ t('admin.published') if guide.published else t('admin.draft') }}
+              </span>
+            </p>
+          </div>
+          <div class="entry-actions">
+            <a class="button small secondary" href="{{ url_for('admin_guides.edit', guide_id=guide.id) }}">{{ t('common.edit') }}</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+</div>
+{% endblock %}

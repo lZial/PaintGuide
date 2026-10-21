@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="shell admin-layout">
+  <header class="page-intro" style="padding-bottom:18px">
+    <h1>{{ t('admin.edit_paint') if paint else t('common.create') }}</h1>
+  </header>
+
+  {% include 'partials/_admin_nav.html' %}
+
+  <form method="post" action="{{ url_for('admin_paints.edit', paint_id=paint.id) if paint else url_for('admin_paints.create') }}">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <section class="panel">
+      <h2>{{ t('admin.edit_paint') if paint else t('common.create') }}</h2>
+      <div class="form-grid">
+        <div class="field">
+          <label for="brand_id">{{ t('paints.filter.brand') }} *</label>
+          <select id="brand_id" name="brand_id" required>
+            <option value="">— выберите —</option>
+            {% for item in brands %}
+              <option value="{{ item.id }}" {{ 'selected' if paint and paint.brand_id == item.id else '' }}>{{ item.name }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="field">
+          <label for="line_id">{{ t('paints.filter.line') }} *</label>
+          <select id="line_id" name="line_id" required>
+            <option value="">— выберите —</option>
+            {% for item in lines %}
+              <option value="{{ item.id }}" {{ 'selected' if paint and paint.line_id == item.id else '' }}>{{ item.brand.name }} · {{ item.name }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="field">
+          <label for="code">{{ t('paints.col.code') }} *</label>
+          <input id="code" name="code" required maxlength="40" value="{{ paint.code if paint else '' }}" placeholder="XF-62">
+        </div>
+        <div class="field">
+          <label for="name">{{ t('paints.col.name') }} *</label>
+          <input id="name" name="name" required maxlength="180" value="{{ paint.name if paint else '' }}" placeholder="Olive Drab">
+        </div>
+        <div class="field">
+          <label for="color_hex">{{ t('paints.col.color') }}</label>
+          <input id="color_hex" name="color_hex" type="color" value="{{ paint.color_hex if paint else '#77786d' }}">
+        </div>
+        <div class="field">
+          <label for="paint_type">{{ t('paints.col.type') }}</label>
+          <select id="paint_type" name="paint_type">
+            {% for value, label in [('acrylic', 'Акрил'), ('enamel', 'Эмаль'), ('pigment', 'Пигмент'), ('metallic', 'Металлик')] %}
+              <option value="{{ value }}" {{ 'selected' if paint and paint.paint_type == value else '' }}>{{ label }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="field span-2">
+          <label for="description">Описание</label>
+          <textarea id="description" name="description" rows="3">{{ paint.description if paint else '' }}</textarea>
+        </div>
+        <div class="field span-2">
+          <label for="equivalents">{{ t('paints.equivalents') }} (ID через запятую)</label>
+          <input id="equivalents" name="equivalents" value="{{ equivalents|join(', ') if equivalents else '' }}" placeholder="12, 45, 78">
+          <span class="helper">Идентификаторы красок из справочника — через запятую.</span>
+        </div>
+      </div>
+      <div class="form-actions">
+        <a class="muted" style="font-size:0.82rem" href="{{ url_for('admin_paints.index') }}">{{ t('common.back') }}</a>
+        <button class="button" type="submit">{{ t('common.save') }}</button>
+      </div>
+    </section>
+  </form>
+</div>
+{% endblock %}

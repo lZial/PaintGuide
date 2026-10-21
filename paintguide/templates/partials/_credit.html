@@ -1,0 +1,16 @@
+{% macro credit(guide, class_name='credit') %}
+  {% if guide.cover_credit or guide.cover_license %}
+    <p class="{{ class_name }}">
+      {% if guide.cover_kind == 'model' %}
+        <span class="badge gold">{{ t('credits.model') }}{% if guide.cover_scale %} {{ guide.cover_scale }}{% endif %}</span>
+      {% elif guide.cover_kind == 'vehicle' %}
+        <span class="badge plain">{{ t('credits.vehicle_photo') }}</span>
+      {% endif %}
+      {% if guide.cover_credit %}Фото: {{ guide.cover_credit }}{% endif %}
+      {% if guide.cover_license %}· {{ guide.cover_license }}{% endif %}
+      {% if guide.cover_source %}
+        · <a href="{{ guide.cover_source }}" target="_blank" rel="noopener nofollow">{{ t('credits.source') }}</a>
+      {% endif %}
+    </p>
+  {% endif %}
+{% endmacro %}

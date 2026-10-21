@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="shell auth-wrap">
+  <div class="auth-card">
+    <h1>{{ t('account.register.title') }}</h1>
+    <p>{{ t('account.register.lede') }}</p>
+
+    {% if error %}<div class="error-box" role="alert">{{ error }}</div>{% endif %}
+
+    <form method="post" action="{{ url_for('account.register') }}" class="auth-form">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      <div class="field">
+        <label for="nickname">{{ t('account.nickname') }}</label>
+        <input id="nickname" name="nickname" minlength="2" maxlength="40" required value="{{ form.nickname }}">
+      </div>
+      <div class="field">
+        <label for="email">{{ t('account.email') }}</label>
+        <input id="email" name="email" type="email" required autocomplete="email" value="{{ form.email }}">
+      </div>
+      <div class="field">
+        <label for="password">{{ t('account.password') }}</label>
+        <input id="password" name="password" type="password" minlength="8" required autocomplete="new-password">
+        <span class="helper">{{ t('account.password_hint') }}</span>
+      </div>
+      <div class="field">
+        <label for="password_confirm">{{ t('account.password_confirm') }}</label>
+        <input id="password_confirm" name="password_confirm" type="password" minlength="8" required autocomplete="new-password">
+      </div>
+      <label class="check">
+        <input type="checkbox" name="terms" required>
+        <span>{{ t('account.terms') }} — <a href="{{ url_for('main.terms') }}" style="color:var(--accent)">{{ t('terms.title') }}</a></span>
+      </label>
+      <button class="button block" type="submit">{{ t('account.submit_register') }}</button>
+    </form>
+
+    <p class="auth-switch">
+      {{ t('account.have_account') }} <a href="{{ url_for('account.login') }}">{{ t('nav.login') }}</a>
+    </p>
+  </div>
+</div>
+{% endblock %}

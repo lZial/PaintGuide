@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="shell auth-wrap">
+  <div class="auth-card">
+    <h1>{{ t('account.check_email.title') }}</h1>
+    <p>{{ t('account.check_email.lede') }}</p>
+
+    {% if email %}
+      <div class="notice-box">
+        {{ t('account.check_email.sent_to') }} <strong>{{ email }}</strong>
+      </div>
+    {% endif %}
+
+    <p class="muted">{{ t('account.check_email.hint') }}</p>
+
+    <form method="post" action="{{ url_for('account.resend_verification') }}" class="auth-form">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+      <div class="field">
+        <label for="email">{{ t('account.email') }}</label>
+        <input id="email" name="email" type="email" required autocomplete="email" value="{{ email }}">
+      </div>
+      <button class="button block" type="submit">{{ t('account.check_email.resend') }}</button>
+    </form>
+
+    <p class="auth-switch">
+      <a href="{{ url_for('account.login') }}">{{ t('nav.login') }}</a>
+    </p>
+  </div>
+</div>
+{% endblock %}

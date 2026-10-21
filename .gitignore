@@ -1,0 +1,26 @@
+# Окружение
+.venv/
+venv/
+.env
+
+# Локальная база и письма: на хостинге их всё равно нет
+instance/
+*.db
+*.sqlite3
+
+# Сборка для Vercel: её делает build.py при каждом деплое
+public/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# Инструменты
+.DS_Store
+Thumbs.db
+*.log
+.tunnel/ 
+tunnel-url.txt 

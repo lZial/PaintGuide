@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="shell admin-layout">
+  <header class="page-intro" style="padding-bottom:18px">
+    <h1>Справочники</h1>
+    <p>Справочники, на которые ссылаются каталог, краски и уровни сложности.</p>
+  </header>
+
+  {% include 'partials/_admin_nav.html' %}
+
+  {% macro reference_table(title, rows, columns, resource, usage, usage_key) %}
+    <section class="panel">
+      <h2>{{ title }} · {{ rows|length }}</h2>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              {% for label in columns %}<th>{{ label }}</th>{% endfor %}
+              <th>{{ t('common.actions') }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for row in rows %}
+              <tr>
+                {% for field in columns %}
+                  <td class="muted">{{ row[field] if row[field] is not none else '—' }}</td>
+                {% endfor %}
+                <td>
+                  <div style="display:flex; gap:6px; align-items:center">
+                    <span class="badge plain">{{ usage.get(row.id, 0) }}</span>
+                    <form method="post" action="{{ url_for('admin_reference.delete', resource=resource, item_id=row.id) }}" data-confirm="{{ t('admin.confirm_delete') }}">
+                      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                      <button class="button small danger" type="submit">×</button>
+                    </form>
+                  </div>
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  {% endmacro %}
+
+  {{ reference_table('Страны', countries, ['slug', 'name_ru', 'name_en', 'region', 'flag'], 'countries', usage.countries) }}
+  {{ reference_table('Типы техники', vehicle_types, ['slug', 'name_ru', 'name_en'], 'vehicle-types', usage.vehicle_types) }}
+  {{ reference_table('Уровни сложности', difficulties, ['slug', 'name_ru', 'name_en', 'rank', 'badge'], 'difficulties', usage.difficulties) }}
+  {{ reference_table('Бренды', brands, ['slug', 'name', 'origin'], 'brands', usage.brands) }}
+  {{ reference_table('Линейки красок', lines, ['slug', 'name', 'paint_type'], 'lines', usage.lines) }}
+
+  <section class="panel">
+    <div class="eyebrow">Добавить</div>
+    <h2>Новая запись в справочник</h2>
+    <div class="form-grid">
+      <form method="post" action="{{ url_for('admin_reference.save_country') }}" class="panel span-2" style="display:grid; gap:12px">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <strong>Страна</strong>
+        <div class="form-grid">
+          <div class="field"><label>Код</label><input name="slug" required placeholder="ussr"></div>
+          <div class="field"><label>Название RU</label><input name="name_ru" required placeholder="СССР"></div>
+          <div class="field"><label>Название EN</label><input name="name_en" placeholder="USSR"></div>
+          <div class="field"><label>Регион</label><input name="region" placeholder="Европа"></div>
+          <div class="field"><label>Флаг</label><input name="flag" placeholder="🇷🇺"></div>
+          <div class="field"><label>Порядок</label><input name="sort_order" type="number" value="100"></div>
+        </div>
+        <button class="button" type="submit">Добавить страну</button>
+      </form>
+
+      <form method="post" action="{{ url_for('admin_reference.save_vehicle_type') }}" class="panel span-2" style="display:grid; gap:12px">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <strong>Тип техники</strong>
+        <div class="form-grid">
+          <div class="field"><label>Код</label><input name="slug" required placeholder="tank"></div>
+          <div class="field"><label>Название RU</label><input name="name_ru" required placeholder="Танк"></div>
+          <div class="field"><label>Название EN</label><input name="name_en" placeholder="Tank"></div>
+          <div class="field"><label>Порядок</label><input name="sort_order" type="number" value="100"></div>
+        </div>
+        <button class="button" type="submit">Добавить тип</button>
+      </form>
+
+      <form method="post" action="{{ url_for('admin_reference.save_brand') }}" class="panel span-2" style="display:grid; gap:12px">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <strong>Бренд</strong>
+        <div class="form-grid">
+          <div class="field"><label>Код</label><input name="slug" required placeholder="tamiya"></div>
+          <div class="field"><label>Название</label><input name="name" required placeholder="Tamiya"></div>
+          <div class="field"><label>Страна</label><input name="origin" placeholder="Япония"></div>
+          <div class="field"><label>Порядок</label><input name="sort_order" type="number" value="100"></div>
+        </div>
+        <button class="button" type="submit">Добавить бренд</button>
+      </form>
+    </div>
+  </section>
+</div>
+{% endblock %}
