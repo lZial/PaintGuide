@@ -8,7 +8,7 @@
 
 from __future__ import annotations
 
-from sqlalchemy import select
+from sqlalchemy import func, insert, select, text
 
 from ..extensions import db
 from ..models import (
@@ -59,6 +59,92 @@ def steps_of(variant: dict) -> list[dict]:
     return _restructure(variant)
 
 
+def _next_id(model) -> int:
+    """Первый свободный id в таблице."""
+    return (db.session.scalar(select(func.max(model.id))) or 0) + 1
+
+
+def _default_value(column):
+    """Значение по умолчанию для столбца.
+
+    SQLAlchemy оборачивает вызываемое значение так, что оно ждёт
+    контекст выполнения, поэтому исходную функцию достаём из обёртки.
+    """
+    default = column.default
+    if default is None:
+        return None
+    value = default.arg
+    if not callable(value):
+        return value
+    original = getattr(value, "__wrapped__", None)
+    if original is not None:
+        return original()
+    try:
+        return value()
+    except TypeError:
+        return value(None)
+
+
+def _insert_rows(model, rows: list[dict]) -> int:
+    """Вставить строки одной пачкой.
+
+    Обычная вставка через ORM отправляет по одному запросу на строку.
+    К удалённой базе (Neon) это тысячи сетевых запросов, поэтому
+    собираем строки в список и вставляем за один вызов.
+
+    Значения по умолчанию берём у самой модели, чтобы не забыть ни
+    одного столбца: у колонок значения по умолчанию заданы на стороне
+    Python, и обычная вставка их не подставит.
+    """
+    if not rows:
+        return 0
+    columns = list(model.__table__.columns)
+    prepared = []
+    for row in rows:
+        item = {}
+        for column in columns:
+            name = column.name
+            if name in row:
+                item[name] = row[name]
+                continue
+            if column.default is not None:
+                item[name] = _default_value(column)
+            elif column.nullable:
+                item[name] = None
+            else:
+                raise ValueError(f"Не задан столбец {model.__name__}.{name}")
+        prepared.append(item)
+    db.session.execute(insert(model), prepared)
+    return len(prepared)
+
+
+def _sync_sequences() -> None:
+    """Подогнать счётчики id под загруженные данные.
+
+    Строки вставляются с явными id — так вставка идёт одной пачкой, —
+    поэтому счётчик в Postgres об этом не знает и может выдать занятый
+    id при следующей вставке.
+    """
+    if db.engine.dialect.name != "postgresql":
+        return
+    for table in (
+        "paints",
+        "paint_equivalents",
+        "guides",
+        "guide_variants",
+        "guide_steps",
+        "step_paints",
+    ):
+        # Имя таблицы берётся из списка выше, а не извне.
+        db.session.execute(
+            text(
+                "SELECT setval(pg_get_serial_sequence('" + table + "', 'id'), "
+                "COALESCE((SELECT MAX(id) FROM " + table + "), 1)) "
+                "WHERE pg_get_serial_sequence('" + table + "', 'id') IS NOT NULL"
+            )
+        )
+
+
 def load_seed_data(reset: bool = False, reset_users: bool = False) -> dict:
     """Загрузить справочники, краски и руководства в базу.
 
@@ -73,6 +159,8 @@ def load_seed_data(reset: bool = False, reset_users: bool = False) -> dict:
     _seed_paints()
     db.session.commit()
     _seed_guides()
+    db.session.commit()
+    _sync_sequences()
     db.session.commit()
     _seed_covers()
     _seed_users()
@@ -199,62 +287,97 @@ def _seed_paints() -> None:
     from .catalog import build_catalog
 
     catalog = build_catalog()
+    # Справочники и уже загруженные краски берём один раз: к удалённой
+    # базе каждый запрос — это сетевой запрос, а на каждую краску их
+    # уходило по три.
+    brands = {brand.slug: brand for brand in db.session.scalars(select(Brand))}
+    lines = {
+        (line.brand_id, line.slug): line
+        for line in db.session.scalars(select(PaintLine))
+    }
+    existing_paints = {
+        (paint.brand_id, paint.code)
+        for paint in db.session.scalars(select(Paint))
+    }
+
+    next_id = _next_id(Paint)
+    rows = []
     for item in catalog:
-        brand = db.session.scalar(select(Brand).where(Brand.slug == item["brand"]))
+        brand = brands.get(item["brand"])
         if brand is None:
             continue
-        line = db.session.scalar(
-            select(PaintLine).where(
-                PaintLine.slug == item["line"], PaintLine.brand_id == brand.id
-            )
-        )
+        line = lines.get((brand.id, item["line"]))
         if line is None:
             continue
-        existing = db.session.scalar(
-            select(Paint).where(
-                Paint.brand_id == brand.id, Paint.code == item["code"]
-            )
-        )
-        if existing is not None:
+        if (brand.id, item["code"]) in existing_paints:
             continue
-        db.session.add(
-            Paint(
-                brand_id=brand.id,
-                line_id=line.id,
-                code=item["code"],
-                name=item["name"],
-                color_hex=item.get("hex") or "#77786d",
-                tone=_tone(item.get("hex") or "#77786d"),
-                paint_type=item.get("type") or "acrylic",
-                description=item.get("description") or "",
-            )
+        existing_paints.add((brand.id, item["code"]))
+        rows.append(
+            {
+                "id": next_id + len(rows),
+                "brand_id": brand.id,
+                "line_id": line.id,
+                "code": item["code"],
+                "name": item["name"],
+                "color_hex": item.get("hex") or "#77786d",
+                "tone": _tone(item.get("hex") or "#77786d"),
+                "paint_type": item.get("type") or "acrylic",
+                "description": item.get("description") or "",
+            }
         )
-    db.session.flush()
+    _insert_rows(Paint, rows)
+    # Индекс строится после вставки, чтобы в нём были и новые краски.
+    _paint_index(rebuild=True)
 
+    existing_links = {
+        (link.paint_id, link.other_paint_id)
+        for link in db.session.scalars(select(PaintEquivalent))
+    }
+    next_link_id = _next_id(PaintEquivalent)
+    link_rows = []
     for code_a, name_a, code_b, name_b in EQUIVALENTS:
         first = _find_paint(code_a, name_a)
         second = _find_paint(code_b, name_b)
         if first is None or second is None or first.id == second.id:
             continue
-        link = db.session.scalar(
-            select(PaintEquivalent).where(
-                PaintEquivalent.paint_id == first.id,
-                PaintEquivalent.other_paint_id == second.id,
-            )
+        if (first.id, second.id) in existing_links:
+            continue
+        existing_links.add((first.id, second.id))
+        link_rows.append(
+            {
+                "id": next_link_id + len(link_rows),
+                "paint_id": first.id,
+                "other_paint_id": second.id,
+            }
         )
-        if link is None:
-            db.session.add(PaintEquivalent(paint_id=first.id, other_paint_id=second.id))
+    _insert_rows(PaintEquivalent, link_rows)
 
 def _paint_map() -> dict:
     """Таблица соответствий «ручное название → реальный код производителя»."""
     import json
     from pathlib import Path
 
-    path = Path(__file__).resolve().parent / "paint_map.json"
-    if not path.exists():
-        return {}
-    data = json.loads(path.read_text(encoding="utf-8"))
-    return data.get("paints", {})
+    if getattr(_paint_map, "store", None) is None:
+        path = Path(__file__).resolve().parent / "paint_map.json"
+        data = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
+        _paint_map.store = data.get("paints", {})
+    return _paint_map.store
+
+
+def _paint_index(rebuild: bool = False) -> tuple[dict, dict]:
+    """Индекс всех красок в памяти: «код+название» и «код» → краска.
+
+    Один запрос вместо тысячи. К удалённой базе каждый запрос — это
+    сетевой запрос, а ссылок на краски в гайдах больше десяти тысяч.
+    """
+    if rebuild or getattr(_paint_index, "store", None) is None:
+        by_code_name: dict = {}
+        by_code: dict = {}
+        for paint in db.session.scalars(select(Paint)):
+            by_code_name.setdefault((paint.code, paint.name), paint)
+            by_code.setdefault(paint.code, paint)
+        _paint_index.store = (by_code_name, by_code)
+    return _paint_index.store
 
 
 def _find_paint(code: str, name: str = "") -> "Paint | None":
@@ -265,94 +388,130 @@ def _find_paint(code: str, name: str = "") -> "Paint | None":
     """
     if not code:
         return None
+    by_code_name, by_code = _paint_index()
     mapped = _paint_map().get(f"{code}|{name}")
     if mapped:
         code = mapped["code"]
         name = mapped["name"]
     if name:
-        exact = db.session.scalar(
-            select(Paint).where(Paint.code == code, Paint.name == name)
-        )
-        if exact is not None:
-            return exact
-    return db.session.scalar(select(Paint).where(Paint.code == code).limit(1))
+        found = by_code_name.get((code, name))
+        if found is not None:
+            return found
+    return by_code.get(code)
 
 
 def _seed_guides() -> None:
     """Создать руководства с уровнями сложности, шагами и красками."""
+    # Справочники — один раз: к удалённой базе каждый запрос обходится
+    # в сетевой запрос, а гайдов 297.
+    countries = {item.slug: item for item in db.session.scalars(select(Country))}
+    vehicle_types = {
+        item.slug: item for item in db.session.scalars(select(VehicleType))
+    }
+    difficulties = {
+        item.slug: item for item in db.session.scalars(select(Difficulty))
+    }
+    existing_guides = set(db.session.scalars(select(Guide.slug)))
+    # После коммита объекты в сессии становятся «протубшими», поэтому
+    # индекс красок строим заново.
+    _paint_index(rebuild=True)
+
+    # Строки вставляются пачками, поэтому id задаём сами: иначе ORM
+    # отправлял бы по одному запросу на каждый шаг.
+    guide_id = _next_id(Guide)
+    variant_id = _next_id(GuideVariant)
+    step_id = _next_id(GuideStep)
+    link_id = _next_id(StepPaint)
+
+    guide_rows: list[dict] = []
+    variant_rows: list[dict] = []
+    step_rows: list[dict] = []
+    link_rows: list[dict] = []
+
     for item in ALL_GUIDES:
-        if db.session.scalar(select(Guide).where(Guide.slug == item["slug"])) is not None:
+        if item["slug"] in existing_guides:
             continue
-        country = db.session.scalar(select(Country).where(Country.slug == item["country"]))
-        vehicle_type = db.session.scalar(
-            select(VehicleType).where(VehicleType.slug == item["vehicle_type"])
-        )
+        country = countries.get(item["country"])
+        vehicle_type = vehicle_types.get(item["vehicle_type"])
         if country is None or vehicle_type is None:
             continue
 
-        guide = Guide(
-            slug=item["slug"],
-            title=item["title"],
-            subtitle=item.get("subtitle", ""),
-            country_id=country.id,
-            vehicle_type_id=vehicle_type.id,
-            year_from=item.get("year_from"),
-            year_to=item.get("year_to"),
-            production=item.get("production", ""),
-            crew=item.get("crew", ""),
-            description=item.get("description", ""),
-            cover_url=item.get("cover_url", ""),
-            published=item.get("published", True),
-            views_count=item.get("views", 0),
+        this_guide_id = guide_id + len(guide_rows)
+        guide_rows.append(
+            {
+                "id": this_guide_id,
+                "slug": item["slug"],
+                "title": item["title"],
+                "subtitle": item.get("subtitle", ""),
+                "country_id": country.id,
+                "vehicle_type_id": vehicle_type.id,
+                "year_from": item.get("year_from"),
+                "year_to": item.get("year_to"),
+                "production": item.get("production", ""),
+                "crew": item.get("crew", ""),
+                "description": item.get("description", ""),
+                "cover_url": item.get("cover_url", ""),
+                "published": item.get("published", True),
+                "views_count": item.get("views", 0),
+            }
         )
-        db.session.add(guide)
-        db.session.flush()
 
         for position, variant_item in enumerate(enrich_variants(item)):
-            difficulty = db.session.scalar(
-                select(Difficulty).where(Difficulty.slug == variant_item["difficulty"])
-            )
+            difficulty = difficulties.get(variant_item["difficulty"])
             if difficulty is None:
                 continue
-            variant = GuideVariant(
-                guide_id=guide.id,
-                difficulty_id=difficulty.id,
-                title=variant_item.get("title", ""),
-                summary=variant_item.get("summary", ""),
-                time_hours=variant_item.get("hours", 0),
-                is_default=variant_item.get("default", position == 0),
-                position=position,
+            this_variant_id = variant_id + len(variant_rows)
+            variant_rows.append(
+                {
+                    "id": this_variant_id,
+                    "guide_id": this_guide_id,
+                    "difficulty_id": difficulty.id,
+                    "title": variant_item.get("title", ""),
+                    "summary": variant_item.get("summary", ""),
+                    "time_hours": variant_item.get("hours", 0),
+                    "is_default": variant_item.get("default", position == 0),
+                    "position": position,
+                }
             )
-            db.session.add(variant)
-            db.session.flush()
 
             for step_position, step_item in enumerate(steps_of(variant_item)):
-                step = GuideStep(
-                    variant_id=variant.id,
-                    position=step_position + 1,
-                    title=step_item.get("title", ""),
-                    instruction=step_item.get("instruction", ""),
-                    tip=step_item.get("tip", ""),
-                    note=step_item.get("note", ""),
-                    **_english_step(step_item),
+                this_step_id = step_id + len(step_rows)
+                english = _english_step(step_item)
+                step_rows.append(
+                    {
+                        "id": this_step_id,
+                        "variant_id": this_variant_id,
+                        "position": step_position + 1,
+                        "title": step_item.get("title", ""),
+                        "instruction": step_item.get("instruction", ""),
+                        "tip": step_item.get("tip", ""),
+                        "note": step_item.get("note", ""),
+                        "title_en": english["title_en"],
+                        "instruction_en": english["instruction_en"],
+                        "tip_en": english["tip_en"],
+                    }
                 )
-                db.session.add(step)
-                db.session.flush()
 
                 for paint_position, paint_item in enumerate(step_item.get("paints", [])):
                     code, name, area, note = _parse_paint_ref(paint_item)
                     paint = _find_paint(code, name)
                     if paint is None:
                         continue
-                    db.session.add(
-                        StepPaint(
-                            step_id=step.id,
-                            paint_id=paint.id,
-                            area=area,
-                            note=note,
-                            position=paint_position,
-                        )
+                    link_rows.append(
+                        {
+                            "id": link_id + len(link_rows),
+                            "step_id": this_step_id,
+                            "paint_id": paint.id,
+                            "area": area,
+                            "note": note,
+                            "position": paint_position,
+                        }
                     )
+
+    _insert_rows(Guide, guide_rows)
+    _insert_rows(GuideVariant, variant_rows)
+    _insert_rows(GuideStep, step_rows)
+    _insert_rows(StepPaint, link_rows)
 
 
 def _english_step(step_item: dict) -> dict:
@@ -395,26 +554,42 @@ def _seed_covers() -> None:
     import json
     from pathlib import Path
 
+    from sqlalchemy import update
+
     path = Path(__file__).resolve().parent / "covers.json"
     if not path.exists():
         return
     data = json.loads(path.read_text(encoding="utf-8"))
-    applied = 0
+    # Все гайды одним запросом и одной пачкой обновлений: к удалённой
+    # базе каждый запрос — это сетевой запрос.
+    guides = {guide.slug: guide for guide in db.session.scalars(select(Guide))}
+    rows = []
     for slug, entry in data.items():
-        guide = db.session.scalar(select(Guide).where(Guide.slug == slug))
+        guide = guides.get(slug)
         if guide is None:
             continue
         file_path = entry.get("file", "")
         if not file_path:
             continue
-        guide.cover_url = "/" + file_path.replace("\\", "/")
-        guide.cover_credit = (entry.get("author") or "")[:200]
-        guide.cover_license = (entry.get("license") or "")[:60]
-        guide.cover_source = (entry.get("source") or "")[:500]
-        guide.cover_kind = (entry.get("kind") or "")[:20]
-        guide.cover_scale = (entry.get("scale") or "")[:20]
-        applied += 1
+        rows.append(
+            {
+                "id": guide.id,
+                "cover_url": "/" + file_path.replace("\\", "/"),
+                "cover_credit": (entry.get("author") or "")[:200],
+                "cover_license": (entry.get("license") or "")[:60],
+                "cover_source": (entry.get("source") or "")[:500],
+                "cover_kind": (entry.get("kind") or "")[:20],
+                "cover_scale": (entry.get("scale") or "")[:20],
+            }
+        )
+    if rows:
+        db.session.execute(
+            update(Guide),
+            rows,
+            execution_options={"synchronize_session": False},
+        )
     db.session.commit()
+    print(f"Обложки проставлены: {len(rows)}.")
 
 
 def _seed_users() -> None:

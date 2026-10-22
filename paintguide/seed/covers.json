@@ -2278,5 +2278,25 @@
     "source": "https://commons.wikimedia.org/wiki/File:Sexton,_Overlord_Museum.jpg",
     "kind": "vehicle",
     "scale": ""
+  },
+  "autoblinda": {
+    "file": "static/img/vehicles/autoblinda.jpg",
+    "title": "File:Autoblinda-AB-41-haugh-1.jpg",
+    "author": "",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:Autoblinda-AB-41-haugh-1.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "macchi-mc-202": {
+    "file": "static/img/vehicles/macchi-mc-202.jpg",
+    "title": "File:Macchi C.202 (A19600332000).jpg",
+    "author": "Smithsonian Institution",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Macchi_C.202_(A19600332000).jpg",
+    "kind": "vehicle",
+    "scale": ""
   }
 }

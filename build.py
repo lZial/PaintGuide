@@ -82,9 +82,13 @@ def main() -> int:
     try:
         fill_database()
     except Exception as error:  # noqa: BLE001
-        # Сборка не должна падать из-за данных: приложение поднимется и
-        # покажет, что базы нет, понятным сообщением.
-        print(f"Не удалось подготовить базу: {error}")
+        # Пустой сайт хуже, чем красная сборка: с ошибкой в логах
+        # видно, что именно сломалось, и деплой можно повторить.
+        print(f"Не удалось подготовить базу: {error}", file=sys.stderr)
+        import traceback
+
+        traceback.print_exc()
+        return 1
     return 0
 
 
