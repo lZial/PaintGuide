@@ -829,53 +829,6 @@ GUIDES_5 = [
         ],
     },
     {
-        "slug": "stug-38",
-        "title": "StuG 38",
-        "subtitle": "Немецкая штурмовая гаубица: панцирный серый и зимняя побелка",
-        "country": "germany",
-        "vehicle_type": "spg",
-        "year_from": 1939,
-        "year_to": 1942,
-        "production": "Alkett",
-        "crew": "3 человека",
-        "description": "Окраска StuG 38: ранняя машина на шасси Pz.Kpfw. III, панцирный серый и открытая рубка.",
-        "views": 78,
-        "variants": [
-            {
-                "difficulty": "medium",
-                "title": "Панцирный серый",
-                "summary": "Окраска поздних машин 1941–1942 годов.",
-                "hours": 10,
-                "steps": [
-                    {
-                        "title": "Грунтовка",
-                        "instruction": "Нанесите красно-оксидный грунт.",
-                        "tip": "Открытая рубка StuG 38 — грунт видно всегда.",
-                        "paints": [[REDOXIDE, "Все области"]],
-                    },
-                    {
-                        "title": "Панцирный серый",
-                        "instruction": "Нанесите серый orts в два слоя.",
-                        "tip": "Панцирный серый ложится плотно и не просвечивает.",
-                        "paints": [[PANZER_GREY, "Корпус и рубка"]],
-                    },
-                    {
-                        "title": "Зелёные пятна и снег",
-                        "instruction": "Нанесите зелёные участки и покройте снегом горизонт.",
-                        "tip": "Снег на рубке StuG 38 держался плохо — делайте его пятнами.",
-                        "paints": [[STUG38_GREEN, "Пятна"], [WHITE, "Снег на горизонте"]],
-                    },
-                    {
-                        "title": "Смывка и грязь",
-                        "instruction": "Подчеркните швы, добавьте грязь на гусницы.",
-                        "tip": "StuG 38 буксировали своим ходом — следы тяги видны на носу.",
-                        "paints": [[AK_OCHRE, "Швы"], [DARK_BROWN, "Гусницы"]],
-                    },
-                ],
-            }
-        ],
-    },
-    {
         "slug": "hetzer",
         "title": "Hetzer",
         "subtitle": "Немецкая САУ на шасси Pz.Kpfw. III: панцирный серый и зимний снег",
@@ -1662,54 +1615,6 @@ GUIDES_5 = [
                         "instruction": "Подчеркните швы, добавьте грязь и следы от орудия.",
                         "tip": "Машина получила попадание в первый же выход — следы на башне.",
                         "paints": [[AK_OCHRE, "Швы"], [BLACK, "Следы попаданий"], [DARK_BROWN, "Гусницы"]],
-                    },
-                ],
-            }
-        ],
-    },
-    {
-        "slug": "churchill-challenger",
-        "title": "Churchill Mk. VII Challenger",
-        "subtitle": "Британская САУ на базе Churchill: хаки-зелёный и круглый козырёк",
-        "country": "uk",
-        "vehicle_type": "spg",
-        "year_from": 1944,
-        "year_to": 1945,
-        "production": "Vauxhall, Harland",
-        "crew": "4 человека",
-        "description": "Окраска Churchill Challenger: открытая рубка, British khaki green и следы грязи.",
-        "views": 63,
-        "variants": [
-            {
-                "difficulty": "medium",
-                "title": "Khaki green",
-                "summary": "Британская окраска 1944–1945 годов.",
-                "hours": 10,
-                "default": True,
-                "steps": [
-                    {
-                        "title": "Грунтовка",
-                        "instruction": "Нанесите красно-оксидный грунт.",
-                        "tip": "Churchill имел S-образный корпус — грунт кладите в загибы.",
-                        "paints": [[REDOXIDE, "Все области"]],
-                    },
-                    {
-                        "title": "Khaki green",
-                        "instruction": "Нанесите British khaki green в два слоя.",
-                        "tip": "Британские Churchill красили в холодный хаки-зелёный.",
-                        "paints": [[CHALLENGER_GREEN, "Корпус и рубка"]],
-                    },
-                    {
-                        "title": "Высветление",
-                        "instruction": "Осветлите верхние плоскости и круглый козырёк.",
-                        "tip": "Круглый козырёк всегда выгорал сильнее плоскостей.",
-                        "paints": [[CHALLENGER_GREEN, "Панели"], [WHITE, "Добавляется в базу"]],
-                    },
-                    {
-                        "title": "Смывка и грязь",
-                        "instruction": "Подчеркните швы, добавьте грязь на гусницы.",
-                        "tip": "Challenger вышел с завода в последние недели войны — следов износа мало.",
-                        "paints": [[AK_OCHRE, "Швы"], [DARK_BROWN, "Гусницы"]],
                     },
                 ],
             }

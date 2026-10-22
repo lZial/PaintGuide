@@ -2318,5 +2318,405 @@
     "source": "https://commons.wikimedia.org/wiki/File:T14_cargo.jpg",
     "kind": "vehicle",
     "scale": ""
+  },
+  "is-4": {
+    "file": "static/img/vehicles/is-4.jpg",
+    "title": "File:IS-4 Tank.jpg",
+    "author": "User:VORON SPb",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:IS-4_Tank.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "bmp-2": {
+    "file": "static/img/vehicles/bmp-2.jpg",
+    "title": "File:Army2016demo-007.jpg",
+    "author": "Vitaly V. Kuzmin",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Army2016demo-007.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "2s6-tunguska": {
+    "file": "static/img/vehicles/2s6-tunguska.jpg",
+    "title": "File:2008 Moscow Victory Day Parade - 9K22 Tunguska.jpg",
+    "author": "Пользователь",
+    "license": "CC BY 3.0",
+    "license_url": "https://creativecommons.org/licenses/by/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:2008_Moscow_Victory_Day_Parade_-_9K22_Tunguska.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "mig-21": {
+    "file": "static/img/vehicles/mig-21.jpg",
+    "title": "File:Croatian MiG-21 (cropped).jpg",
+    "author": "Gojanovic123456789",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Croatian_MiG-21_(cropped).jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "mi-24": {
+    "file": "static/img/vehicles/mi-24.jpg",
+    "title": "File:Mi24CP (modified) b.jpg",
+    "author": "File:Mi24CP (modified).jpg : Cezary Piwowarski modified by FOX 52 derivative work: Georgfotoart",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Mi24CP_(modified)_b.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "tiger-ii": {
+    "file": "static/img/vehicles/tiger-ii.jpg",
+    "title": "File:Bundesarchiv Bild 101I-721-0398-21A, Frankreich, Panzer VI (Tiger II, Königstiger).jpg",
+    "author": "Wagner",
+    "license": "CC BY-SA 3.0 de",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-721-0398-21A,_Frankreich,_Panzer_VI_(Tiger_II,_K%C3%B6nigstiger).jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "fi-156-storch": {
+    "file": "static/img/vehicles/fi-156-storch.jpg",
+    "title": "File:Fieseler Storch 3 (cropped).jpg",
+    "author": "Tony Hisgett",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Fieseler_Storch_3_(cropped).jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "hs-129": {
+    "file": "static/img/vehicles/hs-129.jpg",
+    "title": "File:Henschel Hs 129B.jpg",
+    "author": "USAAF; original uploader to en.wikipedia was en:user:Maury Markowitz",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:Henschel_Hs_129B.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "do-17": {
+    "file": "static/img/vehicles/do-17.jpg",
+    "title": "File:Bundesarchiv Bild 101I-342-0603-25, Belgien-Frankreich, Flugzeuge Dornier Do 17.jpg",
+    "author": "Ketelhohn [Kettelhohn]",
+    "license": "CC BY-SA 3.0 de",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-342-0603-25,_Belgien-Frankreich,_Flugzeuge_Dornier_Do_17.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "he-111": {
+    "file": "static/img/vehicles/he-111.jpg",
+    "title": "File:Bundesarchiv Bild 101I-343-0694-21, Belgien-Frankreich, Flugzeug Heinkel He 111.jpg",
+    "author": "Schödl (e)",
+    "license": "CC BY-SA 3.0 de",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_101I-343-0694-21,_Belgien-Frankreich,_Flugzeug_Heinkel_He_111.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "m1-abrams": {
+    "file": "static/img/vehicles/m1-abrams.jpg",
+    "title": "File:M1A2 SEP v3.jpg",
+    "author": "Spc. Kali Ecton",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:M1A2_SEP_v3.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "t-90": {
+    "file": "static/img/vehicles/t-90.jpg",
+    "title": "File:Moscow 2012 Victory Day Parade Rehearsal, T-90 tank, Russia.jpg",
+    "author": "Vyacheslav Argenberg",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Moscow_2012_Victory_Day_Parade_Rehearsal,_T-90_tank,_Russia.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "su-27": {
+    "file": "static/img/vehicles/su-27.jpg",
+    "title": "File:Sukhoi Su-27.jpg",
+    "author": "Tibboh",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Sukhoi_Su-27.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "ka-50": {
+    "file": "static/img/vehicles/ka-50.jpg",
+    "title": "File:Kamov Ka-50 in Moscow.jpg",
+    "author": "Karen Abeyasekere, U.S. Air Force",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:Kamov_Ka-50_in_Moscow.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "ju-87": {
+    "file": "static/img/vehicles/ju-87.jpg",
+    "title": "File:Junkers JU-87 'Stuka' in-flight display side view.jpg",
+    "author": "Pseudopanax at English Wikipedia",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:Junkers_JU-87_%27Stuka%27_in-flight_display_side_view.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "me-410": {
+    "file": "static/img/vehicles/me-410.jpg",
+    "title": "File:Me 410 Hornisse with BK 5.jpg",
+    "author": "U.S. Army Air Forces photo 342-FH-3A26601-51506AC",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:Me_410_Hornisse_with_BK_5.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "m2-bradley": {
+    "file": "static/img/vehicles/m2-bradley.jpg",
+    "title": "File:US M2A1 Bradley deployed to Saudi Arabia during Operation Desert Shield.jpg",
+    "author": "SGT. Brian Cumper",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:US_M2A1_Bradley_deployed_to_Saudi_Arabia_during_Operation_Desert_Shield.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "m46-patton": {
+    "file": "static/img/vehicles/m46-patton.jpg",
+    "title": "File:Marines-tank-Korea-19530705.JPEG",
+    "author": "MSGT. J.W. HAYES",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:Marines-tank-Korea-19530705.JPEG",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "m109-paladin": {
+    "file": "static/img/vehicles/m109-paladin.jpg",
+    "title": "File:Kings of battle keep the fire; 1-9 FA fires its last rounds 140910-A-CW513-046.jpg",
+    "author": "Staff Sgt. Richard Wrigley",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:Kings_of_battle_keep_the_fire;_1-9_FA_fires_its_last_rounds_140910-A-CW513-046.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "f-86-sabre": {
+    "file": "static/img/vehicles/f-86-sabre.jpg",
+    "title": "File:F-86 Sabre hertiage flight.jpg",
+    "author": "U.S. Air Force photo by J.M. Eddins Jr.",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:F-86_Sabre_hertiage_flight.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "a-10-thunderbolt": {
+    "file": "static/img/vehicles/a-10-thunderbolt.jpg",
+    "title": "File:Fairchild Republic A-10 Thunderbolt II - 32156159151.jpg",
+    "author": "Master Sgt. William Greer, U.S. Air Force",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:Fairchild_Republic_A-10_Thunderbolt_II_-_32156159151.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "b-25-mitchell": {
+    "file": "static/img/vehicles/b-25-mitchell.jpg",
+    "title": "File:B25 Mitchell - Chino Airshow 2014 (14033501440).jpg",
+    "author": "Airwolfhound from Hertfordshire, UK",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:B25_Mitchell_-_Chino_Airshow_2014_(14033501440).jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "cromwell": {
+    "file": "static/img/vehicles/cromwell.jpg",
+    "title": "File:Cromwell Tank (13538144563).jpg",
+    "author": "FaceMePLS from The Hague, The Netherlands",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Cromwell_Tank_(13538144563).jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "hawker-tempest": {
+    "file": "static/img/vehicles/hawker-tempest.jpg",
+    "title": "File:Hawker Tempest V in flight Nov 1944.jpg",
+    "author": "RAF",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:Hawker_Tempest_V_in_flight_Nov_1944.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "dh-vampire": {
+    "file": "static/img/vehicles/dh-vampire.jpg",
+    "title": "File:De Havilland DH115 Vampire banking with the sun reflecting off its silver wings (cropped).jpg",
+    "author": "Pseudopanax",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:De_Havilland_DH115_Vampire_banking_with_the_sun_reflecting_off_its_silver_wings_(cropped).jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "aec-matador": {
+    "file": "static/img/vehicles/aec-matador.jpg",
+    "title": "File:AEC Matador, H102602 pic3.JPG",
+    "author": "Alf van Beem",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:AEC_Matador,_H102602_pic3.JPG",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "merkava": {
+    "file": "static/img/vehicles/merkava.jpg",
+    "title": "File:IDF Merkava Mk I in 1979.jpg",
+    "author": "Unknown author Unknown author",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:IDF_Merkava_Mk_I_in_1979.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "type-99": {
+    "file": "static/img/vehicles/type-99.jpg",
+    "title": "File:Type 99 MBT front left.jpg",
+    "author": "Max Smith",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:Type_99_MBT_front_left.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "macchi-c-205": {
+    "file": "static/img/vehicles/macchi-c-205.jpg",
+    "title": "File:Macchi 205.jpg",
+    "author": "Gmgiuliox",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Macchi_205.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "fiat-cr-32": {
+    "file": "static/img/vehicles/fiat-cr-32.jpg",
+    "title": "File:Az Olasz Légierő FIAT CR-32 típusú vadászrepülőgépe. Fortepan 26473.jpg",
+    "author": "FOTO:Fortepan — ID 26473 : Adományozó/Donor: Hídvégi Zoltán.",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Az_Olasz_L%C3%A9gier%C5%91_FIAT_CR-32_t%C3%ADpus%C3%BA_vad%C3%A1szrep%C3%BCl%C5%91g%C3%A9pe._Fortepan_26473.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "wzt-3": {
+    "file": "static/img/vehicles/wzt-3.jpg",
+    "title": "File:MSPO2004 PICT0082 WZT-3.jpg",
+    "author": "Pibwl",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:MSPO2004_PICT0082_WZT-3.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "tatra-813": {
+    "file": "static/img/vehicles/tatra-813.jpg",
+    "title": "File:Tatra 813 KOLOS 1.jpg",
+    "author": "Jano Gallo",
+    "license": "CC BY-SA 3.0",
+    "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Tatra_813_KOLOS_1.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "tatra-111": {
+    "file": "static/img/vehicles/tatra-111.jpg",
+    "title": "File:Kopřivnice - Muzeum nákladních automobilů Tatra, Tatra 111, obr01.jpg",
+    "author": "RomanM82",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Kop%C5%99ivnice_-_Muzeum_n%C3%A1kladn%C3%ADch_automobil%C5%AF_Tatra,_Tatra_111,_obr01.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "praga-v3s": {
+    "file": "static/img/vehicles/praga-v3s.jpg",
+    "title": "File:BAHNA 2018 - 075 crop.jpg",
+    "author": "Adam Hauner",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:BAHNA_2018_-_075_crop.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "pzl-ts-11": {
+    "file": "static/img/vehicles/pzl-ts-11.jpg",
+    "title": "File:PZL TS-11 lskra.jpg",
+    "author": "Dmgrgl",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:PZL_TS-11_lskra.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "pzl-p-11": {
+    "file": "static/img/vehicles/pzl-p-11.jpg",
+    "title": "File:PZL P.11c '39 - 2' (14336386246).jpg",
+    "author": "Alan Wilson",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:PZL_P.11c_%2739_-_2%27_(14336386246).jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "praga-rn": {
+    "file": "static/img/vehicles/praga-rn.jpg",
+    "title": "File:BAHNA 2018 - 061 crop.jpg",
+    "author": "Adam Hauner",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:BAHNA_2018_-_061_crop.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "nakajima-ki-87": {
+    "file": "static/img/vehicles/nakajima-ki-87.jpg",
+    "title": "File:Ki-87 01 00086218.jpg",
+    "author": "SDASM Archives",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:Ki-87_01_00086218.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "panzer-38t": {
+    "file": "static/img/vehicles/panzer-38t.jpg",
+    "title": "File:Panzer 38(t) Ausf. S.jpg",
+    "author": "Werner Willmann",
+    "license": "CC BY 2.5",
+    "license_url": "https://creativecommons.org/licenses/by/2.5",
+    "source": "https://commons.wikimedia.org/wiki/File:Panzer_38(t)_Ausf._S.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "bedford-oyd": {
+    "file": "static/img/vehicles/bedford-oyd.jpg",
+    "title": "File:Bedford OYD 3 ton 4x2 General Service Truck, Duxford 2024-06-29.jpg",
+    "author": "Anders Bot",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Bedford_OYD_3_ton_4x2_General_Service_Truck,_Duxford_2024-06-29.jpg",
+    "kind": "vehicle",
+    "scale": ""
   }
 }

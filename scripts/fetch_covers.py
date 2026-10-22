@@ -43,6 +43,9 @@ from paintguide.seed.guides_part7 import GUIDES_7  # noqa: E402
 from paintguide.seed.guides_part8 import GUIDES_8  # noqa: E402
 from paintguide.seed.guides_part9 import GUIDES_9  # noqa: E402
 from paintguide.seed.guides_part10 import GUIDES_10  # noqa: E402
+from paintguide.seed.guides_part11 import GUIDES_11  # noqa: E402
+from paintguide.seed.guides_part12 import GUIDES_12  # noqa: E402
+from paintguide.seed.guides_part13 import GUIDES_13  # noqa: E402
 
 ALL_GUIDES = (
     GUIDES
@@ -55,6 +58,9 @@ ALL_GUIDES = (
     + GUIDES_8
     + GUIDES_9
     + GUIDES_10
+    + GUIDES_11
+    + GUIDES_12
+    + GUIDES_13
 )
 
 API = "https://commons.wikimedia.org/w/api.php"
@@ -548,6 +554,46 @@ SCALE_RE = re.compile(r"\b(1\s*:\s*\d{1,3})\b")
 
 # Для машин без пригодной категории в Commons файл подобран вручную.
 PREFERRED_FILES = {
+    "is-4": "File:IS-4 Tank.jpg",
+    "t-90": "File:Moscow 2012 Victory Day Parade Rehearsal, T-90 tank, Russia.jpg",
+    "bmp-2": "File:Army2016demo-007.jpg",
+    "2s6-tunguska": "File:2008 Moscow Victory Day Parade - 9K22 Tunguska.jpg",
+    "mig-21": "File:Croatian MiG-21 (cropped).jpg",
+    "su-27": "File:Sukhoi Su-27.jpg",
+    "mi-24": "File:Mi24CP (modified) b.jpg",
+    "ka-50": "File:Kamov Ka-50 in Moscow.jpg",
+    "tiger-ii": "File:Bundesarchiv Bild 101I-721-0398-21A, Frankreich, Panzer VI (Tiger II, Königstiger).jpg",
+    "fi-156-storch": "File:Fieseler Storch 3 (cropped).jpg",
+    "hs-129": "File:Henschel Hs 129B.jpg",
+    "do-17": "File:Bundesarchiv Bild 101I-342-0603-25, Belgien-Frankreich, Flugzeuge Dornier Do 17.jpg",
+    "ju-87": "File:Junkers JU-87 'Stuka' in-flight display side view.jpg",
+    "he-111": "File:Bundesarchiv Bild 101I-343-0694-21, Belgien-Frankreich, Flugzeug Heinkel He 111.jpg",
+    "me-410": "File:Me 410 Hornisse with BK 5.jpg",
+    "m1-abrams": "File:M1A2 SEP v3.jpg",
+    "m2-bradley": "File:US M2A1 Bradley deployed to Saudi Arabia during Operation Desert Shield.jpg",
+    "m46-patton": "File:Marines-tank-Korea-19530705.JPEG",
+    "m109-paladin": "File:Kings of battle keep the fire; 1-9 FA fires its last rounds 140910-A-CW513-046.jpg",
+    "f-86-sabre": "File:F-86 Sabre hertiage flight.jpg",
+    "a-10-thunderbolt": "File:Fairchild Republic A-10 Thunderbolt II - 32156159151.jpg",
+    "b-25-mitchell": "File:B25 Mitchell - Chino Airshow 2014 (14033501440).jpg",
+    "cromwell": "File:Cromwell Tank (13538144563).jpg",
+    "hawker-tempest": "File:Hawker Tempest V in flight Nov 1944.jpg",
+    "dh-vampire": "File:De Havilland DH115 Vampire banking with the sun reflecting off its silver wings (cropped).jpg",
+    "aec-matador": "File:AEC Matador, H102602 pic3.JPG",
+    "merkava": "File:IDF Merkava Mk I in 1979.jpg",
+    "type-99": "File:Type 99 MBT front left.jpg",
+    "macchi-c-205": "File:Macchi 205.jpg",
+    "fiat-cr-32": "File:Az Olasz Légierő FIAT CR-32 típusú vadászrepülőgépe._Fortepan 26473.jpg",
+    "wzt-3": "File:MSPO2004 PICT0082 WZT-3.jpg",
+    "tatra-813": "File:Tatra 813 KOLOS 1.jpg",
+    "tatra-111": "File:Kopřivnice - Muzeum nákladních automobilů Tatra, Tatra 111, obr01.jpg",
+    "praga-v3s": "File:BAHNA 2018 - 075 crop.jpg",
+    "pzl-ts-11": "File:PZL TS-11 lskra.jpg",
+    "pzl-p-11": "File:PZL P.11c '39 - 2' (14336386246).jpg",
+    "praga-rn": "File:BAHNA 2018 - 061 crop.jpg",
+    "nakajima-ki-87": "File:Ki-87 01 00086218.jpg",
+    "bedford-oyd": "File:Bedford OYD 3 ton 4x2 General Service Truck, Duxford 2024-06-29.jpg",
+    "panzer-38t": "File:Panzer 38(t) Ausf. S.jpg",
     "sdkfz-251": "File:Sonderkraftfahrzeug 251 Sd.Kfz.251.jpg",
     "type-92-jyu-sokosha": "File:Type 92 Iju Sokosha Tankette.jpg",
     "type-59": "File:Type 59-II Tank (9871578856).jpg",
@@ -730,6 +776,48 @@ TITLE_REQUIRED = {
     "type-97-chi-ha": "chi-ha",
     "sdkfz-251": "251",
     "type-92-jyu-sokosha": "type 92",
+    # Новые машины: фотографии проверены по статьям Википедии.
+    "is-4": ("en.wikipedia.org", "IS-4"),
+    "t-90": ("en.wikipedia.org", "T-90"),
+    "bmp-2": ("en.wikipedia.org", "BMP-2"),
+    "2s6-tunguska": ("en.wikipedia.org", "2S6 Tunguska"),
+    "mig-21": ("en.wikipedia.org", "Mikoyan-Gurevich MiG-21"),
+    "su-27": ("en.wikipedia.org", "Sukhoi Su-27"),
+    "mi-24": ("en.wikipedia.org", "Mil Mi-24"),
+    "ka-50": ("en.wikipedia.org", "Kamov Ka-50"),
+    "tiger-ii": ("en.wikipedia.org", "Tiger II"),
+    "fi-156-storch": ("en.wikipedia.org", "Fieseler Fi 156 Storch"),
+    "hs-129": ("en.wikipedia.org", "Henschel Hs 129"),
+    "do-17": ("en.wikipedia.org", "Dornier Do 17"),
+    "ju-87": ("en.wikipedia.org", "Junkers Ju 87"),
+    "he-111": ("en.wikipedia.org", "Heinkel He 111"),
+    "me-410": ("en.wikipedia.org", "Messerschmitt Me 410"),
+    "m1-abrams": ("en.wikipedia.org", "M1 Abrams"),
+    "m2-bradley": ("en.wikipedia.org", "M2 Bradley"),
+    "m46-patton": ("en.wikipedia.org", "M46 Patton"),
+    "m109-paladin": ("en.wikipedia.org", "M109 Paladin"),
+    "f-86-sabre": ("en.wikipedia.org", "F-86 Sabre"),
+    "a-10-thunderbolt": ("en.wikipedia.org", "A-10 Thunderbolt II"),
+    "b-25-mitchell": ("en.wikipedia.org", "North American B-25 Mitchell"),
+    "cromwell": ("ru.wikipedia.org", "Cromwell"),
+    "hawker-tempest": ("en.wikipedia.org", "Hawker Tempest"),
+    "dh-vampire": ("en.wikipedia.org", "de Havilland Vampire"),
+    "aec-matador": ("en.wikipedia.org", "AEC Matador"),
+    "merkava": ("en.wikipedia.org", "Merkava"),
+    "type-99": ("en.wikipedia.org", "Type 99 tank"),
+    "macchi-c-205": ("en.wikipedia.org", "Macchi C.205"),
+    "fiat-cr-32": ("en.wikipedia.org", "Fiat CR.32"),
+    # Польша, Япония, Англия и Чехия — добираем страны и типы техники.
+    "wzt-1": ("pl.wikipedia.org", "WZT-1"),
+    "tatra-813": ("en.wikipedia.org", "Tatra 813"),
+    "tatra-111": ("en.wikipedia.org", "Tatra 111"),
+    "praga-v3s": ("en.wikipedia.org", "Praga V3S"),
+    "pzl-p-43": ("en.wikipedia.org", "PZL P.43"),
+    "pzl-p-11": ("en.wikipedia.org", "PZL P.11"),
+    "praga-rn": ("en.wikipedia.org", "Praga RN"),
+    "nakajima-ki-87": ("en.wikipedia.org", "Nakajima Ki-87"),
+    "bedford-oyd": ("en.wikipedia.org", "Bedford OYD"),
+    "panzer-38t": ("en.wikipedia.org", "Panzer 38(t)"),
 }
 
 # Другие обозначения той же машины: подходят, если основного нет в имени файла.
