@@ -85,23 +85,6 @@
   <section class="section">
     <div class="section-heading">
       <div>
-        <div class="eyebrow">Хронология</div>
-        <h2>Годы выпуска</h2>
-      </div>
-    </div>
-    <div class="collection-grid">
-      {% for year, count in era_rows %}
-        <a class="collection-chip" href="{{ url_for('catalog.catalog', year=year) }}">
-          <span><strong>{{ year }}</strong><small>год выпуска</small></span>
-          <span class="mono muted">{{ count }}</span>
-        </a>
-      {% endfor %}
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="section-heading">
-      <div>
         <div class="eyebrow">Свежие записи</div>
         <h2>{{ t('home.latest') }}</h2>
       </div>

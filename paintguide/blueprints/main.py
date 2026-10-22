@@ -63,13 +63,6 @@ def home():
         .order_by(func.count(Guide.id).desc())
     ).all()
 
-    era_rows = db.session.execute(
-        select(Guide.year_from, func.count(Guide.id))
-        .where(Guide.published.is_(True), Guide.year_from.isnot(None))
-        .group_by(Guide.year_from)
-        .order_by(Guide.year_from.asc())
-    ).all()
-
     # Счётчики выводим из уже загруженных агрегатов — лишних запросов не делаем.
     stats = {
         "guides": sum(count for _, count in country_rows),
@@ -87,7 +80,6 @@ def home():
         latest=latest,
         country_rows=country_rows,
         type_rows=type_rows,
-        era_rows=era_rows,
         stats=stats,
     )
 
