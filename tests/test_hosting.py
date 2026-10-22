@@ -115,3 +115,33 @@ def test_guide_page_does_not_query_every_paint(app):
     with app.app_context():
         queries = _count_queries(app, "/guides/t-34-85")
     assert queries < 30, f"страница гайда делает {queries} запросов — вернулся N+1"
+
+
+def test_dropped_connection_is_retried(app):
+    """Оборванное соединение не должно ронять страницу.
+
+    Neon засыпает при простое и рвёт соединения прямо во время запроса.
+    Страница должна открыться со второй попытки, а не отдать 500.
+    """
+    from sqlalchemy import event
+    from sqlalchemy.engine import Engine
+    from sqlalchemy.exc import OperationalError
+
+    state = {"failed": False}
+
+    @event.listens_for(Engine, "before_cursor_execute")
+    def fail_once(conn, cursor, statement, parameters, context, executemany):
+        if not state["failed"]:
+            state["failed"] = True
+            raise OperationalError(
+                statement, parameters, Exception("server closed the connection unexpectedly")
+            )
+
+    try:
+        with app.app_context():
+            response = app.test_client().get("/catalog")
+    finally:
+        event.remove(Engine, "before_cursor_execute", fail_once)
+
+    assert state["failed"], "искусственный обрыв не сработал"
+    assert response.status_code == 200, f"страница вернула {response.status_code}"

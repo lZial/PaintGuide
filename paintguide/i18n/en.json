@@ -232,6 +232,8 @@
   "error.403.text": "This section is available to administrators only.",
   "error.500.title": "Internal error",
   "error.500.text": "We already know about the problem. Try refreshing the page.",
+  "error.503.title": "Database unavailable",
+  "error.503.text": "The database connection was dropped. Try refreshing the page in a minute.",
   "error.home": "Back home",
   "footer.tagline": "Armour and paint · a modeller's field notebook",
   "footer.motto": "Assemble precisely. Paint at your own pace.",

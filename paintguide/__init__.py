@@ -279,6 +279,8 @@ def _register_hooks(app: Flask) -> None:
 
 
 def _register_errors(app: Flask) -> None:
+    from sqlalchemy.exc import OperationalError
+
     from .i18n import translate
 
     @app.errorhandler(403)
@@ -316,6 +318,34 @@ def _register_errors(app: Flask) -> None:
                 message=translate("error.500.text"),
             ),
             500,
+        )
+
+    @app.errorhandler(OperationalError)
+    def database_unavailable(error):  # pragma: no cover - зависит от сети
+        """Обрыв соединения с базой: одна попытка заново.
+
+        Neon засыпает при простое, а вычислительный узел после
+        перезапуска рвёт соединения прямо во время запроса. Повтор
+        обычно проходит: страница открывается, а не отдаёт 500.
+        """
+        db.session.rollback()
+        retryable = request.method in ("GET", "HEAD")
+        already_retried = request.environ.get("HTTP_X_PAINTGUIDE_RETRY")
+        if retryable and not already_retried:
+            request.environ["HTTP_X_PAINTGUIDE_RETRY"] = "1"
+            try:
+                return app.full_dispatch_request()
+            except Exception:
+                db.session.rollback()
+        app.logger.warning("База недоступна: %s", error)
+        return (
+            render_template(
+                "error.html",
+                code=503,
+                title=translate("error.503.title"),
+                message=translate("error.503.text"),
+            ),
+            503,
         )
 
 
