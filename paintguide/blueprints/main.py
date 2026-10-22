@@ -19,6 +19,7 @@ from sqlalchemy import func, select
 
 from ..extensions import db
 from ..models import Country, Guide, Paint, VehicleType
+from ..services.loaders import guide_card_options
 from ..services.stats import track_visit
 
 bp = Blueprint("main", __name__)
@@ -33,6 +34,7 @@ def home():
             .where(Guide.published.is_(True))
             .order_by(Guide.views_count.desc(), Guide.created_at.desc())
             .limit(6)
+            .options(*guide_card_options())
         )
     )
     latest = list(
@@ -41,6 +43,7 @@ def home():
             .where(Guide.published.is_(True))
             .order_by(Guide.created_at.desc(), Guide.id.desc())
             .limit(6)
+            .options(*guide_card_options())
         )
     )
 

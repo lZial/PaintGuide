@@ -19,6 +19,7 @@ from ..models import (
     StepPaint,
     VehicleType,
 )
+from .loaders import guide_card_options
 
 SORTS = {
     "date": "date",
@@ -186,11 +187,7 @@ def run_catalog(query: CatalogQuery):
     stmt = build_guide_query(query)
     # Карточке каталога нужны уровни сложности, но не шаги: без этой
     # настройки каждый гайд подтягивал бы все свои шаги и краски.
-    stmt = stmt.options(
-        selectinload(Guide.variants).selectinload(GuideVariant.difficulty),
-        selectinload(Guide.country),
-        selectinload(Guide.vehicle_type),
-    )
+    stmt = stmt.options(*guide_card_options())
     pagination = db.paginate(
         stmt,
         page=query.page,
@@ -224,6 +221,7 @@ def related_guides(guide: Guide, limit: int = 3) -> list[Guide]:
         )
         .order_by(Guide.views_count.desc(), Guide.title.asc())
         .limit(limit)
+        .options(*guide_card_options())
     )
     return list(db.session.scalars(stmt))
 

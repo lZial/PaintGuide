@@ -150,20 +150,33 @@ def load_seed_data(reset: bool = False, reset_users: bool = False) -> dict:
 
     `reset` очищает только каталог, `reset_users` — ещё и аккаунты.
     """
+    import time
+
     if reset:
         _wipe()
     if reset_users:
         _wipe_users()
 
-    _seed_reference()
-    _seed_paints()
+    def phase(label: str, function) -> None:
+        """Выполнить этап и показать, сколько он занял.
+
+        Замеры нужны, чтобы по логу сборки было видно, где именно
+        идёт работа: к удалённой базе каждый запрос — это сеть.
+        """
+        start = time.perf_counter()
+        function()
+        print(f"  {label}: {time.perf_counter() - start:.1f} с", flush=True)
+
+    print("Загрузка данных в базу:", flush=True)
+    phase("справочники", _seed_reference)
+    phase("краски", _seed_paints)
     db.session.commit()
-    _seed_guides()
+    phase("гайды, уровни, шаги", _seed_guides)
     db.session.commit()
-    _sync_sequences()
+    phase("счётчики id", _sync_sequences)
     db.session.commit()
-    _seed_covers()
-    _seed_users()
+    phase("обложки", _seed_covers)
+    phase("демо-аккаунты", _seed_users)
 
     return {
         "countries": db.session.scalar(select(db.func.count(Country.id))) or 0,

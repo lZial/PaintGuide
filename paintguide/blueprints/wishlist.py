@@ -8,6 +8,7 @@ from sqlalchemy import select
 
 from ..extensions import db
 from ..models import Guide, Paint, WishlistItem
+from ..services.loaders import guide_card_options
 from ..services.log import log_action
 
 bp = Blueprint("wishlist", __name__, url_prefix="/wishlist")
@@ -30,12 +31,28 @@ def wishlist():
             .order_by(WishlistItem.position, WishlistItem.created_at.desc())
         )
     )
+    # Гайды и краски достаём пачками: по одному запросу на каждый пункт
+    # вишлиста — это медленно, когда база удалённая.
+    guide_ids = [e.item_id for e in entries if e.item_type == "guide" and e.item_id]
+    paint_ids = [e.item_id for e in entries if e.item_type == "paint" and e.item_id]
+    guides = {}
+    if guide_ids:
+        for guide in db.session.scalars(
+            select(Guide).where(Guide.id.in_(guide_ids)).options(*guide_card_options())
+        ):
+            guides[guide.id] = guide
+    paints = {}
+    if paint_ids:
+        for paint in db.session.scalars(select(Paint).where(Paint.id.in_(paint_ids))):
+            paints[paint.id] = paint
+
     for entry in entries:
         entry.detail = None
         if entry.item_type == "paint" and entry.item_id:
-            entry.detail = db.session.get(Paint, entry.item_id)
+            entry.detail = paints.get(entry.item_id)
         elif entry.item_type == "guide" and entry.item_id:
-            entry.detail = db.session.get(Guide, entry.item_id)
+            entry.detail = guides.get(entry.item_id)
+
 
     return render_template(
         "wishlist.html",

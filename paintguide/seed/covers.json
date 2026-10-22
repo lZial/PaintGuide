@@ -2298,5 +2298,25 @@
     "source": "https://commons.wikimedia.org/wiki/File:Macchi_C.202_(A19600332000).jpg",
     "kind": "vehicle",
     "scale": ""
+  },
+  "75mm-wz-1897": {
+    "file": "static/img/vehicles/75mm-wz-1897.jpg",
+    "title": "File:Lufa armaty 75 mm wz. 1897 MWP 01.jpg",
+    "author": "Zala",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Lufa_armaty_75_mm_wz._1897_MWP_01.jpg",
+    "kind": "vehicle",
+    "scale": ""
+  },
+  "m30-cargo": {
+    "file": "static/img/vehicles/m30-cargo.jpg",
+    "title": "File:T14 cargo.jpg",
+    "author": "U.S. Army",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:T14_cargo.jpg",
+    "kind": "vehicle",
+    "scale": ""
   }
 }

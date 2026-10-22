@@ -22,6 +22,7 @@ from ..models import (
     StepPaint,
     WishlistItem,
 )
+from ..services.loaders import guide_card_options, guide_detail_options
 from ..services.log import log_action
 from ..services.stats import track_visit
 
@@ -32,7 +33,9 @@ bp = Blueprint("guide", __name__, url_prefix="/guides")
 def guide_detail(slug: str):
     """Страница руководства с вкладками уровней сложности."""
     guide = db.session.scalar(
-        select(Guide).where(Guide.slug == slug, Guide.published.is_(True))
+        select(Guide)
+        .where(Guide.slug == slug, Guide.published.is_(True))
+        .options(*guide_detail_options())
     )
     if guide is None:
         abort(404)
@@ -138,6 +141,7 @@ def _related(guide: Guide, limit: int = 3):
         )
         .order_by(Guide.views_count.desc(), Guide.title.asc())
         .limit(limit)
+        .options(*guide_card_options())
     )
     return list(db.session.scalars(stmt))
 

@@ -6,7 +6,13 @@ from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf.csrf import CSRFProtect
 
-db = SQLAlchemy()
+# expire_on_commit=False: по умолчанию после коммита все загруженные
+# объекты становятся «протухшими», и каждое обращение к их полям
+# снова идёт в базу. Счётчик посещений коммитится посреди страницы —
+# и каталог из 24 гайдов превращался в 109 запросов вместо десятка.
+# К удалённой базе каждый запрос — это сеть, поэтому это было очень
+# заметно.
+db = SQLAlchemy(session_options={"expire_on_commit": False})
 csrf = CSRFProtect()
 login_manager = LoginManager()
 

@@ -8,6 +8,7 @@ from sqlalchemy import select
 
 from ..extensions import db
 from ..models import Favorite, Guide, Paint
+from ..services.loaders import guide_card_options
 
 bp = Blueprint("favorites", __name__, url_prefix="/favorites")
 
@@ -25,6 +26,7 @@ def favorites():
                 Favorite.target_type == "guide",
             )
             .order_by(Favorite.created_at.desc())
+            .options(*guide_card_options())
         )
     )
     paint_rows = list(

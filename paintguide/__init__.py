@@ -27,7 +27,7 @@ def create_app(config_name: str | None = None) -> Flask:
     )
     app.config.from_object(resolve_config(config_name))
     app.config.from_prefixed_env("PAINTGUIDE")
-    INSTANCE_DIR.mkdir(parents=True, exist_ok=True)
+    _ensure_instance_dir()
 
     _init_extensions(app)
     _register_blueprints(app)
@@ -41,6 +41,20 @@ def create_app(config_name: str | None = None) -> Flask:
     _check_production_settings(app)
 
     return app
+
+
+def _ensure_instance_dir() -> None:
+    """Создать папку для локальных файлов, если это вообще возможно.
+
+    На Vercel файловая система функции только для чтения, и попытка
+    создать папку падает с ошибкой — а падение на старте приложения
+    означает 500 на каждой странице. Локальной базе папка нужна,
+    на хостинге с внешней базой — нет.
+    """
+    try:
+        INSTANCE_DIR.mkdir(parents=True, exist_ok=True)
+    except OSError:
+        pass
 
 
 def _check_production_settings(app: Flask) -> None:
@@ -158,6 +172,11 @@ def _register_sqlite_functions(app: Flask) -> None:
 
 def _resolve_database_uri(app: Flask) -> str:
     """URI базы: DATABASE_URL из окружения, иначе значение из конфига, иначе локальный SQLite."""
+    # В тестах база задана конфигом (в памяти) и остаётся в памяти.
+    # Переменная окружения с боевой базой в тесты попадать не должна:
+    # тесты создают и удаляют таблицы.
+    if app.config.get("TESTING"):
+        return app.config.get("SQLALCHEMY_DATABASE_URI") or "sqlite://"
     raw = os.environ.get("DATABASE_URL", "").strip()
     if raw:
         if raw.startswith("postgres://"):
@@ -168,7 +187,7 @@ def _resolve_database_uri(app: Flask) -> str:
     existing = app.config.get("SQLALCHEMY_DATABASE_URI")
     if existing:
         return existing
-    INSTANCE_DIR.mkdir(parents=True, exist_ok=True)
+    _ensure_instance_dir()
     return f"sqlite:///{(INSTANCE_DIR / 'paintguide.db').as_posix()}"
 
 

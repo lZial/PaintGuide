@@ -70,10 +70,24 @@ def fill_database() -> bool:
 
 
 def main() -> int:
+    import time
+
+    # Лог сборки на Vercel не терминал: без этой строки вывод
+    # залипает в буфере и в логе не видно, что происходит.
+    try:
+        sys.stdout.reconfigure(line_buffering=True)
+    except (AttributeError, ValueError):  # pragma: no cover
+        pass
+
+    started = time.perf_counter()
     PUBLIC.mkdir(parents=True, exist_ok=True)
     files = copy_static()
     make_404()
-    print(f"Статика скопирована в public/static: файлов {files}.")
+    print(
+        f"Статика скопирована в public/static: файлов {files} "
+        f"({time.perf_counter() - started:.1f} с).",
+        flush=True,
+    )
 
     if not (os.environ.get("DATABASE_URL") or "").strip():
         print("DATABASE_URL не задан — база остаётся локальной (для проверки).")
@@ -89,6 +103,7 @@ def main() -> int:
 
         traceback.print_exc()
         return 1
+    print(f"Сборка заняла {time.perf_counter() - started:.1f} с.", flush=True)
     return 0
 
 
