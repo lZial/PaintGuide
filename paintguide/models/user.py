@@ -133,13 +133,13 @@ def load_user(user_id: str):
 
 
 class Favorite(db.Model):
-    """Избранное: гайд или краска."""
+    """Избранное: модель (гайд)."""
 
     __tablename__ = "favorites"
 
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id", ondelete="CASCADE"), nullable=False)
-    target_type = db.Column(db.String(10), nullable=False, index=True)  # guide | paint
+    target_type = db.Column(db.String(10), nullable=False, index=True)  # guide
     target_id = db.Column(db.Integer, nullable=False, index=True)
     created_at = db.Column(db.DateTime(timezone=True), nullable=False, default=utc_now)
 
@@ -150,13 +150,13 @@ class Favorite(db.Model):
 
 
 class WishlistItem(db.Model):
-    """Вишлист: модель, гайд, краска или свободная идея."""
+    """Вишлист: краска, которую планируется купить и применить."""
 
     __tablename__ = "wishlist_items"
 
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id", ondelete="CASCADE"), nullable=False)
-    item_type = db.Column(db.String(20), nullable=False, default="model", index=True)
+    item_type = db.Column(db.String(20), nullable=False, default="paint", index=True)
     item_id = db.Column(db.Integer, nullable=True)
     name = db.Column(db.String(180), nullable=False)
     notes = db.Column(db.String(500), nullable=False, default="")

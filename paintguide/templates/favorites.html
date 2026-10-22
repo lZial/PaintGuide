@@ -6,7 +6,9 @@
     <p>{{ t('favorites.lede') }}</p>
   </header>
 
-  <div class="dashboard-grid">
+  {# Избранное — это модели: гайды и машины, к которым хочется вернуться.
+     Краски живут в вишлисте, а учёт того, что уже куплено, — в инвентаре. #}
+  <div class="dashboard-grid single">
     <section class="panel">
       <h2>{{ t('favorites.guides') }} · {{ guides|length }}</h2>
       {% if guides %}
@@ -19,33 +21,6 @@
                 <p>{{ guide.vehicle_type.name if guide.vehicle_type else '' }} · {{ guide.year_label }}</p>
               </div>
               <form class="entry-actions" method="post" action="{{ url_for('guide.toggle_favorite', slug=guide.slug) }}">
-                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-                <button class="button small secondary" type="submit">Убрать</button>
-              </form>
-            </article>
-          {% endfor %}
-        </div>
-      {% else %}
-        <div class="empty-state">
-          <div class="empty-mark">☆</div>
-          <h3>{{ t('favorites.empty') }}</h3>
-          <p>{{ t('favorites.empty_hint') }}</p>
-        </div>
-      {% endif %}
-    </section>
-
-    <section class="panel">
-      <h2>{{ t('favorites.paints') }} · {{ paints|length }}</h2>
-      {% if paints %}
-        <div class="entry-list">
-          {% for paint in paints %}
-            <article class="entry">
-              <span class="swatch-dot" style="--swatch: {{ paint.color_hex }}"></span>
-              <div>
-                <h3><a href="{{ url_for('paints.paint_detail', paint_id=paint.id) }}">{{ paint.name }}</a></h3>
-                <p>{{ paint.brand.name }} · {{ paint.code }} · {{ paint.color_hex }}</p>
-              </div>
-              <form class="entry-actions" method="post" action="{{ url_for('paints.toggle_favorite', paint_id=paint.id) }}">
                 <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                 <button class="button small secondary" type="submit">Убрать</button>
               </form>

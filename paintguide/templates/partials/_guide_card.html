@@ -42,10 +42,6 @@
             <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
             <button class="icon-button" type="submit" aria-label="В избранное">★</button>
           </form>
-          <form method="post" action="{{ url_for('guide.add_to_wishlist', slug=guide.slug) }}">
-            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-            <button class="icon-button" type="submit" aria-label="В вишлист">＋</button>
-          </form>
         </div>
       {% else %}
         <a class="mono faint" style="font-size:0.68rem" href="{{ url_for('guide.guide_detail', slug=guide.slug) }}">Читать →</a>

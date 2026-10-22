@@ -82,26 +82,66 @@ def test_favorite_toggle(logged_in, app):
         assert Favorite.query.filter_by(target_type="guide").count() == 0
 
 
-def test_paint_favorite_toggle(logged_in, app):
-    logged_in.post("/paints/1/favorite", follow_redirects=True)
+def test_paint_goes_to_wishlist_not_favorites(logged_in, app):
+    """Краска попадает в вишлист, а не в избранное.
+
+    Избранное — про модели, вишлист — про краски.
+    """
+    logged_in.post("/paints/1/wishlist", follow_redirects=True)
     with app.app_context():
-        assert Favorite.query.filter_by(target_type="paint").count() == 1
+        assert Favorite.query.filter_by(target_type="paint").count() == 0
+        assert WishlistItem.query.filter_by(item_type="paint").count() == 1
+
+
+def test_paint_favorite_route_is_gone(logged_in):
+    """Звезды у красок больше нет: маршрут должен отвечать 404."""
+    response = logged_in.post("/paints/1/favorite", follow_redirects=True)
+    assert response.status_code == 404
 
 
 def test_wishlist_add_and_delete(logged_in, app):
     logged_in.post(
         "/wishlist/",
-        data={"name": "Panther Ausf. G", "item_type": "model", "notes": "1:35", "quantity": "1"},
+        data={"paint_id": "1", "notes": "1:35", "quantity": "2"},
         follow_redirects=True,
     )
     with app.app_context():
-        entry = WishlistItem.query.filter_by(name="Panther Ausf. G").first()
+        entry = WishlistItem.query.filter_by(item_type="paint").first()
         assert entry is not None
+        assert entry.item_id == 1
+        assert entry.quantity == 2
         entry_id = entry.id
 
     logged_in.post(f"/wishlist/{entry_id}/delete", follow_redirects=True)
     with app.app_context():
         assert WishlistItem.query.count() == 0
+
+
+def test_wishlist_needs_a_paint(logged_in, app):
+    """Без выбранной краски запись не создаётся."""
+    logged_in.post("/wishlist/", data={"notes": "что-то"}, follow_redirects=True)
+    with app.app_context():
+        assert WishlistItem.query.count() == 0
+
+
+def test_same_paint_is_not_added_twice(logged_in, app):
+    """Повторное добавление краски увеличивает количество, а не плодит записи."""
+    logged_in.post("/wishlist/", data={"paint_id": "1", "quantity": "1"}, follow_redirects=True)
+    logged_in.post("/wishlist/", data={"paint_id": "1", "quantity": "3"}, follow_redirects=True)
+    with app.app_context():
+        entries = WishlistItem.query.filter_by(item_type="paint").all()
+        assert len(entries) == 1
+        assert entries[0].quantity == 4
+
+
+def test_favorites_page_shows_only_models(logged_in, app):
+    """На странице избранного — только модели, панели с красками нет."""
+    logged_in.post("/guides/t-34-85/favorite", follow_redirects=True)
+    response = logged_in.get("/favorites/", follow_redirects=True)
+    assert response.status_code == 200
+    text = response.get_data(as_text=True)
+    assert "/guides/t-34-85" in text
+    assert "Избранные краски" not in text
 
 
 def test_add_all_paints_from_guide_to_wishlist(logged_in, app):

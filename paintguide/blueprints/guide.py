@@ -66,7 +66,6 @@ def guide_detail(slug: str):
 
     palette = _palette(guide, selected)
     is_favorite = False
-    in_wishlist = False
     if current_user_id():
         is_favorite = (
             db.session.scalar(
@@ -78,17 +77,6 @@ def guide_detail(slug: str):
             )
             or 0
         ) > 0
-        in_wishlist = (
-            db.session.scalar(
-                select(func.count(WishlistItem.id)).where(
-                    WishlistItem.user_id == current_user_id(),
-                    WishlistItem.item_type == "guide",
-                    WishlistItem.item_id == guide.id,
-                )
-            )
-            or 0
-        ) > 0
-
     track_visit(f"/guides/{slug}")
     return render_template(
         "guide_detail.html",
@@ -99,7 +87,6 @@ def guide_detail(slug: str):
         variant=selected,
         palette=palette,
         is_favorite=is_favorite,
-        in_wishlist=in_wishlist,
         related=_related(guide),
     )
 
@@ -173,36 +160,6 @@ def toggle_favorite(slug: str):
         flash("Гайд добавлен в избранное.", "success")
     db.session.commit()
     log_action(current_user.id, "guide.favorite", "guide", guide.title)
-    return redirect(request.referrer or url_for("guide.guide_detail", slug=slug))
-
-
-@bp.post("/<slug>/wishlist")
-@login_required
-def add_to_wishlist(slug: str):
-    from flask_login import current_user
-
-    guide = db.session.scalar(select(Guide).where(Guide.slug == slug))
-    if guide is None:
-        abort(404)
-    existing = db.session.scalar(
-        select(WishlistItem).where(
-            WishlistItem.user_id == current_user.id,
-            WishlistItem.item_type == "guide",
-            WishlistItem.item_id == guide.id,
-        )
-    )
-    if existing is None:
-        db.session.add(
-            WishlistItem(
-                user_id=current_user.id,
-                item_type="guide",
-                item_id=guide.id,
-                name=guide.title,
-                notes=f"Руководство: /guides/{guide.slug}",
-            )
-        )
-        db.session.commit()
-        flash("Руководство добавлено в вишлист.", "success")
     return redirect(request.referrer or url_for("guide.guide_detail", slug=slug))
 
 

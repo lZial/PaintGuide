@@ -226,6 +226,8 @@
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 22px;
+  display: flex;
+  flex-direction: column;
 }
 .panel + .panel { margin-top: 18px; }
 .panel h2 { font-size: var(--step-2); margin: 0 0 18px; }
@@ -235,9 +237,18 @@
   display: grid;
   grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
   gap: 20px;
-  align-items: start;
+  align-items: stretch;
   padding-bottom: 50px;
 }
+/* Панели в сетке стоят рядом: расстояние между ними задаёт gap.
+   Общее правило «.panel + .panel» сдвигало бы вторую панель вниз. */
+.dashboard-grid > .panel { margin-top: 0; }
+/* Одна панель во всю ширину — когда раздел состоит из одного блока. */
+.dashboard-grid.single { grid-template-columns: minmax(0, 1fr); }
+/* Содержимое панели тянется на всю её высоту, а пустое состояние
+   встаёт по центру — так панели выглядят одинаково. */
+.panel > .entry-list,
+.panel > .empty-state { flex: 1 1 auto; }
 
 .empty-state {
   padding: 48px 24px;
@@ -245,6 +256,8 @@
   border: 1px dashed var(--line-strong);
   border-radius: var(--radius);
   background: color-mix(in srgb, var(--surface) 55%, transparent);
+  display: grid;
+  place-content: center;
 }
 .empty-state .empty-mark {
   width: 42px;

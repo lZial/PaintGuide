@@ -6,33 +6,31 @@
     <p>{{ t('wishlist.lede') }}</p>
   </header>
 
+  {# Вишлист — это краски: что планируется купить и применить.
+     Модели живут в избранном, то, что уже куплено, — в инвентаре. #}
   <div class="dashboard-grid">
     <section class="panel">
       <h2>{{ t('wishlist.add_title') }}</h2>
       <form method="post" action="{{ url_for('wishlist.wishlist') }}" class="wishlist-form">
         <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
         <div class="field">
-          <label for="item-name">{{ t('wishlist.name') }}</label>
-          <input id="item-name" name="name" required maxlength="180" placeholder="Panther Ausf. G">
+          <label for="paint_id">{{ t('paints.col.name') }}</label>
+          <select id="paint_id" name="paint_id" required>
+            <option value="">— {{ t('wishlist.pick_paint') }} —</option>
+            {% for paint in all_paints %}
+              <option value="{{ paint.id }}">{{ paint.brand.name }} · {{ paint.name }} ({{ paint.code }})</option>
+            {% endfor %}
+          </select>
         </div>
         <div class="row">
-          <div class="field">
-            <label for="item-type">{{ t('wishlist.type') }}</label>
-            <select id="item-type" name="item_type" required>
-              <option value="model">{{ t('wishlist.type.model') }}</option>
-              <option value="guide">{{ t('wishlist.type.guide') }}</option>
-              <option value="paint">{{ t('wishlist.type.paint') }}</option>
-              <option value="idea">{{ t('wishlist.type.idea') }}</option>
-            </select>
-          </div>
           <div class="field">
             <label for="item-qty">{{ t('wishlist.quantity') }}</label>
             <input id="item-qty" name="quantity" type="number" min="1" max="99" value="1">
           </div>
-        </div>
-        <div class="field full">
-          <label for="item-notes">{{ t('wishlist.notes') }}</label>
-          <textarea id="item-notes" name="notes" rows="3" maxlength="500" placeholder="Набор, масштаб, задумка по окраске…"></textarea>
+          <div class="field">
+            <label for="item-notes">{{ t('wishlist.notes') }}</label>
+            <input id="item-notes" name="notes" maxlength="300" placeholder="Номер оттенка, магазин…">
+          </div>
         </div>
         <div class="full">
           <button class="button block" type="submit">{{ t('wishlist.add') }} <span aria-hidden="true">+</span></button>
@@ -46,14 +44,20 @@
         <div class="entry-list">
           {% for entry in entries %}
             <article class="entry">
-              {% if entry.item_type == 'paint' and entry.detail %}
+              {% if entry.detail %}
                 <span class="swatch-dot" style="--swatch: {{ entry.detail.color_hex }}"></span>
+              {% else %}
+                <span class="swatch-dot" style="--swatch: var(--line-strong)"></span>
               {% endif %}
               <div>
-                <span class="badge plain">{{ entry.item_type }}</span>
-                <h3>{{ entry.name }}</h3>
+                {% if entry.detail %}
+                  <h3><a href="{{ url_for('paints.paint_detail', paint_id=entry.detail.id) }}">{{ entry.name }}</a></h3>
+                  <p>{{ entry.detail.brand.name }} · {{ entry.detail.code }} · {{ entry.detail.color_hex }}</p>
+                {% else %}
+                  <h3>{{ entry.name }}</h3>
+                {% endif %}
                 <p>
-                  {{ entry.notes or '—' }}
+                  {{ entry.notes or '' }}
                   {% if entry.quantity > 1 %} · ×{{ entry.quantity }}{% endif %}
                 </p>
               </div>

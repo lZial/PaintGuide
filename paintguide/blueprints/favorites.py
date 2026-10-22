@@ -1,4 +1,9 @@
-"""Избранное: сохранённые гайды и краски."""
+"""Избранное: сохранённые модели.
+
+По замыслу избранное — про модели: гайды и машины, к которым хочется
+вернуться. Краски живут в вишлисте, а учёт того, что уже куплено, — в
+инвентаре.
+"""
 
 from __future__ import annotations
 
@@ -7,7 +12,7 @@ from flask_login import current_user, login_required
 from sqlalchemy import select
 
 from ..extensions import db
-from ..models import Favorite, Guide, Paint
+from ..models import Favorite, Guide
 from ..services.loaders import guide_card_options
 
 bp = Blueprint("favorites", __name__, url_prefix="/favorites")
@@ -16,7 +21,7 @@ bp = Blueprint("favorites", __name__, url_prefix="/favorites")
 @bp.get("/")
 @login_required
 def favorites():
-    """Список избранных гайдов и красок."""
+    """Список избранных моделей."""
     guide_rows = list(
         db.session.scalars(
             select(Guide)
@@ -29,21 +34,9 @@ def favorites():
             .options(*guide_card_options())
         )
     )
-    paint_rows = list(
-        db.session.scalars(
-            select(Paint)
-            .join(Favorite, Favorite.target_id == Paint.id)
-            .where(
-                Favorite.user_id == current_user.id,
-                Favorite.target_type == "paint",
-            )
-            .order_by(Favorite.created_at.desc())
-        )
-    )
     return render_template(
         "favorites.html",
         title="Избранное",
         nav_active="favorites",
         guides=guide_rows,
-        paints=paint_rows,
     )

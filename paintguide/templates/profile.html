@@ -35,10 +35,6 @@
       <span>{{ t('profile.saved_guides') }}</span>
     </div>
     <div class="profile-stat">
-      <strong>{{ stats.paints_saved }}</strong>
-      <span>{{ t('profile.saved_paints') }}</span>
-    </div>
-    <div class="profile-stat">
       <strong>{{ stats.wishlist_count }}</strong>
       <span>{{ t('nav.wishlist') }}</span>
     </div>
@@ -120,27 +116,6 @@
                 <p>{{ guide.vehicle_type.name if guide.vehicle_type else '' }} · {{ guide.year_label }}</p>
               </div>
               <form class="entry-actions" method="post" action="{{ url_for('guide.toggle_favorite', slug=guide.slug) }}">
-                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-                <button class="button small secondary" type="submit">Убрать</button>
-              </form>
-            </article>
-          {% endfor %}
-        </div>
-      {% else %}
-        <p class="muted">{{ t('favorites.empty_hint') }}</p>
-      {% endif %}
-
-      <h2 style="margin-top:26px">{{ t('profile.saved_paints') }} · {{ favorite_paints|length }}</h2>
-      {% if favorite_paints %}
-        <div class="entry-list">
-          {% for paint in favorite_paints %}
-            <article class="entry">
-              <span class="swatch-dot" style="--swatch: {{ paint.color_hex }}"></span>
-              <div>
-                <h3><a href="{{ url_for('paints.paint_detail', paint_id=paint.id) }}">{{ paint.name }}</a></h3>
-                <p>{{ paint.brand.name }} · {{ paint.code }}</p>
-              </div>
-              <form class="entry-actions" method="post" action="{{ url_for('paints.toggle_favorite', paint_id=paint.id) }}">
                 <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                 <button class="button small secondary" type="submit">Убрать</button>
               </form>

@@ -10,7 +10,6 @@ from sqlalchemy.orm import selectinload
 from ..extensions import db
 from ..models import (
     Brand,
-    Favorite,
     Guide,
     GuideStep,
     GuideVariant,
@@ -154,21 +153,6 @@ def paint_detail(paint_id: int):
         )
     )
 
-    is_favorite = False
-    from flask_login import current_user
-
-    if current_user.is_authenticated:
-        is_favorite = (
-            db.session.scalar(
-                select(func.count(Favorite.id)).where(
-                    Favorite.user_id == current_user.id,
-                    Favorite.target_type == "paint",
-                    Favorite.target_id == paint.id,
-                )
-            )
-            or 0
-        ) > 0
-
     track_visit(f"/paints/{paint.id}")
     return render_template(
         "paint_detail.html",
@@ -177,34 +161,7 @@ def paint_detail(paint_id: int):
         paint=paint,
         equivalents=equivalents,
         guides=guides,
-        is_favorite=is_favorite,
     )
-
-
-@bp.post("/<int:paint_id>/favorite")
-@login_required
-def toggle_favorite(paint_id: int):
-    from flask_login import current_user
-
-    paint = db.get_or_404(Paint, paint_id)
-    favorite = db.session.scalar(
-        select(Favorite).where(
-            Favorite.user_id == current_user.id,
-            Favorite.target_type == "paint",
-            Favorite.target_id == paint.id,
-        )
-    )
-    if favorite:
-        db.session.delete(favorite)
-        flash("Краска удалена из избранного.", "success")
-    else:
-        db.session.add(
-            Favorite(user_id=current_user.id, target_type="paint", target_id=paint.id)
-        )
-        flash("Краска добавлена в избранное.", "success")
-    db.session.commit()
-    log_action(current_user.id, "paint.favorite", "paint", paint.display_name)
-    return redirect(request.referrer or url_for("paints.paints_index"))
 
 
 @bp.post("/<int:paint_id>/wishlist")

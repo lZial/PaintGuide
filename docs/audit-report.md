@@ -1,6 +1,6 @@
 # Проверка PaintGuide
 
-Сгенерировано: 2026-10-22 07:30
+Сгенерировано: 2026-10-22 08:01
 
 ## Обложки
 
@@ -46,21 +46,21 @@
 
 | Страница | Код | мс |
 | --- | --- | --- |
-| / | 200 | 1320.1 |
-| /catalog | 200 | 1058.6 |
-| /catalog?difficulty=medium | 200 | 960.3 |
-| /catalog?difficulty=hard | 200 | 958.6 |
-| /catalog?difficulty=expert | 200 | 1022.5 |
-| /catalog?q=проливка | 200 | 1143.2 |
-| /catalog?q=тонировка | 200 | 1362.8 |
-| /paints/ | 200 | 1037.4 |
-| /paints/1 | 200 | 2709.5 |
-| /guides/t-34-85 | 200 | 1727.0 |
-| /guides/t-34-85?level=medium | 200 | 1699.2 |
-| /guides/t-34-85?level=hard | 200 | 1749.8 |
-| /guides/t-34-85?level=expert | 200 | 1657.2 |
-| /guides/type-97-chi-ha | 200 | 1710.7 |
-| /guides/m14-41 | 200 | 1752.1 |
+| / | 200 | 1158.5 |
+| /catalog | 200 | 1050.2 |
+| /catalog?difficulty=medium | 200 | 936.4 |
+| /catalog?difficulty=hard | 200 | 930.1 |
+| /catalog?difficulty=expert | 200 | 1003.9 |
+| /catalog?q=проливка | 200 | 1120.3 |
+| /catalog?q=тонировка | 200 | 1317.2 |
+| /paints/ | 200 | 947.2 |
+| /paints/1 | 200 | 2507.1 |
+| /guides/t-34-85 | 200 | 1727.4 |
+| /guides/t-34-85?level=medium | 200 | 1647.6 |
+| /guides/t-34-85?level=hard | 200 | 1763.7 |
+| /guides/t-34-85?level=expert | 200 | 1681.3 |
+| /guides/type-97-chi-ha | 200 | 1630.5 |
+| /guides/m14-41 | 200 | 1594.2 |
 
 ## Ссылки
 

@@ -29,7 +29,7 @@ from flask_login import current_user, login_required, login_user, logout_user
 from sqlalchemy import func, select
 
 from ..extensions import db
-from ..models import AccountToken, Favorite, Guide, Paint, User, WishlistItem, utc_now
+from ..models import AccountToken, Favorite, Guide, User, WishlistItem, utc_now
 from ..services import ratelimit
 from ..services.log import log_action
 from ..services.mail import (
@@ -420,12 +420,6 @@ def profile():
             )
         )
         or 0,
-        "paints_saved": db.session.scalar(
-            select(func.count(Favorite.id)).where(
-                Favorite.user_id == current_user.id, Favorite.target_type == "paint"
-            )
-        )
-        or 0,
         "wishlist_count": db.session.scalar(
             select(func.count(WishlistItem.id)).where(WishlistItem.user_id == current_user.id)
         )
@@ -443,25 +437,12 @@ def profile():
             .order_by(Favorite.created_at.desc())
         )
     )
-    favorite_paints = list(
-        db.session.scalars(
-            select(Paint)
-            .join(Favorite, Favorite.target_id == Paint.id)
-            .where(
-                Favorite.user_id == current_user.id,
-                Favorite.target_type == "paint",
-            )
-            .order_by(Favorite.created_at.desc())
-        )
-    )
-
     return render_template(
         "profile.html",
         title="Профиль",
         nav_active="profile",
         stats=stats,
         favorite_guides=favorite_guides,
-        favorite_paints=favorite_paints,
         error=error,
     )
 

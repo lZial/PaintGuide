@@ -1,4 +1,9 @@
-"""Вишлист: очередь моделей, гайдов, красок и идей."""
+"""Вишлист: очередь красок, которые планируется купить и применить.
+
+Модели живут в избранном, а то, что уже куплено, — в инвентаре.
+Поэтому вишлист хранит только краски: выбранные из каталога, с
+количеством и заметкой.
+"""
 
 from __future__ import annotations
 
@@ -7,19 +12,18 @@ from flask_login import current_user, login_required
 from sqlalchemy import select
 
 from ..extensions import db
-from ..models import Guide, Paint, WishlistItem
-from ..services.loaders import guide_card_options
+from ..models import Paint, WishlistItem
 from ..services.log import log_action
 
 bp = Blueprint("wishlist", __name__, url_prefix="/wishlist")
 
-ITEM_TYPES = {"model", "guide", "paint", "idea"}
+ITEM_TYPE = "paint"
 
 
 @bp.route("/", methods=["GET", "POST"])
 @login_required
 def wishlist():
-    """Список желаемого с формой добавления."""
+    """Список желаемых красок с формой добавления."""
     if request.method == "POST":
         _create_item()
         return redirect(url_for("wishlist.wishlist"))
@@ -31,67 +35,64 @@ def wishlist():
             .order_by(WishlistItem.position, WishlistItem.created_at.desc())
         )
     )
-    # Гайды и краски достаём пачками: по одному запросу на каждый пункт
+    # Краски достаём пачками: по одному запросу на каждый пункт
     # вишлиста — это медленно, когда база удалённая.
-    guide_ids = [e.item_id for e in entries if e.item_type == "guide" and e.item_id]
-    paint_ids = [e.item_id for e in entries if e.item_type == "paint" and e.item_id]
-    guides = {}
-    if guide_ids:
-        for guide in db.session.scalars(
-            select(Guide).where(Guide.id.in_(guide_ids)).options(*guide_card_options())
-        ):
-            guides[guide.id] = guide
+    paint_ids = [e.item_id for e in entries if e.item_id]
     paints = {}
     if paint_ids:
         for paint in db.session.scalars(select(Paint).where(Paint.id.in_(paint_ids))):
             paints[paint.id] = paint
 
     for entry in entries:
-        entry.detail = None
-        if entry.item_type == "paint" and entry.item_id:
-            entry.detail = paints.get(entry.item_id)
-        elif entry.item_type == "guide" and entry.item_id:
-            entry.detail = guides.get(entry.item_id)
-
+        entry.detail = paints.get(entry.item_id) if entry.item_id else None
 
     return render_template(
         "wishlist.html",
         title="Вишлист",
         nav_active="wishlist",
         entries=entries,
+        all_paints=_all_paints(),
+    )
+
+
+def _all_paints():
+    """Список красок для выпадающего списка добавления."""
+    return list(
+        db.session.scalars(
+            select(Paint).join(Paint.brand).order_by(Paint.brand_id, Paint.name)
+        )
     )
 
 
 def _create_item() -> None:
-    name = request.form.get("name", "").strip()
-    item_type = request.form.get("item_type", "model").strip().lower()
-    notes = request.form.get("notes", "").strip()
-    item_id = request.form.get("item_id", type=int)
+    paint_id = request.form.get("paint_id", type=int)
+    notes = request.form.get("notes", "").strip()[:300]
     quantity = max(1, request.form.get("quantity", default=1, type=int))
 
-    if not name:
-        flash("Введите название пункта вишлиста.", "error")
+    if not paint_id:
+        flash("Выберите краску из списка.", "error")
         return
-    if len(name) > 180 or len(notes) > 500:
-        flash("Название или заметка слишком длинные.", "error")
+    paint = db.session.get(Paint, paint_id)
+    if paint is None:
+        flash("Эта краска больше недоступна.", "error")
         return
-    if item_type not in ITEM_TYPES:
-        item_type, item_id = "model", None
 
-    if item_type == "paint" and item_id:
-        paint = db.session.get(Paint, item_id)
-        if paint is None:
-            flash("Эта краска больше недоступна.", "error")
-            return
-        name = f"{paint.brand.name} — {paint.name}"
-    elif item_type == "guide" and item_id:
-        guide = db.session.get(Guide, item_id)
-        if guide is None or not guide.published:
-            flash("Это руководство больше недоступно.", "error")
-            return
-        name = guide.title
-    else:
-        item_id = None
+    # Одна и та же краска в списке не нужна дважды: добавляем количество.
+    existing = db.session.scalar(
+        select(WishlistItem).where(
+            WishlistItem.user_id == current_user.id,
+            WishlistItem.item_type == ITEM_TYPE,
+            WishlistItem.item_id == paint.id,
+        )
+    )
+    if existing is not None:
+        existing.quantity += quantity
+        if notes:
+            existing.notes = notes
+        db.session.commit()
+        log_action(current_user.id, "wishlist.create", ITEM_TYPE, paint.name)
+        flash("Количество увеличено: краска уже была в вишлисте.", "success")
+        return
 
     position = (
         db.session.scalar(
@@ -105,17 +106,17 @@ def _create_item() -> None:
     db.session.add(
         WishlistItem(
             user_id=current_user.id,
-            item_type=item_type,
-            item_id=item_id,
-            name=name,
+            item_type=ITEM_TYPE,
+            item_id=paint.id,
+            name=f"{paint.brand.name} — {paint.name}",
             notes=notes,
             quantity=quantity,
             position=position,
         )
     )
     db.session.commit()
-    log_action(current_user.id, "wishlist.create", item_type, name)
-    flash("Добавлено в ваш вишлист.", "success")
+    log_action(current_user.id, "wishlist.create", ITEM_TYPE, paint.name)
+    flash("Краска добавлена в ваш вишлист.", "success")
 
 
 @bp.post("/<int:entry_id>/delete")
@@ -132,5 +133,5 @@ def delete_entry(entry_id: int):
     db.session.delete(entry)
     db.session.commit()
     log_action(current_user.id, "wishlist.delete", entry.item_type, entry.name)
-    flash("Пункт удалён из вишлиста.", "success")
+    flash("Краска убрана из вишлиста.", "success")
     return redirect(url_for("wishlist.wishlist"))

@@ -36,14 +36,6 @@
               {{ '★ ' ~ t('guide.in_favorite') if is_favorite else '☆ ' ~ t('guide.add_favorite') }}
             </button>
           </form>
-          {% if not in_wishlist %}
-            <form method="post" action="{{ url_for('guide.add_to_wishlist', slug=guide.slug) }}">
-              <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-              <button class="button secondary" type="submit">{{ t('guide.add_wishlist') }}</button>
-            </form>
-          {% else %}
-            <a class="button secondary" href="{{ url_for('wishlist.wishlist') }}">{{ t('guide.in_wishlist') }}</a>
-          {% endif %}
         {% else %}
           <a class="button secondary" href="{{ url_for('account.login') }}">{{ t('nav.login') }}</a>
         {% endif %}
