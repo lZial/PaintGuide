@@ -13,6 +13,8 @@ from flask import (
 )
 from sqlalchemy import func, select
 
+from flask_login import login_required
+
 from ..extensions import db
 from ..models import (
     Favorite,
@@ -147,6 +149,7 @@ def _related(guide: Guide, limit: int = 3):
 
 
 @bp.post("/<slug>/favorite")
+@login_required
 def toggle_favorite(slug: str):
     from flask_login import current_user
 
@@ -174,6 +177,7 @@ def toggle_favorite(slug: str):
 
 
 @bp.post("/<slug>/wishlist")
+@login_required
 def add_to_wishlist(slug: str):
     from flask_login import current_user
 
@@ -203,6 +207,7 @@ def add_to_wishlist(slug: str):
 
 
 @bp.post("/<slug>/add-paints")
+@login_required
 def add_paints_to_wishlist(slug: str):
     """Добавить все краски выбранного уровня сложности в вишлист."""
     from flask_login import current_user

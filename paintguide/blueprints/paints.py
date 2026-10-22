@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from flask import Blueprint, abort, flash, redirect, render_template, request, url_for
+from flask_login import login_required
 from sqlalchemy import func, or_, select
 from sqlalchemy.orm import selectinload
 
@@ -18,6 +19,7 @@ from ..models import (
     StepPaint,
     WishlistItem,
 )
+from ..services.loaders import guide_card_options
 from ..services.log import log_action
 from ..services.stats import track_visit
 
@@ -148,11 +150,7 @@ def paint_detail(paint_id: int):
             .distinct()
             .order_by(Guide.title)
             .limit(24)
-            .options(
-                selectinload(Guide.variants).selectinload(GuideVariant.difficulty),
-                selectinload(Guide.country),
-                selectinload(Guide.vehicle_type),
-            )
+            .options(*guide_card_options())
         )
     )
 
@@ -184,6 +182,7 @@ def paint_detail(paint_id: int):
 
 
 @bp.post("/<int:paint_id>/favorite")
+@login_required
 def toggle_favorite(paint_id: int):
     from flask_login import current_user
 
@@ -209,6 +208,7 @@ def toggle_favorite(paint_id: int):
 
 
 @bp.post("/<int:paint_id>/wishlist")
+@login_required
 def add_to_wishlist(paint_id: int):
     from flask_login import current_user
 
@@ -236,6 +236,7 @@ def add_to_wishlist(paint_id: int):
 
 
 @bp.post("/<int:paint_id>/inventory")
+@login_required
 def add_to_inventory(paint_id: int):
     from flask_login import current_user
 
