@@ -98,10 +98,11 @@
               <td>
                 {% if current_user.is_authenticated %}
                   <div style="display:flex; gap:6px">
-                    <form method="post" action="{{ url_for('paints.add_to_wishlist', paint_id=paint.id) }}">
-                      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-                      <button class="button small secondary" type="submit">+ {{ t('paints.add_wishlist') }}</button>
-                    </form>
+                    <button class="button small secondary js-add-to-wishlist" type="button"
+                            data-wishlist-paint="{{ paint.id }}"
+                            data-next="{{ request.url }}">
+                      + {{ t('paints.add_wishlist') }}
+                    </button>
                     <form method="post" action="{{ url_for('paints.add_to_inventory', paint_id=paint.id) }}">
                       <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                       <button class="button small secondary" type="submit">+ {{ t('paints.add_inventory') }}</button>

@@ -6,7 +6,15 @@ from .guide import Guide, GuideStep, GuideVariant, StepPaint
 from .paint import Paint, PaintEquivalent, PaintLine
 from .reference import Brand, Country, Difficulty, VehicleType
 from .stats import ActionLog, PageView, VisitEvent
-from .user import AccountToken, Favorite, PaintStock, User, WishlistItem, utc_now
+from .user import (
+    AccountToken,
+    Favorite,
+    PaintStock,
+    User,
+    Wishlist,
+    WishlistItem,
+    utc_now,
+)
 
 __all__ = [
     "AccountToken",
@@ -27,6 +35,7 @@ __all__ = [
     "User",
     "VehicleType",
     "VisitEvent",
+    "Wishlist",
     "WishlistItem",
     "utc_now",
 ]

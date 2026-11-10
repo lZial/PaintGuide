@@ -6,16 +6,41 @@
     <p>{{ t('wishlist.lede') }}</p>
   </header>
 
-  {# Вишлист — это краски: что планируется купить и применить.
-     Модели живут в избранном, то, что уже куплено, — в инвентаре. #}
   <div class="dashboard-grid">
+    {# Переключатель вишлистов #}
     <section class="panel">
-      <h2>{{ t('wishlist.add_title') }}</h2>
+      <h2>{{ t('wishlist.lists') }}</h2>
+      {% if wishlists %}
+        <form method="get" action="{{ url_for('wishlist.wishlist') }}" class="wishlist-switcher">
+          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+          <label for="wishlist-switch">{{ t('wishlist.switch') }}</label>
+          <select id="wishlist-switch" name="list" onchange="this.form.submit()">
+            {% for w in wishlists %}
+              <option value="{{ w.id }}" {{ 'selected' if w.id == wishlist.id else '' }}>
+                {{ w.name }}
+                {% if w.is_public %} <span class="faint">· {{ t('wishlist.public') }}</span>{% endif %}
+              </option>
+            {% endfor %}
+          </select>
+        </form>
+        <p class="muted" style="margin-top:10px">
+          <a href="{{ url_for('wishlist.lists') }}">{{ t('wishlist.manage') }}</a>
+        </p>
+      {% else %}
+        <p class="muted">{{ t('wishlist.no_lists') }}</p>
+        <p><a class="button secondary" href="{{ url_for('wishlist.lists') }}">{{ t('wishlist.create_list') }}</a></p>
+      {% endif %}
+    </section>
+
+    {# Содержимое выбранного вишлиста #}
+    <section class="panel">
+      <h2>{{ wishlist.name }} · {{ entries|length }}</h2>
       <form method="post" action="{{ url_for('wishlist.wishlist') }}" class="wishlist-form">
         <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <input type="hidden" name="wishlist_id" value="{{ wishlist.id }}">
         <div class="field">
-          <label for="paint_id">{{ t('paints.col.name') }}</label>
-          <select id="paint_id" name="paint_id" required>
+          <label for="wish-paint_id">{{ t('paints.col.name') }}</label>
+          <select id="wish-paint_id" name="paint_id" required>
             <option value="">— {{ t('wishlist.pick_paint') }} —</option>
             {% for paint in all_paints %}
               <option value="{{ paint.id }}">{{ paint.brand.name }} · {{ paint.name }} ({{ paint.code }})</option>
@@ -24,22 +49,19 @@
         </div>
         <div class="row">
           <div class="field">
-            <label for="item-qty">{{ t('wishlist.quantity') }}</label>
-            <input id="item-qty" name="quantity" type="number" min="1" max="99" value="1">
+            <label for="wish-qty">{{ t('wishlist.quantity') }}</label>
+            <input id="wish-qty" name="quantity" type="number" min="1" max="99" value="1">
           </div>
           <div class="field">
-            <label for="item-notes">{{ t('wishlist.notes') }}</label>
-            <input id="item-notes" name="notes" maxlength="300" placeholder="Номер оттенка, магазин…">
+            <label for="wish-notes">{{ t('wishlist.notes') }}</label>
+            <input id="wish-notes" name="notes" maxlength="300" placeholder="Номер оттенка, магазин…">
           </div>
         </div>
         <div class="full">
           <button class="button block" type="submit">{{ t('wishlist.add') }} <span aria-hidden="true">+</span></button>
         </div>
       </form>
-    </section>
 
-    <section class="panel">
-      <h2>{{ t('wishlist.queue_title') }} · {{ entries|length }}</h2>
       {% if entries %}
         <div class="entry-list">
           {% for entry in entries %}
@@ -63,6 +85,7 @@
               </div>
               <form class="entry-actions" method="post" action="{{ url_for('wishlist.delete_entry', entry_id=entry.id) }}" data-confirm="Удалить запись из вишлиста?">
                 <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                <input type="hidden" name="wishlist_id" value="{{ entry.wishlist_id or wishlist.id }}">
                 <button class="button small danger" type="submit">{{ t('wishlist.remove') }}</button>
               </form>
             </article>

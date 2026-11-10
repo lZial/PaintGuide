@@ -228,7 +228,13 @@ def _collect(variant: dict) -> tuple[dict[str, list[dict]], dict[str, list[dict]
 
 
 def _make_step(technique: str, entries: list[dict], tip: str) -> dict:
-    """Собрать шаг по технике."""
+    """Собрать шаг по технике.
+
+    Практический совет ложится в тот же текст, что и сама техника:
+    отдельного блока «совет» на странице нет, всё знание шага собрано
+    в инструкции. Совет самого гайда добавляется в конце — он знает
+    машину и потому полезнее общих слов о технике.
+    """
     meta = TECHNIQUES[technique]
     paints: list[list] = []
     for group in _group_by_surface(entries):
@@ -237,14 +243,21 @@ def _make_step(technique: str, entries: list[dict], tip: str) -> dict:
                 [entry["code"], entry["name"], group["surface"], entry["note"]]
             )
 
-    instruction = meta["instruction"].format(
-        paints=_paint_list(entries),
-        zones=_zone_phrase(entries),
-    )
+    parts = [
+        meta["instruction"].format(
+            paints=_paint_list(entries),
+            zones=_zone_phrase(entries),
+        ),
+        meta.get("tip", ""),
+    ]
+    note = (tip or "").strip()
+    if note:
+        parts.append(note)
+    instruction = " ".join(part.strip() for part in parts if part and part.strip())
+
     step = {
         "title": meta["title"],
         "instruction": instruction,
-        "tip": tip or meta["tip"],
         "paints": paints,
     }
 
@@ -252,13 +265,17 @@ def _make_step(technique: str, entries: list[dict], tip: str) -> dict:
     english = TECHNIQUES_EN.get(technique)
     if english:
         step["title_en"] = english["title"]
-        step["instruction_en"] = english["instruction"].format(
-            paints=_paint_list(entries),
-            zones=_zone_phrase(entries, english=True),
+        step["instruction_en"] = " ".join(
+            part.strip()
+            for part in (
+                english["instruction"].format(
+                    paints=_paint_list(entries),
+                    zones=_zone_phrase(entries, english=True),
+                ),
+                english.get("tip", ""),
+            )
+            if part and part.strip()
         )
-        # Совет из исходных данных написан по-русски, поэтому в
-        # английской версии берём совет самой техники.
-        step["tip_en"] = english["tip"]
     return step
 
 

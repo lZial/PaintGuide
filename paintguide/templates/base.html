@@ -95,6 +95,39 @@
   </div>
 </header>
 
+{# Всплывающий выбор вишлиста при добавлении краски. Открывается JS-кнопкой .js-add-to-wishlist. #}
+{% if current_user.is_authenticated %}
+<div id="wishlist-chooser" class="chooser-panel panel" style="display:none; position:fixed; z-index:50; min-width:260px">
+  <form method="post" action="{{ url_for('wishlist.add_item') }}">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <input type="hidden" name="target-paint" id="chooser-target-paint" value="">
+    <input type="hidden" name="target-guide" id="chooser-target-guide" value="">
+    <input type="hidden" name="target-variant" id="chooser-target-variant" value="">
+    <input type="hidden" name="next" id="chooser-next" value="">
+    <div class="field">
+      <label for="chooser-list">{{ t('wishlist.choose_list') }}</label>
+      <select id="chooser-list" name="wishlist_id" required>
+        {% for w in current_user.wishlists %}
+          <option value="{{ w.id }}">{{ w.name }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="field">
+      <label for="chooser-qty">{{ t('wishlist.quantity') }}</label>
+      <input id="chooser-qty" name="quantity" type="number" min="1" max="99" value="1">
+    </div>
+    <div class="row">
+      <div class="field span-1">
+        <button class="button block" type="submit">{{ t('wishlist.add') }}</button>
+      </div>
+      <div class="field span-1">
+        <button class="button secondary block" type="button" id="chooser-cancel">{{ t('common.cancel') }}</button>
+      </div>
+    </div>
+  </form>
+</div>
+{% endif %}
+
 <div class="shell flash-stack" aria-live="polite">
   {% with messages = get_flashed_messages(with_categories=true) %}
     {% if messages %}

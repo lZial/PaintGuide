@@ -1,22 +1,23 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40">
   <defs>
-    <g id="mark">
-      <g fill="none" stroke="currentColor" stroke-width="2.1" stroke-linejoin="round" stroke-linecap="round">
-        <path d="M5 27h30l-2.2 5.4H7.6z"/>
-        <path d="M9 22.6h22.6l4.6 4.2H6.8z"/>
-        <path d="M14.4 17.4h11.2l4.2 5H11.6z"/>
-        <path d="M19.6 11.6h6.8l3 5.8H17.4z"/>
-        <path d="M26.4 12.2l8.8.6.2 2.6-9 .6z"/>
-      </g>
-      <g fill="currentColor">
-        <circle cx="11.4" cy="30.1" r="2.2"/>
-        <circle cx="17.4" cy="30.1" r="2.2"/>
-        <circle cx="23.4" cy="30.1" r="2.2"/>
-        <circle cx="29.4" cy="30.1" r="2.2"/>
+    <!-- Знак PaintGuide: капля краски над двумя слоями покрытия.
+         Вся композиция симметрична относительно оси x=20, поэтому
+         логотип не смещён вправо. Цвет берётся из --accent темы
+         (для фавикона, где темы нет, работает fallback). -->
+    <g id="mark" style="color: var(--accent, #a8bd76)">
+      <path
+        fill="currentColor"
+        d="M20 4.5
+           C18.6 8.4 14.7 12.3 14.7 15.6
+           C14.7 18.7 17.1 21.2 20 21.2
+           C22.9 21.2 25.3 18.7 25.3 15.6
+           C25.3 12.3 21.4 8.4 20 4.5 Z"
+      />
+      <g fill="none" stroke="currentColor" stroke-width="4.4" stroke-linecap="round">
+        <path d="M12 25.9h16"/>
+        <path d="M8.5 32.8h23"/>
       </g>
     </g>
   </defs>
-  <g style="color:#a8bd76">
-    <use href="#mark"/>
-  </g>
+  <use href="#mark"/>
 </svg>

@@ -31,10 +31,11 @@
 
       <div class="detail-actions">
         {% if current_user.is_authenticated %}
-          <form method="post" action="{{ url_for('paints.add_to_wishlist', paint_id=paint.id) }}">
-            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-            <button class="button secondary" type="submit">+ {{ t('paints.add_wishlist') }}</button>
-          </form>
+          <button class="button secondary js-add-to-wishlist" type="button"
+                  data-wishlist-paint="{{ paint.id }}"
+                  data-next="{{ request.url }}">
+            + {{ t('paints.add_wishlist') }}
+          </button>
           <form method="post" action="{{ url_for('paints.add_to_inventory', paint_id=paint.id) }}">
             <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
             <button class="button secondary" type="submit">+ {{ t('paints.add_inventory') }}</button>

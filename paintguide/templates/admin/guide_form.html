@@ -128,9 +128,9 @@
                   <textarea id="step_instruction_{{ difficulty.slug }}_{{ index }}" name="step_instruction_{{ difficulty.slug }}_{{ index }}" rows="2">{{ step.instruction if step else '' }}</textarea>
                 </div>
                 <div class="field span-2">
-                  <label for="step_tip_{{ difficulty.slug }}_{{ index }}">{{ t('guide.tip') }}</label>
+                  <label for="step_tip_{{ difficulty.slug }}_{{ index }}">Заметка к шагу</label>
                   <input id="step_tip_{{ difficulty.slug }}_{{ index }}" name="step_tip_{{ difficulty.slug }}_{{ index }}"
-                         maxlength="400" value="{{ step.tip if step else '' }}" placeholder="{{ t('admin.tip_placeholder') }}">
+                         maxlength="400" value="" placeholder="Добавится к тексту инструкции">
                 </div>
               </div>
               <div class="paint-slots">

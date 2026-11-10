@@ -24,9 +24,6 @@
         <span class="badge">{{ guide.country.name if guide.country else '' }}</span>
         <span class="badge">{{ guide.vehicle_type.name if guide.vehicle_type else '' }}</span>
         <span class="badge gold">{{ guide.year_label }}</span>
-        {% if variant and variant.difficulty %}
-          <span class="badge rust">{{ variant.difficulty.name }}</span>
-        {% endif %}
       </div>
       <div class="detail-actions">
         {% if current_user.is_authenticated %}
@@ -125,12 +122,12 @@
           {% endfor %}
         </div>
         {% if current_user.is_authenticated %}
-          <form method="post" action="{{ url_for('guide.add_paints_to_wishlist', slug=guide.slug) }}" style="margin-top:18px">
-            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-            <input type="hidden" name="variant_id" value="{{ variant.id }}">
-            <input type="hidden" name="level" value="{{ variant.difficulty.slug if variant.difficulty else '' }}">
-            <button class="button gold" type="submit">♥ {{ t('guide.add_all_paints') }}</button>
-          </form>
+          <button class="button gold js-add-to-wishlist" type="button"
+                  data-wishlist-guide="{{ guide.slug }}"
+                  data-wishlist-variant="{{ variant.id }}"
+                  data-next="{{ request.url }}">
+            ♥ {{ t('guide.add_all_paints') }}
+          </button>
         {% else %}
           <p class="muted" style="margin-top:14px">
             <a href="{{ url_for('account.login') }}" style="color:var(--accent)">{{ t('nav.login') }}</a> — чтобы собрать палитру в вишлист.
@@ -170,12 +167,6 @@
                   </div>
                 {% endif %}
                 {% if step.local_instruction %}<p class="step-instruction">{{ step.local_instruction }}</p>{% endif %}
-                {% if step.local_tip %}
-                  <div class="step-tip">
-                    <strong>{{ t('guide.tip') }}</strong>
-                    <span>{{ step.local_tip }}</span>
-                  </div>
-                {% endif %}
               </div>
             </article>
           {% endfor %}

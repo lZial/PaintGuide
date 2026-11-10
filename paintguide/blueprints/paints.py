@@ -16,6 +16,7 @@ from ..models import (
     Paint,
     PaintLine,
     StepPaint,
+    Wishlist,
     WishlistItem,
 )
 from ..services.loaders import guide_card_options
@@ -164,15 +165,40 @@ def paint_detail(paint_id: int):
     )
 
 
+def _default_wishlist_for(user) -> Wishlist:
+    """Базовый вишлист пользователя, создавая его при необходимости."""
+    wishlist = db.session.scalar(
+        select(Wishlist).where(Wishlist.user_id == user.id).order_by(Wishlist.created_at.asc())
+    )
+    if wishlist is None:
+        wishlist = Wishlist(
+            user_id=user.id,
+            name="Вишлист",
+            slug=f"wishlist-{user.id}",
+            position=0,
+        )
+        db.session.add(wishlist)
+        db.session.flush()
+    return wishlist
+
+
 @bp.post("/<int:paint_id>/wishlist")
 @login_required
 def add_to_wishlist(paint_id: int):
     from flask_login import current_user
 
     paint = db.get_or_404(Paint, paint_id)
+    wishlist_id = request.form.get("wishlist_id", type=int)
+    if wishlist_id:
+        wishlist = db.session.get(Wishlist, wishlist_id)
+        if wishlist is None or wishlist.user_id != current_user.id:
+            abort(404)
+    else:
+        wishlist = _default_wishlist_for(current_user)
+
     existing = db.session.scalar(
         select(WishlistItem).where(
-            WishlistItem.user_id == current_user.id,
+            WishlistItem.wishlist_id == wishlist.id,
             WishlistItem.item_type == "paint",
             WishlistItem.item_id == paint.id,
         )
@@ -181,6 +207,7 @@ def add_to_wishlist(paint_id: int):
         db.session.add(
             WishlistItem(
                 user_id=current_user.id,
+                wishlist_id=wishlist.id,
                 item_type="paint",
                 item_id=paint.id,
                 name=f"{paint.brand.name} — {paint.name}",

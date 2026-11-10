@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="shell">
+  <header class="page-intro">
+    <h1>{{ t('wishlist.shared_title', name=wishlist.name) }}</h1>
+    {% if owner %}
+      <p class="muted">{{ t('wishlist.shared_by', nickname=owner.nickname) }}</p>
+    {% endif %}
+    <p class="muted">{{ t('wishlist.shared_hint') }}</p>
+  </header>
+
+  <div class="dashboard-grid single">
+    <section class="panel">
+      <h2>{{ t('wishlist.queue_title') }} · {{ entries|length }}</h2>
+      {% if entries %}
+        <div class="entry-list">
+          {% for entry in entries %}
+            <article class="entry">
+              {% if entry.detail %}
+                <span class="swatch-dot" style="--swatch: {{ entry.detail.color_hex }}"></span>
+              {% else %}
+                <span class="swatch-dot" style="--swatch: var(--line-strong)"></span>
+              {% endif %}
+              <div>
+                {% if entry.detail %}
+                  <h3><a href="{{ url_for('paints.paint_detail', paint_id=entry.detail.id) }}">{{ entry.name }}</a></h3>
+                  <p>{{ entry.detail.brand.name }} · {{ entry.detail.code }} · {{ entry.detail.color_hex }}</p>
+                {% else %}
+                  <h3>{{ entry.name }}</h3>
+                {% endif %}
+                <p>
+                  {{ entry.notes or '' }}
+                  {% if entry.quantity > 1 %} · ×{{ entry.quantity }}{% endif %}
+                </p>
+              </div>
+              {% if current_user.is_authenticated %}
+                <form method="post" action="{{ url_for('wishlist.add_item') }}" style="margin:0">
+                  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                  <input type="hidden" name="paint_id" value="{{ entry.detail.id if entry.detail else '' }}">
+                  <input type="hidden" name="next" value="{{ request.url }}">
+                  <button class="button small secondary" type="submit">{{ t('wishlist.add_to_mine') }}</button>
+                </form>
+              {% endif %}
+            </article>
+          {% endfor %}
+        </div>
+      {% else %}
+        <div class="empty-state">
+          <div class="empty-mark">○</div>
+          <h3>{{ t('wishlist.empty') }}</h3>
+          <p>{{ t('wishlist.shared_empty') }}</p>
+        </div>
+      {% endif %}
+    </section>
+  </div>
+</div>
+{% endblock %}

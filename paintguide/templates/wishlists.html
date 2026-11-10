@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="shell">
+  <header class="page-intro">
+    <h1>{{ t('wishlist.lists') }}</h1>
+    <p>{{ t('wishlist.lists_lede') }}</p>
+  </header>
+
+  <div class="dashboard-grid">
+    <section class="panel">
+      <h2>{{ t('wishlist.create_list') }}</h2>
+      <form method="post" action="{{ url_for('wishlist.lists') }}" class="wishlist-form">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <input type="hidden" name="action" value="create">
+        <div class="field">
+          <label for="list-name">{{ t('wishlist.list_name') }}</label>
+          <input id="list-name" name="name" maxlength="120" value="" required placeholder="Например, «Для танка»">
+        </div>
+        <div class="full">
+          <button class="button block" type="submit">{{ t('wishlist.create') }}</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>{{ t('wishlist.my_lists') }}</h2>
+      {% if wishlists %}
+        <div class="entry-list">
+          {% for w in wishlists %}
+            <article class="entry">
+              <div>
+                <h3>{{ w.name }}</h3>
+                <p class="muted">{{ w.items|length }} {{ t('wishlist.items') }} · {{ t('wishlist.created', date=w.created_at.strftime('%d.%m.%Y') if w.created_at else '') }}</p>
+                {% if w.is_public %}
+                  <p class="muted" style="color:var(--gold)">{{ t('wishlist.public_open') }} <code style="font-size:0.72rem">{{ url_for('wishlist.shared', token=w.share_token, _external=True) }}</code></p>
+                {% else %}
+                  <p class="muted">{{ t('wishlist.private') }}</p>
+                {% endif %}
+              </div>
+              <div class="entry-actions" style="display:flex; gap:6px; align-items:flex-start">
+                <form method="post" action="{{ url_for('wishlist.lists') }}" style="margin:0">
+                  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                  <input type="hidden" name="action" value="rename">
+                  <input type="hidden" name="wishlist_id" value="{{ w.id }}">
+                  <input name="name" maxlength="120" value="{{ w.name }}" style="width:150px">
+                  <button class="button small secondary" type="submit">{{ t('wishlist.rename') }}</button>
+                </form>
+                <form method="post" action="{{ url_for('wishlist.lists') }}" style="margin:0">
+                  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                  <input type="hidden" name="action" value="toggle-public">
+                  <input type="hidden" name="wishlist_id" value="{{ w.id }}">
+                  <button class="button small secondary" type="submit">{{ t('wishlist.toggle_public') if not w.is_public else t('wishlist.toggle_private') }}</button>
+                </form>
+                <form method="post" action="{{ url_for('wishlist.delete_list', wishlist_id=w.id) }}" data-confirm="{{ t('wishlist.delete_confirm') }}" style="margin:0">
+                  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                  <button class="button small danger" type="submit">{{ t('wishlist.delete') }}</button>
+                </form>
+              </div>
+            </article>
+          {% endfor %}
+        </div>
+      {% else %}
+        <p class="muted">{{ t('wishlist.no_lists') }}</p>
+      {% endif %}
+    </section>
+  </div>
+</div>
+{% endblock %}

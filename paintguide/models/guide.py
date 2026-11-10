@@ -207,14 +207,6 @@ class GuideStep(db.Model):
             return self.instruction_en
         return self.instruction
 
-    @property
-    def local_tip(self) -> str:
-        from ..i18n import current_locale
-
-        if current_locale() != "ru" and self.tip_en:
-            return self.tip_en
-        return self.tip
-
 
 class StepPaint(db.Model):
     """Краска, применяемая на шаге, и область нанесения."""

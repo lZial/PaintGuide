@@ -38,6 +38,7 @@ from .guides_part10 import GUIDES_10
 from .guides_part11 import GUIDES_11
 from .guides_part12 import GUIDES_12
 from .guides_part13 import GUIDES_13
+from .guides_part14 import GUIDES_14
 from .levels import enrich_variants
 from .paints import EQUIVALENTS, PAINTS
 from .reference import BRANDS, COUNTRIES, DIFFICULTIES, LINES, VEHICLE_TYPES
@@ -57,6 +58,7 @@ ALL_GUIDES = (
     + GUIDES_11
     + GUIDES_12
     + GUIDES_13
+    + GUIDES_14
 )
 
 

@@ -33,9 +33,6 @@
     <h3><a href="{{ url_for('guide.guide_detail', slug=guide.slug) }}">{{ guide.title }}</a></h3>
     <p>{{ guide.description|truncate(110) }}</p>
     <div class="card-bottom">
-      <span class="badge {{ 'gold' if guide.is_hard_guide else '' }}">
-        {{ guide.difficulty_range }}
-      </span>
       {% if current_user.is_authenticated %}
         <div class="card-actions">
           <form method="post" action="{{ url_for('guide.toggle_favorite', slug=guide.slug) }}">

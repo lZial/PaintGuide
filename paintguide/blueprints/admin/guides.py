@@ -318,8 +318,10 @@ def _collect_steps(variant: GuideVariant, slug: str) -> None:
             )
 
         step.title = title
-        step.instruction = instruction
-        step.tip = tip
+        # Заметка администратора становится частью инструкции: отдельного
+        # блока «совет» на странице нет, весь текст шага собран в одном.
+        step.instruction = " ".join(part for part in (instruction, tip) if part).strip()
+        step.tip = ""
         keep_ids.add(step.id)
 
     for step_id, step in existing.items():

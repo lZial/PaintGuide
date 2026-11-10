@@ -46,6 +46,7 @@ from paintguide.seed.guides_part10 import GUIDES_10  # noqa: E402
 from paintguide.seed.guides_part11 import GUIDES_11  # noqa: E402
 from paintguide.seed.guides_part12 import GUIDES_12  # noqa: E402
 from paintguide.seed.guides_part13 import GUIDES_13  # noqa: E402
+from paintguide.seed.guides_part14 import GUIDES_14  # noqa: E402
 
 ALL_GUIDES = (
     GUIDES
@@ -61,6 +62,7 @@ ALL_GUIDES = (
     + GUIDES_11
     + GUIDES_12
     + GUIDES_13
+    + GUIDES_14
 )
 
 API = "https://commons.wikimedia.org/w/api.php"

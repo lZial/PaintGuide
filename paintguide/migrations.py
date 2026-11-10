@@ -7,7 +7,7 @@
 
 from __future__ import annotations
 
-from sqlalchemy import inspect, text
+from sqlalchemy import inspect, select, text
 
 from .extensions import db
 
@@ -50,6 +50,86 @@ def ensure_schema(app) -> list[str]:
                 applied.append(f"{model.name}.{column.name}")
         if applied:
             db.session.commit()
+    return applied
+
+
+def migrate_wishlists(app) -> list[str]:
+    """Перенести вишлисты на схему с несколькими списками.
+
+    Добавляет таблицу wishlists, колонку wishlist_id в wishlist_items,
+    создаёт каждому пользователю базовый вишлист и меняет уникальность
+    с «одна краска на пользователя» на «одна краска в вишлисте».
+    """
+    applied: list[str] = []
+    with app.app_context():
+        inspector = inspect(db.engine)
+        tables = set(inspector.get_table_names())
+
+        if "wishlists" not in tables:
+            db.create_all()
+            applied.append("table wishlists")
+
+        if "wishlist_items" in tables:
+            existing = {column["name"] for column in inspector.get_columns("wishlist_items")}
+            if "wishlist_id" not in existing:
+                db.session.execute(
+                    text(
+                        "ALTER TABLE wishlist_items "
+                        "ADD COLUMN wishlist_id INTEGER "
+                        "REFERENCES wishlists(id) ON DELETE CASCADE"
+                    )
+                )
+                applied.append("wishlist_items.wishlist_id")
+        if applied:
+            db.session.commit()
+
+        # Каждому пользователю — базовый вишлист, а записи без списка — в него.
+        from .models.user import User, Wishlist
+
+        for user in db.session.scalars(select(User)).all():
+            default = db.session.scalar(
+                select(Wishlist).where(Wishlist.user_id == user.id).order_by(Wishlist.created_at.asc())
+            )
+            if default is None:
+                default = Wishlist(
+                    user_id=user.id,
+                    name="Вишлист",
+                    slug=f"wishlist-{user.id}",
+                    position=0,
+                )
+                db.session.add(default)
+                db.session.flush()
+                applied.append(f"wishlist {user.id}")
+            db.session.execute(
+                text(
+                    "UPDATE wishlist_items SET wishlist_id = :wid "
+                    "WHERE user_id = :uid AND wishlist_id IS NULL"
+                ),
+                {"wid": default.id, "uid": user.id},
+            )
+        db.session.commit()
+
+        # Уникальность теперь внутри вишлиста, а не на всю базу пользователя.
+        if "wishlist_items" in tables:
+            try:
+                db.session.execute(
+                    text("ALTER TABLE wishlist_items DROP CONSTRAINT IF EXISTS uq_wishlist_target")
+                )
+                db.session.commit()
+                applied.append("drop uq_wishlist_target")
+            except Exception:  # noqa: BLE001 - SQLite не поддерживает IF EXISTS для констрейнтов
+                db.session.rollback()
+            try:
+                db.session.execute(
+                    text(
+                        "ALTER TABLE wishlist_items "
+                        "ADD CONSTRAINT uq_wishlist_target UNIQUE (wishlist_id, item_type, item_id)"
+                    )
+                )
+                db.session.commit()
+                applied.append("uq_wishlist_target(wishlist_id, item_type, item_id)")
+            except Exception:  # noqa: BLE001 - уже существует или дубликаты
+                db.session.rollback()
     return applied
 
 

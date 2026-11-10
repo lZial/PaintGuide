@@ -90,12 +90,13 @@ def _prepare_database(app: Flask) -> None:
     поднимается при каждом холодном старте, и лишние запросы к базе
     там обходятся дорого.
     """
-    from .migrations import drop_obsolete_columns, ensure_schema
+    from .migrations import drop_obsolete_columns, ensure_schema, migrate_wishlists
 
     if not app.config.get("REQUIRE_DATABASE_URL"):
         with app.app_context():
             db.create_all()
         ensure_schema(app)
+        migrate_wishlists(app)
         drop_obsolete_columns(app)
         return
 
@@ -115,6 +116,12 @@ def _prepare_database(app: Flask) -> None:
             db.session.rollback()
             db.create_all()
             ensure_schema(app)
+            migrate_wishlists(app)
+            drop_obsolete_columns(app)
+        else:
+            # База уже есть: применяем ленивые миграции (новые таблицы/колонки).
+            ensure_schema(app)
+            migrate_wishlists(app)
             drop_obsolete_columns(app)
 
 
@@ -268,6 +275,12 @@ def _register_hooks(app: Flask) -> None:
         response.headers.setdefault("Referrer-Policy", "strict-origin-when-cross-origin")
         if request.path.startswith("/static/"):
             response.headers.setdefault("Cache-Control", "public, max-age=86400")
+        elif response.mimetype == "text/html":
+            # HTML без заголовка кэша браузер складывает в кэш и потом
+            # отдаёт форму со старым CSRF-токеном — обычно на телефоне,
+            # где вкладка восстановлена из истории. Запрещаем кэширование,
+            # чтобы форма всегда рисовалась заново со свежим токеном.
+            response.headers.setdefault("Cache-Control", "no-store")
         return response
 
     @app.teardown_appcontext
@@ -279,9 +292,40 @@ def _register_hooks(app: Flask) -> None:
 
 
 def _register_errors(app: Flask) -> None:
+    from urllib.parse import urlparse
+
+    from flask import flash, redirect
+    from flask_wtf.csrf import CSRFError
     from sqlalchemy.exc import OperationalError
 
     from .i18n import translate
+
+    @app.errorhandler(CSRFError)
+    def csrf_failed(_error):
+        """Устаревший CSRF-токен: понятная реакция вместо «Bad Request».
+
+        Токен в открытой форме не совпадает с сессией, когда страница
+        пришла из кэша или восстановлена из старой вкладки (на телефоне
+        такое сплошь и рядом). В этом случае возвращаем пользователя
+        на ту же страницу: она отрисуется заново со свежим токеном,
+        и действие можно просто повторить.
+        """
+        method_is_state_changing = request.method in ("POST", "PUT", "PATCH", "DELETE")
+        referrer = request.referrer or ""
+        # Уходим только на свой же хост: referrer задаёт браузер.
+        same_site = bool(referrer) and urlparse(referrer).netloc == request.host
+        if method_is_state_changing and same_site:
+            flash(translate("error.csrf.retry"), "info")
+            return redirect(referrer, 303)
+        return (
+            render_template(
+                "error.html",
+                code=400,
+                title=translate("error.csrf.title"),
+                message=translate("error.csrf.text"),
+            ),
+            400,
+        )
 
     @app.errorhandler(403)
     def forbidden(_error):

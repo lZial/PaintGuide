@@ -22,6 +22,7 @@ from ..models import (
     GuideVariant,
     Paint,
     StepPaint,
+    Wishlist,
     WishlistItem,
 )
 from ..services.loaders import guide_card_options, guide_detail_options
@@ -163,6 +164,23 @@ def toggle_favorite(slug: str):
     return redirect(request.referrer or url_for("guide.guide_detail", slug=slug))
 
 
+def _default_wishlist_for(user) -> Wishlist:
+    """Базовый вишлист пользователя, создавая его при необходимости."""
+    wishlist = db.session.scalar(
+        select(Wishlist).where(Wishlist.user_id == user.id).order_by(Wishlist.created_at.asc())
+    )
+    if wishlist is None:
+        wishlist = Wishlist(
+            user_id=user.id,
+            name="Вишлист",
+            slug=f"wishlist-{user.id}",
+            position=0,
+        )
+        db.session.add(wishlist)
+        db.session.flush()
+    return wishlist
+
+
 @bp.post("/<slug>/add-paints")
 @login_required
 def add_paints_to_wishlist(slug: str):
@@ -173,6 +191,14 @@ def add_paints_to_wishlist(slug: str):
     if guide is None:
         abort(404)
 
+    wishlist_id = request.form.get("wishlist_id", type=int)
+    if wishlist_id:
+        wishlist = db.session.get(Wishlist, wishlist_id)
+        if wishlist is None or wishlist.user_id != current_user.id:
+            abort(404)
+    else:
+        wishlist = _default_wishlist_for(current_user)
+
     variant = _variant_from_request(guide)
     if variant is None:
         flash("Уровень сложности не найден.", "error")
@@ -182,7 +208,7 @@ def add_paints_to_wishlist(slug: str):
         item.item_id
         for item in db.session.scalars(
             select(WishlistItem).where(
-                WishlistItem.user_id == current_user.id,
+                WishlistItem.wishlist_id == wishlist.id,
                 WishlistItem.item_type == "paint",
             )
         )
@@ -195,6 +221,7 @@ def add_paints_to_wishlist(slug: str):
         db.session.add(
             WishlistItem(
                 user_id=current_user.id,
+                wishlist_id=wishlist.id,
                 item_type="paint",
                 item_id=paint.id,
                 name=f"{paint.brand.name} — {paint.name}",
@@ -210,9 +237,9 @@ def add_paints_to_wishlist(slug: str):
         "guide.add_paints",
         "guide",
         guide.title,
-        f"Добавлено красок: {added}",
+        f"Вишлист {wishlist.name}: добавлено красок {added}",
     )
-    flash(f"В вишлист добавлено красок: {added}.", "success")
+    flash(f"В «{wishlist.name}» добавлено красок: {added}.", "success")
     return redirect(url_for("guide.guide_detail", slug=slug, level=request.form.get("level", "")))
 
 

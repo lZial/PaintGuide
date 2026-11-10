@@ -35,6 +35,13 @@ class User(UserMixin, db.Model):
     favorites = db.relationship(
         "Favorite", back_populates="user", cascade="all, delete-orphan", lazy="selectin"
     )
+    wishlists = db.relationship(
+        "Wishlist",
+        back_populates="user",
+        cascade="all, delete-orphan",
+        lazy="selectin",
+        order_by="Wishlist.position, Wishlist.created_at",
+    )
     wishlist_items = db.relationship(
         "WishlistItem", back_populates="user", cascade="all, delete-orphan", lazy="selectin"
     )
@@ -149,12 +156,48 @@ class Favorite(db.Model):
     )
 
 
+class Wishlist(db.Model):
+    """Вишлист пользователя: именованный список красок.
+
+    У одного пользователя может быть несколько вишлистов
+    (например, «Дляраскраски танка», «Заказы на следующую неделю»).
+    Вишлист можно сделать публичным, чтобы им могли делиться по ссылке.
+    """
+
+    __tablename__ = "wishlists"
+
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(
+        db.Integer, db.ForeignKey("users.id", ondelete="CASCADE"), nullable=False, index=True
+    )
+    name = db.Column(db.String(120), nullable=False, default="Вишлист")
+    slug = db.Column(db.String(80), nullable=False, index=True)
+    position = db.Column(db.Integer, nullable=False, default=0)
+    is_public = db.Column(db.Boolean, nullable=False, default=False, index=True)
+    share_token = db.Column(db.String(40), nullable=True, index=True, unique=True)
+    created_at = db.Column(db.DateTime(timezone=True), nullable=False, default=utc_now)
+    updated_at = db.Column(
+        db.DateTime(timezone=True), nullable=False, default=utc_now, onupdate=utc_now
+    )
+
+    user = db.relationship("User", back_populates="wishlists")
+    items = db.relationship(
+        "WishlistItem", back_populates="wishlist", cascade="all, delete-orphan", lazy="selectin"
+    )
+    __table_args__ = (
+        db.UniqueConstraint("user_id", "slug", name="uq_wishlist_user_slug"),
+    )
+
+
 class WishlistItem(db.Model):
     """Вишлист: краска, которую планируется купить и применить."""
 
     __tablename__ = "wishlist_items"
 
     id = db.Column(db.Integer, primary_key=True)
+    wishlist_id = db.Column(
+        db.Integer, db.ForeignKey("wishlists.id", ondelete="CASCADE"), nullable=True, index=True
+    )
     user_id = db.Column(db.Integer, db.ForeignKey("users.id", ondelete="CASCADE"), nullable=False)
     item_type = db.Column(db.String(20), nullable=False, default="paint", index=True)
     item_id = db.Column(db.Integer, nullable=True)
@@ -164,9 +207,10 @@ class WishlistItem(db.Model):
     position = db.Column(db.Integer, nullable=False, default=0)
     created_at = db.Column(db.DateTime(timezone=True), nullable=False, default=utc_now)
 
+    wishlist = db.relationship("Wishlist", back_populates="items")
     user = db.relationship("User", back_populates="wishlist_items")
     __table_args__ = (
-        db.UniqueConstraint("user_id", "item_type", "item_id", name="uq_wishlist_target"),
+        db.UniqueConstraint("wishlist_id", "item_type", "item_id", name="uq_wishlist_target"),
     )
 
 
